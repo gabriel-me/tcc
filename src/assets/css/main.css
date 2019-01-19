@@ -1,3 +1,5 @@
+/* Reset
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
 * {
     margin: 0;
     padding: 0;
@@ -11,4 +13,90 @@
 
 :root {
     font-size: 16px;
+}
+
+/* H
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+h1 { font-size: 2.2rem; }
+h2 { font-size: 2.0rem; }
+h3 { font-size: 1.8rem; }
+h4 { font-size: 1.6rem; }
+h5 { font-size: 1.4rem; }
+h6 { font-size: 1.2rem; }
+h7 { font-size: 1.0rem; }
+
+/* Width class
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+._default { width: auto; }
+._10 { width: 10%; }
+._20 { width: 20%; }
+._30 { width: 30%; }
+._40 { width: 40%; }
+._50 { width: 50%; }
+._60 { width: 60%; }
+._70 { width: 70%; }
+._80 { width: 80%; }
+._90 { width: 90%; }
+._100 { width: 100%; }
+
+/* Buttons
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+input, 
+select, 
+textarea {
+    padding: .6rem .5rem;
+    background-color: white;
+    border: 1px solid #E6E6E6;
+    border-radius: 3px;
+    outline: none;
+    transition: .5s;
+}
+
+input:focus, 
+select:focus, 
+textarea:focus {
+    border-color: black;
+}
+
+button, 
+input[type="submit"] {
+    color: white;
+    background-color: #1C1C1C;
+    padding: .7rem 1rem;
+    border: none;
+    border-radius: 3px;
+    outline: none;
+    cursor: pointer;
+    transition: .5s;
+}
+
+button:hover, 
+input[type="submit"]:hover {
+    background-color: black;
+}
+
+/* Form
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+form {
+    display: flex;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    width: 100%;
+    padding: 2.5%;
+}
+
+form div, 
+form section, 
+form article, 
+form header, 
+form footer {
+    padding: 1%;
+    width: 100%;
+}
+
+form div input, 
+form div textarea, 
+form div select, 
+form div button {
+    width: 100%;
 }
