@@ -1,0 +1,23 @@
+<link rel="stylesheet" type="text/css" media="screen" href="/css/login.css" />
+
+<form action="/app" method="POST" onkeyup="checksRequired(this)" >
+    <header class="center">
+        <h1>Iniciar Sessão</h1>
+        <button>Usar conta do Google</button>
+    </header>
+    <div class="center">
+        <h5>Ou</h5>
+    </div>
+    <div>
+        <label>Email</label>
+        <input type="text" name="txtName" required />
+    </div>
+    <div>
+        <label>Senha</label>
+        <input type="password" name="pswPassword" required />
+    </div>
+    <div class="right">
+        <button class="disabled" disabled>Iniciar sessão</button>
+        <a href="/forgot_password" title="Clique para criar uma conta">Esqueceu a senha?</a>
+    </div>
+</form>

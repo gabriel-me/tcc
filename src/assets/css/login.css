@@ -1,0 +1,39 @@
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-image: linear-gradient(45deg, #00FB8E, #02EAFB);
+}
+
+form {
+    padding: 5%;
+    width: 45%;
+}
+
+form header h1 {
+    margin-bottom: 5%;
+}
+
+div h5 {
+    opacity: .5;
+}
+
+div a {
+    position: absolute;
+    left: 0;
+    opacity: .3;
+    font-size: .8rem;
+    transition: .5s;
+}
+
+div a:hover {
+    opacity: 1;
+    color: #013ADF;
+}
+
+@media (max-width: 900px) {
+    form {
+        width: 85%;
+    }
+}
