@@ -111,29 +111,31 @@ input[type="submit"]:hover {
 /* Form
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 form {
-    padding: 2.5%;
     border-radius: 5px;
     background-color: white;
 }
 
-form div, 
-form section, 
-form article, 
-form header, 
-form footer {
-    position: relative;
-    display: inline-block;
-    margin: 1%;
+form section {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
     width: 100%;
 }
 
-form label {
+form section div {
+    position: relative;
+    width: 98%;
+    margin: 1%;
+}   
+
+form section div label {
     display: block;
     opacity: .5;
 }
 
-form input, 
-form textarea, 
-form select {
+form section div input, 
+form section div textarea, 
+form section div select {
     width: 100%;
 }
