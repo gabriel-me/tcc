@@ -1,23 +1,123 @@
 <link rel="stylesheet" type="text/css" media="screen" href="/css/login.css" />
 
-<form action="/app" method="POST" onkeyup="checksRequired(this)" >
+<div class="buttons-container">
+    <ul>
+        <a href="#" id="createAccountA" onclick="display('createAccount')" >
+            <li><h6>Criar uma conta</li></h6>
+        </a>
+        <a href="#" id="signInA" onclick="display('signIn')">
+            <li><h6>Iniciar sessão</h6></li>
+        </a>
+    </ul>
+</div>
+<form action="/app" method="POST" onkeyup="checksRequired(this)" id="signIn">
     <header class="center">
         <h1>Iniciar Sessão</h1>
         <button>Usar conta do Google</button>
     </header>
-    <div class="center">
-        <h5>Ou</h5>
-    </div>
-    <div>
-        <label>Email</label>
-        <input type="text" name="txtName" required />
-    </div>
-    <div>
-        <label>Senha</label>
-        <input type="password" name="pswPassword" required />
-    </div>
-    <div class="right">
-        <button class="disabled" disabled>Iniciar sessão</button>
-        <a href="/forgot_password" title="Clique para criar uma conta">Esqueceu a senha?</a>
-    </div>
+    <section>
+        <div class="center">
+            <ul>
+                <li></li>
+                <li class="li-or"><h5>Ou</h5></li>
+                <li></li>
+            </ul>
+        </div>
+    </section>
+    <section>
+        <div>
+            <label>Email</label>
+            <input type="text" name="txtName" required />
+        </div>
+    </section>
+    <section>
+        <div>
+            <label>Senha</label>
+            <input type="password" name="pswPassword" required />
+        </div>
+    </section>
+    <section>
+        <div class="right">
+            <button class="disabled" disabled>Iniciar sessão</button>
+            <a href="/forgot_password" title="Clique para criar uma conta">Esqueceu a senha?</a>
+        </div>
+    </section>
 </form>
+<form action="" method="POST" onkeyup="checksRequired(this)" id="createAccount">
+    <header class="center">
+        <h1>Inscreva-se para começar</h1>
+        <button>Usar conta do Google</button>
+    </header>
+    <section>
+        <div class="center">
+            <ul>
+                <li></li>
+                <li class="li-or"><h5>Ou</h5></li>
+                <li></li>
+            </ul>
+        </div>
+    </section>
+    <section>
+        <div>
+            <label>Nome</label>
+            <input type="text" name="inpName" required />
+        </div>
+        <div>
+            <label>Sobrenome</label>
+            <input type="text" name="inpLastName" required />
+        </div>
+    </section>
+    <section>
+        <div>
+            <label>Email</label>
+            <input type="email" name="inpEmail" required />
+        </div>
+    </section>
+    <section>
+        <div>
+            <label>Senha</label>
+            <input type="password" name="inpPassword" required />
+        </div>
+        <div>
+            <label>Confirme a senha</label>
+            <input type="password" name="inpConfirmPassword" required />
+        </div>
+    </section>
+    <section>
+        <div class="right">
+            <button class="disabled" disabled>Inscrever-se</button>
+        </div>
+    </section>
+</form> 
+<script>
+function display(id) {
+    let $createAccount = document.getElementById('createAccount');
+    let $createAccountA = document.getElementById('createAccountA');
+    let $signIn = document.getElementById('signIn');
+    let $signInA = document.getElementById('signInA');
+
+    if (id == 'signIn') {
+        $createAccount.style.display = 'none';
+        $createAccountA.style.backgroundColor = '#F2F2F2';
+        $createAccountA.style.borderRight = '1px solid #D8D8D8';
+        $createAccountA.style.borderBottom = '1px solid #D8D8D8';
+        $createAccountA.style.opacity = '.5';
+        $signIn.style.display = 'block';
+        $signInA.style.backgroundColor = 'white';
+        $signInA.style.borderColor = 'white';
+        $signInA.style.borderColor = 'white';
+        $signInA.style.opacity = '1';
+    } else {
+        $signIn.style.display = 'none';
+        $signInA.style.backgroundColor = '#F2F2F2';
+        $signInA.style.borderLeft = '1px solid #D8D8D8';
+        $signInA.style.borderBottom = '1px solid #D8D8D8';
+        $signInA.style.opacity = '.5';
+        $createAccount.style.display = 'block';
+        $createAccountA.style.borderColor = 'white';
+        $createAccountA.style.borderColor = 'white';
+        $createAccountA.style.backgroundColor = 'white';
+        $createAccountA.style.opacity = '1';
+    }
+}
+</script>
