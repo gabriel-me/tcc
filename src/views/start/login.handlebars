@@ -43,7 +43,7 @@
         </div>
     </section>
 </form>
-<form action="/login" method="POST" onkeyup="checksRequired(this)" id="createAccount">
+<form action="/login" method="POST" onkeyup="checksRequired(this)" id="frmCreateAccount">
     <header class="center">
         <h1>Inscreva-se para começar</h1>
         <button>Usar conta do Google</button>
@@ -91,9 +91,9 @@
 </form> 
 <script>
 function display(id) {
-    let $createAccount = document.getElementById('createAccount');
+    let $createAccount = document.getElementById('frmCreateAccount');
     let $createAccountA = document.getElementById('createAccountA');
-    let $signIn = document.getElementById('signIn');
+    let $signIn = document.getElementById('frmSignIn');
     let $signInA = document.getElementById('signInA');
 
     if (id == 'signIn') {

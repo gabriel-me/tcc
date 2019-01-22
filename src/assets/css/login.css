@@ -28,7 +28,7 @@ body {
     padding: 5% 2%;
 }
 
-#createAccount {
+#frmCreateAccount {
     display: none;
 }
 
@@ -39,7 +39,7 @@ body {
     opacity: .5;
 }
 
-#signInA {
+#frmSignInA {
     border-left: 1px solid white;
     border-bottom: 1px solid white;
 }
