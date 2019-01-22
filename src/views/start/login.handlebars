@@ -10,7 +10,7 @@
         </a>
     </ul>
 </div>
-<form action="/app" method="POST" onkeyup="checksRequired(this)" id="signIn">
+<form action="/login" method="POST" onkeyup="checksRequired(this)" id="frmSignIn">
     <header class="center">
         <h1>Iniciar Sessão</h1>
         <button>Usar conta do Google</button>
@@ -27,13 +27,13 @@
     <section>
         <div>
             <label>Email</label>
-            <input type="text" name="txtName" required />
+            <input type="text" name="inpName" required />
         </div>
     </section>
     <section>
         <div>
             <label>Senha</label>
-            <input type="password" name="pswPassword" required />
+            <input type="password" name="inpPassword" required />
         </div>
     </section>
     <section>
@@ -43,7 +43,7 @@
         </div>
     </section>
 </form>
-<form action="" method="POST" onkeyup="checksRequired(this)" id="createAccount">
+<form action="/login" method="POST" onkeyup="checksRequired(this)" id="createAccount">
     <header class="center">
         <h1>Inscreva-se para começar</h1>
         <button>Usar conta do Google</button>
