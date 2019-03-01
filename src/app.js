@@ -11,9 +11,11 @@ const app = express();
 mongoose.Promise = global.Promise;
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
+
+// View engine
 app.engine('handlebars', handlebars({defaultLayout: 'main'}));
 app.set('view engine', 'handlebars');
-app.use(express.static(path.join(__dirname, 'assets')))
+app.use(express.static(path.join(__dirname, 'public')))
 
 // Routes
 app.use('/', start);
