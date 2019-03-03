@@ -16,6 +16,14 @@
     background: none;
 }
 
+::-webkit-scrollbar {
+    width: .2rem;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #E6E6E6;
+}
+
 /* Default styles
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 :root { font-size: 15px; }
@@ -28,6 +36,7 @@ article,
 div,
 footer,
 main {
+    position: relative;
     display: block;
     min-width: 100%;
     padding: .5rem;
@@ -112,15 +121,97 @@ input[type="submit"]:hover {
 .left { text-align: left; }
 .right { text-align: right; }
 
+/* Aside menu
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+#menu {
+    display: inline-block;
+    min-height: 100vh;
+    min-width: 20%;
+    border-right: 1px solid #E6E6E6;
+    padding: 0;
+    transition: .3s;
+}
+
+#menu header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1.5rem 0rem 1.5rem 0rem;
+}
+
+#menu header div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 24px;
+    min-height: 24px;
+    position: absolute;
+    right: -17px;
+    background-color: white;
+    border: 1px solid #E6E6E6;
+    border-radius: 100%;
+    padding: 5px;
+    cursor: pointer;
+}
+
+#menu nav {
+    padding: 0;
+}
+
+#menu nav ul a li {
+    border-right: 5px solid white;
+    padding: 1.5rem 0rem 1.5rem 1rem;
+    cursor: pointer;
+    transition: .2s;
+}
+
+#menu nav ul a li:hover {
+    border-color: #0080FF;
+    transition: .2s;
+}
+
+#menu nav ul a li:hover h4 {
+    color: #0080FF;
+    transition: .2s;
+}
+
+#menu footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    bottom: 0;
+    border-top: 1px solid #E6E6E6;
+    padding: 1rem 0;
+}
+
+#menu footer ul li {
+    margin: 0px 10px;
+    display: inline-block;
+}
+
 /* Media queries
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
-@media (max-width: 400px) {
-    :root { font-size: 12px; }
-    .row { flex-direction: column; }
+@media (max-height: 400px) {
+    #menu footer {
+        position: relative;
+    }
 }
 
 @media (max-width: 800px) {
     :root { font-size: 14px; }
+    .row { flex-direction: column; }
+    #menu { 
+        width: 100%;
+        border: none; 
+    }
+    #menu header div {
+        border: none; 
+        position: fixed;
+        top: 5px;
+        right: 5px;
+    }
+    #menu footer ul li { margin: 0px 5px; }
     .length-1 { min-width: 50%; }
     .length-2 { min-width: 50%; }
     .length-3 { min-width: 50%; }
