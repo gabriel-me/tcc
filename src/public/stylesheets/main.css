@@ -96,8 +96,8 @@ input[type="submit"] {
     width: auto;
     color: white;
     background-color: #0080FF;
-    padding: 1rem 1.2rem;
-    border: none;
+    border: 2px solid #0080FF;
+    padding: .8rem 1rem;
     border-radius: 5px;
     cursor: pointer;
     transition: .5s;
@@ -106,6 +106,7 @@ input[type="submit"] {
 button:hover, 
 input[type="submit"]:hover {
     background-color: #0040FF;
+    border-color: #0040FF;
 }
 
 /* Class
