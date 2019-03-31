@@ -24,3 +24,21 @@ $menuButton.addEventListener('click', () => {
         $navbar.style.display = 'block';
     }
 });
+
+let $inputs = document.querySelectorAll('input');
+let $labels = document.querySelectorAll('label');
+
+$inputs.forEach($input => {
+    $input.addEventListener('focus', () => {
+        $label = $input.labels[0].children[0];
+        $label.style.marginTop = '-1.5rem';
+        $label.style.color = '#0080FF';
+    });
+    $input.addEventListener('blur', () => {
+        $label = $input.labels[0].children[0];
+        $label.style.color = '#A4A4A4';
+        if ($input.value == '') {
+            $label.style.marginTop = '0';
+        }
+    });
+});
