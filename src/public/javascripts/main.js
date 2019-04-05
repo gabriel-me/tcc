@@ -25,6 +25,20 @@ $menuButton.addEventListener('click', () => {
     }
 });
 
+document.body.onresize = () => {
+    if (window.innerWidth > 800) {
+        if ($menu.style.marginLeft == '-100%') {
+            $menu.style.marginLeft = '-15rem';
+            $menu.style.backgroundColor = 'white';
+            $navbar.style.display = 'none';
+        }
+    } else {
+        if ($menu.style.marginLeft == '-15rem') {
+            $menu.style.marginLeft = '-100%';
+        }
+    }
+}
+
 let $inputs = document.querySelectorAll('input');
 let $labels = document.querySelectorAll('label');
 
