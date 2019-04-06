@@ -90,16 +90,17 @@ input,
 textarea,
 select {
     width: 100%;
-    border: 2px solid #E6E6E6;
+    border: 1px solid #E6E6E6;
     padding: .8rem;
-    border-radius: 5px;
+    border-radius: 3px;
     transition: .5s;
 }
 
 input:focus, 
 textarea:focus,
 select:focus {
-    border-color: #0080FF;
+    border-color: white;
+    box-shadow: 0px 0px 0px 2px #0080FF;
 }
 
 button, 
