@@ -156,47 +156,50 @@ input[type="submit"]:hover {
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 #menu {
     display: inline-block;
-    min-height: 100vh;
-    min-width: 20rem;
+    height: 100vh;
+    min-width: 18rem;
     background-color: #070719;
     padding: 0;
     transition: .3s;
 }
 
-#menu h3,
-#menu h4 {
+#menu h3, #menu h4, #menu p {
     color: white;
 }
 
-#menu header {
+#menu header, #menu footer {
+    position: absolute;
+    left: 0;
     display: flex;
     align-items: center;
+    background-color: #070719;
+    padding: 1rem;
+    z-index: 1;
+}
+
+#menu header {
+    top: 0;
     justify-content: space-between;
-    padding: 1.5rem;
 }
 
 #menu nav {
-    padding: 0;
+    padding: 5rem 0rem;
+    height: 100vh;
+    overflow: auto;
 }
 
 #menu nav ul a li {
     padding: 1rem 1.5rem;
     cursor: pointer;
-    transition: .2s;
 }
 
 #menu nav ul a li:hover h4 {
     color: #0080FF;
-    transition: .2s;
 }
 
 #menu footer {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: absolute;
-    padding: 1rem 0;
     bottom: 0;
+    justify-content: center;
     border-top: 1px solid white;
 }
 
@@ -207,12 +210,6 @@ input[type="submit"]:hover {
 
 /* Media queries
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
-@media (max-height: 400px) {
-    #menu footer {
-        position: relative;
-    }
-}
-
 @media (max-width: 800px) {
     .row { flex-direction: column; }
     #menu {
