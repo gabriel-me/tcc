@@ -1,0 +1,81 @@
+.panel section {
+    padding: 0;
+    margin-bottom: 2rem;
+}
+
+.panel section h4 {
+    margin-bottom: 1rem;
+}
+
+.panel div {
+    padding: 0;
+}
+
+.panel section div ul li {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: .5rem 0rem;
+    border-bottom: 1px solid #e6e6e6;
+    cursor: pointer;
+}
+
+.panel section div ul li:hover {
+    box-shadow: 0px 0px 15px 1px #e6e6e6;
+}
+
+.panel section div ul li time {
+    position: absolute;
+    right: 1rem;
+    background-color: #070719;
+    padding: .5rem 1rem;
+    border-radius: 1rem;
+    color: white;
+}
+
+.panel section div ul li:hover {
+    background-color: white;
+}
+
+.panel .project-list {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.project-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 9rem;
+    min-width: 9rem;
+    max-width: 9rem;
+    background-color: white;
+    border: 1px solid #E6E6E6;
+    margin-right: 1rem;
+    border-radius: 2rem;
+    cursor: pointer;
+    transition: .5s;
+}
+
+.project-container h4 {
+    transition: .5s;
+}
+
+.project-container:hover h4 {
+    color: #0080FF;
+}
+
+.project-container:hover span {
+    opacity: 1;
+    transition: .5s;
+}
+
+.project-container span {
+    position: absolute;
+    right: 1rem;
+    top: .5rem;
+    opacity: 0;
+    z-index: 1;
+    transition: .5s;
+}
