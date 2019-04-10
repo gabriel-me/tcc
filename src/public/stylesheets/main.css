@@ -44,7 +44,6 @@ footer {
     position: relative;
     display: block;
     min-width: 100%;
-    padding: .5rem;
 }
 
 main {
@@ -129,19 +128,30 @@ input[type="submit"]:hover {
 
 /* Class
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
-.title-page {
-    margin: -3.1rem 0 2rem 0;
+.list li {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    border-bottom: 1px solid #F2F2F2;
+    padding: .5rem 0;
+    cursor: pointer;
 }
 
-.progress-bar {
+.list li:hover {
+    box-shadow: 0px 0px 1rem 1px #E6E6E6;
+}
+
+.list time {
     position: absolute;
-    top: 0;
-    left: 0;
-    border-top-left-radius: 1rem;
-    border-bottom-left-radius: 1rem;
-    background-color: #0080FF;
-    height: 100%;
-    z-index: -1;
+    right: .5rem;
+    padding: .5rem 1rem;
+    border-radius: 10rem;
+    background-color: #070719;
+    color: white;
+}
+
+.title-page {
+    margin: -3.1rem 0 2rem 0;
 }
 
 .input-container {

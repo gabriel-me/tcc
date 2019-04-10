@@ -1,43 +1,13 @@
-.panel section {
+section {
     padding: 0;
     margin-bottom: 2rem;
 }
 
-.panel section h4 {
+section h4 {
     margin-bottom: 1rem;
 }
 
-.panel div {
-    padding: 0;
-}
-
-.panel section div ul li {
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    padding: .5rem 0rem;
-    border-bottom: 1px solid #e6e6e6;
-    cursor: pointer;
-}
-
-.panel section div ul li:hover {
-    box-shadow: 0px 0px 15px 1px #e6e6e6;
-}
-
-.panel section div ul li time {
-    position: absolute;
-    right: 1rem;
-    background-color: #070719;
-    padding: .5rem 1rem;
-    border-radius: 1rem;
-    color: white;
-}
-
-.panel section div ul li:hover {
-    background-color: white;
-}
-
-.panel .project-list {
+.project-list {
     display: flex;
     align-items: center;
     justify-content: flex-start;
