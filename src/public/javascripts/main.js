@@ -13,7 +13,11 @@ $menuButton.addEventListener('click', () => {
             $menuHeader.style.backgroundColor = 'white';
             $menuFooter.style.backgroundColor = 'white';
             $navbar.style.display = 'none';
+            setTimeout(() => {
+                $menu.style.position = 'fixed';
+            }, 150);
         } else {
+            $menu.style.position = 'relative';
             $menu.style.marginLeft = '0rem';
             $menu.style.backgroundColor = '#070719';
             $menuHeader.style.backgroundColor = '#070719';
