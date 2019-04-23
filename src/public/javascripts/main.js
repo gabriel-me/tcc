@@ -1,53 +1,52 @@
+let $main = document.querySelector('main');
 let $menu = document.getElementById('menu');
-let $navbar = document.querySelector('#menu nav');
+let $navbar = document.querySelector('#menu nav ul');
 let $footer = document.querySelector('#menu footer');
 let $menuButton = document.getElementById('menuButton');
-let $menuHeader = $menu.children[0];
-let $menuFooter = $menu.children[2];
 
 $menuButton.addEventListener('click', () => {
-    if(window.innerWidth > 800) {
+    $menu.style.backgroundColor = ($menu.style.marginLeft != '-14rem' && $menu.style.marginLeft != '-100%') ? '#FFFFFF' : '#070719';
+    if ($navbar.style.display != 'none') {
+        $navbar.style.display = 'none';
+        $footer.style.display = 'none';
+    } else {
+        $navbar.style.display = 'block';
+        $footer.style.display = 'flex';
+    }
+    if (window.innerWidth > 800) {
         if ($menu.style.marginLeft != '-14rem') {
             $menu.style.marginLeft = '-14rem';
-            $menu.style.backgroundColor = 'white';
-            $menuHeader.style.backgroundColor = 'white';
-            $menuFooter.style.backgroundColor = 'white';
-            $navbar.style.display = 'none';
-            setTimeout(() => {
-                $menu.style.position = 'fixed';
-            }, 150);
+            $main.style.marginLeft = '0';
         } else {
-            $menu.style.position = 'relative';
-            $menu.style.marginLeft = '0rem';
-            $menu.style.backgroundColor = '#070719';
-            $menuHeader.style.backgroundColor = '#070719';
-            $menuFooter.style.backgroundColor = '#070719';
-            $navbar.style.display = 'block';
+            $menu.style.marginLeft = '0';
+            $main.style.marginLeft = '18rem';
         }
     } else {
         if ($menu.style.marginLeft != '-100%') {
             $menu.style.marginLeft = '-100%';
         } else {
-            $menu.style.marginLeft = '0%';
+            $menu.style.marginLeft = '0';
         }
-        $menu.style.backgroundColor = '#070719';
-        $navbar.style.display = 'block';
     }
 });
 
 document.body.onresize = () => {
+    $menu.style.backgroundColor = ($menu.style.marginLeft != '-14rem' && $menu.style.marginLeft != '-100%') ? '#070719' : '#FFFFFF';
     if (window.innerWidth > 800) {
-        if ($menu.style.marginLeft == '-100%') {
+        if ($menu.style.marginLeft == '-14rem' || $menu.style.marginLeft == '-100%') {
             $menu.style.marginLeft = '-14rem';
-            $menu.style.backgroundColor = 'white';
-            $menuHeader.style.backgroundColor = 'white';
-            $menuFooter.style.backgroundColor = 'white';
-            $navbar.style.display = 'none';
+            $main.style.marginLeft = '0';
+        } else {
+            $menu.style.marginLeft = '0';
+            $main.style.marginLeft = '18rem';
         }
     } else {
-        if ($menu.style.marginLeft == '-14rem') {
+        if ($menu.style.marginLeft == '-14rem' || $menu.style.marginLeft == '-100%') {
             $menu.style.marginLeft = '-100%';
+        } else {
+            $menu.style.marginLeft = '0';
         }
+        $main.style.marginLeft = '0';
     }
 }
 
@@ -58,7 +57,7 @@ $inputs.forEach($input => {
     $input.addEventListener('focus', () => {
         $label = $input.labels[0].children[0];
         $label.style.marginTop = '-1.5rem';
-        $label.style.color = '#0080FF';
+        $label.style.color = '#15DB95';
     });
     $input.addEventListener('blur', () => {
         $label = $input.labels[0].children[0];
