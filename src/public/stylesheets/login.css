@@ -1,0 +1,98 @@
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  width: 100%;
+  background-image: linear-gradient(to right, #43e97b 0%, #38f9d7 100%);
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #FFFFFF;
+  z-index: 0;
+}
+
+main section {
+  text-align: center;
+  margin-bottom: 2.5rem;
+  padding: 0 4rem;
+}
+
+.choose {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  cursor: pointer;
+}
+
+#create,
+#login {
+  width: 50%;
+  padding: 1rem;
+  transition: .3s;
+  color: #A4A4A4;
+}
+
+#create:hover,
+#login:hover {
+  color: black;
+  background-color: white;
+}
+
+#create {
+  background-color: #F2F2F2;
+}
+
+#create:hover {
+  box-shadow: 5px 5px 5px 1px #D8D8D8;
+}
+
+#login {
+  color: black;
+}
+
+#login:hover {
+  box-shadow: -5px 5px 5px 1px #D8D8D8;
+}
+
+.separator {
+  padding: .5rem 0;
+}
+
+.ou {
+  color: #A4A4A4;
+  background-color: #FFFFFF;
+  padding: 0 1rem;
+  z-index: 9999;
+}
+
+.line {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  height: 1px;
+  width: 100%;
+  background-color: #D8D8D8;
+  z-index: -1;
+}
+
+form div {
+  margin-bottom: 1rem;
+}
+
+.sign-container {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-bottom: 0;
+}
+
+.sign-container a {
+  color: #A4A4A4;
+  font-size: .8rem;
+}

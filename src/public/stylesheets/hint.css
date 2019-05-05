@@ -61,7 +61,7 @@
     border: 6px solid transparent;
     z-index: 1000001; }
   [class*="hint--"]:after {
-    background: #15DB95;
+    background: #1C1C1C;
     color: white;
     padding: 8px 10px;
     font-size: 12px;
@@ -93,28 +93,28 @@
  * set default color for tooltip arrows
  */
 .hint--top-left:before {
-  border-top-color: #15DB95; }
+  border-top-color: #1C1C1C; }
 
 .hint--top-right:before {
-  border-top-color: #15DB95; }
+  border-top-color: #1C1C1C; }
 
 .hint--top:before {
-  border-top-color: #15DB95; }
+  border-top-color: #1C1C1C; }
 
 .hint--bottom-left:before {
-  border-bottom-color: #15DB95; }
+  border-bottom-color: #1C1C1C; }
 
 .hint--bottom-right:before {
-  border-bottom-color: #15DB95; }
+  border-bottom-color: #1C1C1C; }
 
 .hint--bottom:before {
-  border-bottom-color: #15DB95; }
+  border-bottom-color: #1C1C1C; }
 
 .hint--left:before {
-  border-left-color: #15DB95; }
+  border-left-color: #1C1C1C; }
 
 .hint--right:before {
-  border-right-color: #15DB95; }
+  border-right-color: #1C1C1C; }
 
 /**
  * top tooltip
