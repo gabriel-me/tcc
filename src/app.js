@@ -2,13 +2,18 @@
 const express = require('express');
 const handlebars = require('express-handlebars');
 const bodyParser = require('body-parser');
-const mongoose = require('mongoose');
 const path = require('path');
 const generic = require('./routes/generic');
+const firebase = require('firebase');
 const app = express();
 
+// Connection firebase
+firebase.initializeApp({
+  serviceAccount: "./tasks-system-23a7d-firebase-adminsdk-ghbbh-e2908b7e54.json",
+  databaseURL: 'https://tasks-system-23a7d.firebaseio.com'
+});
+
 // Config
-mongoose.Promise = global.Promise;
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 

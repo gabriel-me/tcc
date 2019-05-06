@@ -1,34 +1,19 @@
-const mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost/tasksdb', {
-  useNewUrlParser: true
-});
-
-const accountSchema = mongoose.Schema({
-  email: {
-    type: String,
-    required: true
-  },
-  password: {
-    type: String,
-    required: true
-  },
-  name: {
-    type: String,
-    required: true
-  },
-  lastName: {
-    type: String,
-    required: true
-  },
-  office: {
-    type: String,
-    required: true
-  },
-  about: {
-    type: String,
-    required: true
+class Account {
+  constructor() {
+    this.firebase = require('firebase');
   }
-});
 
-mongoose.model('account', accountSchema);
-module.exports = mongoose.model('account');
+  createAccount(email, password) {
+    return new Promise((resolve, reject) => {
+      this.firebase.database().ref('users/').child(email).set({
+        password: password
+      }).then(() => {
+        resolve('success');
+      }).catch(err => {
+        reject(err);
+      });
+    });
+  }
+}
+
+module.exports = new Account();
