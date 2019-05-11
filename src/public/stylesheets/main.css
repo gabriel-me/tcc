@@ -162,8 +162,8 @@ h6 { font-size: 1.1rem; }
   z-index: -1;
   border-top-left-radius: 10rem;
   border-bottom-left-radius: 10rem;
-  background-color: rgb(102, 0, 238);
-  box-shadow: 0 0 .1px .5px rgb(102, 0, 238); }
+  background-color: #0040FF;
+  box-shadow: 0 0 .1px .5px #0040FF; }
 
 /* Header
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
