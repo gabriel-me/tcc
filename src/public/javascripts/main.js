@@ -33,10 +33,12 @@ function menuControl() {
   }
 }
 
-function changeElementStyle(elements) {
-  elements.forEach(element => {
-    let currentElement= document.getElementById(element.id);
-    currentElement.classList = element.class;
+function changeElementStyle(references) {
+  references.forEach(reference => {
+    let elements = document.querySelectorAll(reference.element);
+    elements.forEach(element => {
+      element.classList = reference.class;
+    });
   });
 }
 
