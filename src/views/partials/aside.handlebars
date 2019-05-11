@@ -8,7 +8,12 @@
         <section class="logo-row" style="padding-top: 1.9rem; background-color: #2EB67D;"></section>
       </figure>
       <i id="menuButtonRight" data-eva="arrowhead-right-outline" data-eva-animation="none" data-eva-fill="#FFFFFF"
-        data-eva-width="1.8rem" data-eva-height="1.8rem"></i>
+        data-eva-width="1.8rem" data-eva-height="1.8rem"
+        onclick="changeElementStyle([
+          { 'element': '#menu', class: 'visible-menu' }, 
+          { 'element': 'main', class: 'main-content' }
+        ]);">
+      </i>
     </span>
     <ul>
       <li>
@@ -37,7 +42,12 @@
   <nav id="menu-nav" class="menu-column">
     <header>
       <i id="menuButton" data-eva="arrowhead-left-outline" data-eva-animation="none" data-eva-fill="#FFFFFF"
-        data-eva-width="1.8rem" data-eva-height="1.8rem"></i>
+        data-eva-width="1.8rem" data-eva-height="1.8rem"
+        onclick="changeElementStyle([
+          { 'element': '#menu', class: 'hidden-menu' }, 
+          { 'element': 'main', class: 'expanded-main-content' } 
+        ]);">
+      </i>
     </header>
     <ul>
       <li id="first-li">

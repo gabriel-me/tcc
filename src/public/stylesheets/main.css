@@ -65,7 +65,34 @@ h6 { font-size: 1.1rem; }
 
 /* Class
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
-.main-content {
+.hidden-menu {
+  margin-left: 0;
+  width: 4rem !important; }
+
+.hidden-menu .logo {
+  display: none; }
+
+.hidden-menu #menuButtonRight {
+  display: block !important; }
+
+.hidden-menu #menu-nav {
+  margin-left: -25rem; }
+
+.visible-menu {
+  margin-left: 0;
+  width: 20rem; }
+
+.visible-menu .logo {
+  display: flex; }
+
+.visible-menu #menuButtonRight {
+  display: none; }
+
+.visible-menu #menu-nav {
+  margin-left: 0; }
+
+.main-content, 
+.expanded-main-content {
   display: block;
   width: 100%;
   height: 100vh;
@@ -73,6 +100,9 @@ h6 { font-size: 1.1rem; }
   padding: 4rem;
   transition: .3s;
   overflow: auto; }
+
+.expanded-main-content {
+  margin-left: 4rem; }
 
 .title-page {
   margin: -3.1rem 0 2rem 0; }
