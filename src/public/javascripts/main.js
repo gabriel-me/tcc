@@ -33,36 +33,11 @@ function menuControl() {
   }
 }
 
-function listenClickMenuButton() {
-  let $menuButtonLeft = document.getElementById('menuButton');
-  let $menuButtonRight = document.getElementById('menuButtonRight');
-
-  $menuButtonRight.addEventListener('click', () => {
-    menuControl();
-  });
-
-  $menuButtonLeft.addEventListener('click', () => {
-    menuControl();
+function changeElementStyle(elements) {
+  elements.forEach(element => {
+    let currentElement= document.getElementById(element.id);
+    currentElement.classList = element.class;
   });
 }
 
-function startbehaviorNormalInputs() {
-  let $inputs = document.querySelectorAll('.input-button');
-  $inputs.forEach($input => {
-    $input.addEventListener('focus', () => {
-      $label = $input.labels[0].children[0];
-      $label.style.marginTop = '-1.5rem';
-      $label.style.color = '#0040FF';
-    });
-    $input.addEventListener('blur', () => {
-      $label = $input.labels[0].children[0];
-      $label.style.color = '#A4A4A4';
-      if ($input.value == '') {
-        $label.style.marginTop = '0';
-      }
-    });
-  });
-}
-
-startbehaviorNormalInputs();
 listenClickMenuButton();

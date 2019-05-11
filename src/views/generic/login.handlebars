@@ -1,33 +1,81 @@
+<h4 class="logo">LOGO</h4>
 <main>
   <section class="choose">
-    <h4 id="create">Criar conta</h4>
-    <h4 id="login">Entrar</h4>
+    <h4 id="create" onclick="changeElementStyle([
+      { id: 'create', class: 'selected' },
+      { id: 'frmCreateAccount', class: 'display-block' },
+      { id: 'login', class: 'deselect' },
+      { id: 'frmLogin', class: 'display-none' } 
+    ]);" class="deselect">Criar conta</h4>
+    <h4 id="login" onclick="changeElementStyle([
+      { id: 'login', class: 'selected' },
+      { id: 'frmLogin', class: 'display-block' },
+      { id: 'create', class: 'deselect' },
+      { id: 'frmCreateAccount', class: 'display-none' } 
+    ]);">Entrar</h4>
   </section>
   <section>
     <h1>Acesse sua conta</h1>
   </section>
   <section class="section-form">
-    <button>Entrar com o Google</button>
+    <button class="matter-button-outlined matter-secondary">Entrar com o Google</button>
     <div class="separator">
-      <h3><span class="ou">ou</span></h3>
+      <h3><span class="or">ou</span></h3>
       <span class="line"></span>
     </div>
-    <form method="POST" action="" class="validateForm">
-      <div>
-        <label for="txtEmail">
-          <span>E-mail</span>
+    <form method="POST" action="" class="validateForm" id="frmLogin">
+      <div class="column">
+        <label class="matter-textfield-outlined matter-secondary">
+          <span class="matter-tooltip"></span>
+          <input name="emlEmail" type="email" placeholder=" " required />
+          <span>Email</span>
         </label>
-        <input type="text" id="txtEmail" name="txtEmail" class="input-button" required>
-      </div>
-      <div>
-        <label for="txtPassword">
+        <label class="matter-textfield-outlined matter-secondary">
+          <span class="matter-tooltip "></span>
+          <input name="pswPassword" type="password" placeholder=" " required />
           <span>Senha</span>
         </label>
-        <input type="text" id="txtPassword" name="txtPassword" class="input-button" required>
       </div>
-      <div class="sign-container">
+      <div class="row">
         <a href="#">Esqueceu sua senha?</a>
-        <button class="button-disabled">Entrar</button>
+        <button class="matter-button-contained matter-secondary">Entrar</button>
+      </div>
+    </form>
+    <form method="POST" action="" class="validateForm" id="frmCreateAccount">
+      <div class="column">
+        <div class="row">
+          <label class="matter-textfield-outlined matter-secondary">
+            <span class="matter-tooltip"></span>
+            <input name="txtName" placeholder=" " required />
+            <span>Nome</span>
+          </label>
+          <label class="matter-textfield-outlined matter-secondary">
+            <span class="matter-tooltip "></span>
+            <input name="txtLastName" placeholder=" " required />
+            <span>Sobrenome</span>
+          </label>
+        </div>
+        <label class="matter-textfield-outlined matter-secondary">
+          <span class="matter-tooltip"></span>
+          <input name="emlEmail" type="email" placeholder=" " required />
+          <span>Email</span>
+        </label>
+        <div class="row">
+          <label class="matter-textfield-outlined matter-secondary">
+            <span class="matter-tooltip"></span>
+            <input name="pswPassword" type="password" placeholder=" " required />
+            <span>Senha</span>
+          </label>
+          <label class="matter-textfield-outlined matter-secondary">
+            <span class="matter-tooltip "></span>
+            <input name="pswConfirmPassword" type="password" placeholder=" " required />
+            <span>Confirmar senha</span>
+          </label>
+        </div>
+      </div>
+      <div class="row">
+        <a href="#">Esqueceu sua senha?</a>
+        <button class="matter-button-contained matter-secondary">Entrar</button>
       </div>
     </form>
   </section>
