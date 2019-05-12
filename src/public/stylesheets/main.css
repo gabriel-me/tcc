@@ -272,7 +272,8 @@ h6 { font-size: 1.1rem; }
 
 #menu #menu-nav {
   left: 4rem;
-  width: 16rem; }
+  width: 16rem; 
+  border-right: 1px solid #282841; }
 
 #menu #menu-nav header {
   display: flex;
