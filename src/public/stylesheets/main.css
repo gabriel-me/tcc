@@ -195,6 +195,31 @@ h6 { font-size: 1.1rem; }
   background-color: #0040FF;
   box-shadow: 0 0 .1px .5px #0040FF; }
 
+.dropdown {
+  position: relative;
+  height: auto; }
+
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  max-height: 20rem;
+  width: 100%;
+  overflow: auto;
+  display: none; 
+  flex-direction: column; 
+  background-color: #FFFFFF;
+  border-left: 1px solid #D8D8D8;
+  border-right: 1px solid #D8D8D8;
+  border-bottom: 1px solid #D8D8D8; }
+
+.dropdown-menu li {
+  width: 100%;
+  padding: .5rem; }
+
+.dropdown-menu li:hover {
+  color: rgb(102, 0, 238); }
+
 /* Header
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 #header {
