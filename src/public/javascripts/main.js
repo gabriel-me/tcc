@@ -20,4 +20,32 @@ function listenDropdownButton() {
   });
 }
 
+function whileLoadingPage() {
+  let loading = {
+    start: () => {
+      document.body.insertAdjacentHTML(
+        'beforeend',
+        `<div class="spinner">
+          <div class="rect1"></div>
+          <div class="rect2"></div>
+          <div class="rect3"></div>
+          <div class="rect4"></div>
+          <div class="rect5"></div>
+        </div>`
+      );
+    },
+    complete: () => {
+      let loading = document.querySelector('.spinner');
+      loading.remove(loading);
+    }
+  };
+  loading.start();
+  document.addEventListener('readystatechange', () => {
+    if (document.readyState === "complete") {
+      loading.complete();
+    }
+  });
+}
+
+whileLoadingPage();
 listenDropdownButton();
