@@ -49,29 +49,37 @@
         ]);">
       </i>
     </header>
-    <ul>
-      <li id="first-li">
+    <ul class="menu-ul">
+      <li class="menu-li" id="first-li">
         <i data-eva="done-all" data-eva-animation="none" data-eva-fill="#282841" data-eva-width="2.2rem"
           data-eva-height="2.2rem"></i>
         <p>Tarefas</p>
       </li>
-      <li>
+      <li class="menu-li">
         <i data-eva="layers-outline" data-eva-animation="none" data-eva-fill="#282841" data-eva-width="2.2rem"
           data-eva-height="2.2rem"></i>
         <p>Projetos</p>
       </li>
-      <li>
+      <li class="menu-li">
         <i data-eva="person-outline" data-eva-animation="none" data-eva-fill="#282841" data-eva-width="2.2rem"
           data-eva-height="2.2rem"></i>
         <p>Usuários</p>
       </li>
-      <li>
+      <li class="menu-li">
         <i data-eva="activity" data-eva-animation="none" data-eva-fill="#282841" data-eva-width="2.2rem"
           data-eva-height="2.2rem"></i>
         <p>Relatórios</p>
       </li>
-      <li id="last-li">
-        <button class="matter-button-contained matter-secondary">Adicionar novo</button>
+      <li id="last-li" class="menu-li">
+        <div class="dropdown">
+          <button class="matter-button-contained matter-secondary">Adicionar novo</button>
+          <ul class="dropdown-menu">
+            <a href="#"><li>Tarefa</li></a>
+            <a href="#"><li>Projeto</li></a>
+            <a href="#"><li>Conversa</li></a>
+            <a href="#"><li>Convite</li></a>
+          </ul>
+        </div>
       </li>
     </ul>
   </nav>

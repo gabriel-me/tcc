@@ -307,7 +307,7 @@ h6 { font-size: 1.1rem; }
 #menu,
 #menu .menu-column,
 #menu #menu-nav header,
-#menu #menu-nav ul {
+#menu #menu-nav .menu-ul {
   background-color: #282841;
   transition: .3s; }
 
@@ -337,14 +337,14 @@ h6 { font-size: 1.1rem; }
   justify-content: flex-end;
   padding: .5rem; }
 
-#menu #menu-nav ul {
+#menu #menu-nav .menu-ul {
   border-right: 1px solid #D8D8D8;
   border-top-left-radius: .5rem;
   background-color: #FFFFFF;
   height: 100vh;
   overflow: auto; }
 
-#menu #menu-nav ul li {
+#menu #menu-nav .menu-ul .menu-li {
   display: flex;
   align-items: center;
   width: 16rem;
@@ -352,23 +352,28 @@ h6 { font-size: 1.1rem; }
   border-bottom: 1px solid #D8D8D8;
   cursor: pointer; }
 
-#menu #menu-nav ul li:hover {
+#menu #menu-nav .menu-ul .menu-li:hover {
   background-color: #F2F2F2; }
 
-#menu #menu-nav ul #first-li {
+#menu #menu-nav .menu-ul #first-li {
   border-top-left-radius: .5rem; }
 
-#menu #menu-nav ul #last-li {
+#menu #menu-nav .menu-ul #last-li {
+  text-align: center;
+  padding-bottom: 0;
   border-bottom: 0;
   justify-content: center; }
 
-#menu #menu-nav ul #last-li:hover {
+#menu #menu-nav .menu-ul #last-li:hover {
   background-color: white; }
 
-#menu #menu-nav ul li i {
+#menu #menu-nav .menu-ul #last-li .dropdown-menu {
+  border: none; }
+
+#menu #menu-nav .menu-ul .menu-li i {
   padding: 0 .8rem; }
 
-#menu #menu-nav ul li p {
+#menu #menu-nav .menu-ul .menu-li p {
   color: #282841;
   font-size: 1.8rem; }
 
@@ -395,10 +400,10 @@ h6 { font-size: 1.1rem; }
     left: 0;
     width: 100%; }
 
-  #menu #menu-nav ul {
+  #menu #menu-nav .menu-ul {
     width: 100%;
     margin-left: 8rem; }
 
-  #menu #menu-nav ul li {
+  #menu #menu-nav .menu-ul .menu-li {
     width: 100%; } 
 }
