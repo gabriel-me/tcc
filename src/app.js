@@ -4,6 +4,7 @@ const handlebars = require('express-handlebars');
 const bodyParser = require('body-parser');
 const path = require('path');
 const generic = require('./routes/generic');
+const user = require('./routes/user');
 const firebase = require('firebase');
 const app = express();
 
@@ -24,6 +25,7 @@ app.use(express.static(path.join(__dirname, 'public')))
 
 // Routes
 app.use('/', generic);
+app.use('/user/', user);
 
 // Server
 app.listen('8081', () => {
