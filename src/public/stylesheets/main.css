@@ -276,6 +276,19 @@ h6 { font-size: 1.1rem; }
     transform: scaleY(1.0);
     -webkit-transform: scaleY(1.0); } }
 
+.tag,
+.tag-selected {
+  width: auto;
+  padding: .3rem;
+  border-radius: 3px;
+  color: rgb(102, 0, 238);
+  border: 1px solid rgb(102, 0, 238); }
+
+.tag-selected,
+.tag:hover {
+  background-color: rgb(102, 0, 238);
+  color: #FFFFFF; }
+
 /* Header
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 #header {

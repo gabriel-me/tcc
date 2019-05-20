@@ -21,6 +21,27 @@ function listenDropdownButton() {
   });
 }
 
+function listenTag() {
+  let $tags = document.querySelectorAll('.tag, .tag-selected');
+  $tags.forEach($tag => {
+    let $linkTag = $tag.parentElement;
+    $tag.addEventListener('click', () => {
+      if ($tag.classList == 'tag-selected') {
+        $tag.classList = 'tag';
+        let linkHref = $linkTag.href.split('/');
+        let deletedIndex = linkHref.indexOf($tag.id);
+        if (deletedIndex !== -1) {
+          linkHref.splice(deletedIndex, 1);
+          $linkTag.href = linkHref.join('/');
+        }
+      } else {
+        $tag.classList = 'tag-selected';
+        $linkTag.href += `/${$tag.id}`;
+      }
+    });
+  });
+}
+
 function whileLoadingPage() {
   let loading = {
     start: () => {
@@ -50,3 +71,4 @@ function whileLoadingPage() {
 
 whileLoadingPage();
 listenDropdownButton();
+listenTag();
