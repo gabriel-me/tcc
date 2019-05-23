@@ -21,22 +21,16 @@ function listenDropdownButton() {
   });
 }
 
-function listenTag() {
+function buildLinkForTag() {
+  let location = document.location;
   let $tags = document.querySelectorAll('.tag, .tag-selected');
   $tags.forEach($tag => {
-    let $linkTag = $tag.parentElement;
     $tag.addEventListener('click', () => {
-      if ($tag.classList == 'tag-selected') {
-        $tag.classList = 'tag';
-        let linkHref = $linkTag.href.split('/');
-        let deletedIndex = linkHref.indexOf($tag.id);
-        if (deletedIndex !== -1) {
-          linkHref.splice(deletedIndex, 1);
-          $linkTag.href = linkHref.join('/');
-        }
+      if (location.href.indexOf(`/${$tag.id}`) === -1) {
+        location.href += `/${$tag.id}`;
       } else {
-        $tag.classList = 'tag-selected';
-        $linkTag.href += `/${$tag.id}`;
+        let href = location.href.split(`/${$tag.id}`);
+        location.href = href.join('');
       }
     });
   });
@@ -71,4 +65,4 @@ function whileLoadingPage() {
 
 whileLoadingPage();
 listenDropdownButton();
-listenTag();
+buildLinkForTag();
