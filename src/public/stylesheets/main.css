@@ -149,26 +149,6 @@ h6 { font-size: 1.1rem; }
 .list li .icon-list {
   margin: 0 .5rem; }
 
-.list time {
-  position: absolute;
-  right: .5rem;
-  padding: .3rem 1.5rem;
-  border-radius: 10rem;
-  background-color: #282841;
-  color: white;
-  z-index: 1; }
-
-.list time::after {
-  content: "";
-  height: 100%;
-  width: 100%;
-  background: none;
-  box-shadow: 0 0 1px .3rem #FFFFFF;
-  border-radius: 10rem;
-  position: absolute;
-  top: 0;
-  left: 0; }
-
 .row {
   display: flex;
   align-items: center;
@@ -184,6 +164,26 @@ h6 { font-size: 1.1rem; }
   padding: 0; }
 
 .progress-bar {
+  position: absolute;
+  right: .5rem;
+  padding: .3rem 1.5rem;
+  border-radius: 10rem;
+  background-color: #282841;
+  color: white;
+  z-index: 1; }
+
+.progress-bar::after {
+  content: "";
+  height: 100%;
+  width: 100%;
+  background: none;
+  box-shadow: 0 0 1px .3rem #FFFFFF;
+  border-radius: 10rem;
+  position: absolute;
+  top: 0;
+  left: 0; }
+
+.progress {
   position: absolute;
   top: 0;
   left: 0;
