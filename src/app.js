@@ -5,6 +5,7 @@ const bodyParser = require('body-parser');
 const path = require('path');
 const generic = require('./routes/generic');
 const user = require('./routes/user');
+const task = require('./routes/task');
 const firebase = require('firebase');
 const app = express();
 
@@ -26,6 +27,7 @@ app.use(express.static(path.join(__dirname, 'public')))
 // Routes
 app.use('/', generic);
 app.use('/user/', user);
+app.use('/task/', task);
 
 // Server
 app.listen('8081', () => {
