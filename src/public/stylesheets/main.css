@@ -129,25 +129,57 @@ h6 { font-size: 1.1rem; }
   height: 2rem; }
 
 .profile-img {
-  height: 3.3rem;
-  width: 3.3rem;
+  height: 2.8rem;
+  width: 2.8rem;
   border-radius: 100%;
-  cursor: pointer;
-  border: 3px solid #282841; }
-
-.list li {
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  border-bottom: 1px solid #D8D8D8;
-  padding: .5rem 0;
   cursor: pointer; }
 
-.list li:hover {
-  box-shadow: 0px 0px 5px 1px #D8D8D8; }
+.list,
+.list header,
+.list-row,
+.list-item {
+  display: flex; }
 
-.list li .icon-list {
-  margin: 0 .5rem; }
+.list {
+  flex-direction: column; }
+
+.list header .list-item {
+  padding: 0;
+  font-size: 1.2rem;
+  opacity: .5;
+  background-color: transparent;
+  border-color: transparent; }
+
+.list-row:hover .list-item {
+  background-color: #F2F2F2; }
+
+.list-item {
+  align-items: center;
+  padding: .5rem;
+  margin: .1rem;
+  background-color: #FAFAFA;
+  border: 1px solid #F2F2F2; }
+
+.list-item img {
+  margin-right: .5rem; }
+
+.list-item-small {
+  width: 30rem;
+  justify-content: center; }
+
+.list-item-auto {
+  width: auto;
+  justify-content: center; }
+
+.online, 
+.offline {
+  background-color: #00FF40;
+  height: .5rem;
+  width: .5rem;
+  border-radius: 100%; }
+
+.offline {
+  background-color: #BDBDBD; }
 
 .row {
   display: flex;
@@ -165,7 +197,6 @@ h6 { font-size: 1.1rem; }
 
 .progress-bar {
   position: absolute;
-  right: .5rem;
   padding: .3rem 1.5rem;
   border-radius: 10rem;
   background-color: #282841;
