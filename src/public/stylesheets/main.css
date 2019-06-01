@@ -161,7 +161,8 @@ h6 { font-size: 1.1rem; }
   background-color: #FAFAFA;
   border: 1px solid #F2F2F2; }
 
-.list-item img {
+.list-item img,
+.list-item i {
   margin-right: .5rem; }
 
 .list-item-small {
