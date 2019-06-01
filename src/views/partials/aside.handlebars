@@ -17,27 +17,35 @@
     </span>
     <ul>
       <li>
-        <span class="hint--right" aria-label="Página inicial">
-          <i data-eva="home-outline" data-eva-animation="none" data-eva-fill="#FFFFFF" data-eva-width="1.8rem"
-            data-eva-height="1.8rem"></i>
-        </span>
+        <a href="/">
+          <span class="hint--right" aria-label="Página inicial">
+            <i data-eva="home-outline" data-eva-animation="none" data-eva-fill="#FFFFFF" data-eva-width="1.8rem"
+              data-eva-height="1.8rem"></i>
+          </span>
+        </a>
       </li>
       <li>
-        <span class="hint--right" aria-label="Mensagens">
-          <i data-eva="message-circle-outline" data-eva-animation="none" data-eva-fill="#FFFFFF" data-eva-width="1.8rem"
-            data-eva-height="1.8rem"></i>
-        </span>
+        <a href="/message">
+          <span class="hint--right" aria-label="Mensagens">
+            <i data-eva="message-circle-outline" data-eva-animation="none" data-eva-fill="#FFFFFF" data-eva-width="1.8rem"
+              data-eva-height="1.8rem"></i>
+          </span>
+        </a>
       </li>
       <li>
-        <span class="hint--right" aria-label="Notificações">
-          <i data-eva="bell-outline" data-eva-animation="none" data-eva-fill="#FFFFFF" data-eva-width="1.8rem"
-            data-eva-height="1.8rem"></i>
-        </span>
+        <a href="/notification">
+          <span class="hint--right" aria-label="Notificações">
+            <i data-eva="bell-outline" data-eva-animation="none" data-eva-fill="#FFFFFF" data-eva-width="1.8rem"
+              data-eva-height="1.8rem"></i>
+          </span>
+        </a>
       </li>
     </ul>
-    <span class="hint--right" aria-label="Perfil">
-      <img src="/images/profile.jpg" class="profile-img">
-    </span>
+    <a href="/profile">
+      <span class="hint--right" aria-label="Perfil">
+        <img src="/images/profile.jpg" class="profile-img">
+      </span>
+    </a>
   </div>
   <nav id="menu-nav" class="menu-column">
     <header>
@@ -50,26 +58,34 @@
       </i>
     </header>
     <ul class="menu-ul">
-      <li class="menu-li" id="first-li">
-        <i data-eva="done-all" data-eva-animation="none" data-eva-fill="#282841" data-eva-width="2.2rem"
-          data-eva-height="2.2rem"></i>
-        <p>Tarefas</p>
-      </li>
-      <li class="menu-li">
-        <i data-eva="layers-outline" data-eva-animation="none" data-eva-fill="#282841" data-eva-width="2.2rem"
-          data-eva-height="2.2rem"></i>
-        <p>Projetos</p>
-      </li>
-      <li class="menu-li">
-        <i data-eva="person-outline" data-eva-animation="none" data-eva-fill="#282841" data-eva-width="2.2rem"
-          data-eva-height="2.2rem"></i>
-        <p>Usuários</p>
-      </li>
-      <li class="menu-li">
-        <i data-eva="activity" data-eva-animation="none" data-eva-fill="#282841" data-eva-width="2.2rem"
-          data-eva-height="2.2rem"></i>
-        <p>Relatórios</p>
-      </li>
+      <a href="/task">
+        <li class="menu-li" id="first-li">
+          <i data-eva="done-all" data-eva-animation="none" data-eva-fill="#282841" data-eva-width="2.2rem"
+            data-eva-height="2.2rem"></i>
+          <p>Tarefas</p>
+        </li>
+      </a>
+      <a href="/project">
+        <li class="menu-li">
+          <i data-eva="layers-outline" data-eva-animation="none" data-eva-fill="#282841" data-eva-width="2.2rem"
+            data-eva-height="2.2rem"></i>
+          <p>Projetos</p>
+        </li>
+      </a>
+      <a href="/user">
+        <li class="menu-li">
+            <i data-eva="person-outline" data-eva-animation="none" data-eva-fill="#282841" data-eva-width="2.2rem"
+              data-eva-height="2.2rem"></i>
+            <p>Usuários</p>
+        </li>
+      </a>
+      <a href="/report">
+        <li class="menu-li">
+          <i data-eva="activity" data-eva-animation="none" data-eva-fill="#282841" data-eva-width="2.2rem"
+            data-eva-height="2.2rem"></i>
+          <p>Relatórios</p>
+        </li>
+      </a>
       <li id="last-li" class="menu-li">
         <div class="dropdown">
           <button class="matter-button-contained matter-secondary">Adicionar novo</button>
