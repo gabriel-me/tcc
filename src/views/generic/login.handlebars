@@ -23,16 +23,16 @@
       <h3><span class="or">ou</span></h3>
       <span class="line"></span>
     </div>
-    <form method="POST" action="" class="validateForm" id="frmLogin">
+    <form method="POST" action="http://localhost:8082/auth/authenticate/" class="validateForm" id="frmLogin">
       <div class="column">
         <label class="matter-textfield-outlined matter-secondary">
           <span class="matter-tooltip"></span>
-          <input name="emlEmail" type="email" placeholder=" " required />
+          <input name="email" type="email" placeholder=" " required />
           <span>Email</span>
         </label>
         <label class="matter-textfield-outlined matter-secondary">
           <span class="matter-tooltip "></span>
-          <input name="pswPassword" type="password" placeholder=" " required />
+          <input name="password" type="password" placeholder=" " required />
           <span>Senha</span>
         </label>
       </div>
@@ -41,34 +41,34 @@
         <button class="matter-button-contained matter-secondary">Entrar</button>
       </div>
     </form>
-    <form method="POST" action="" class="validateForm" id="frmCreateAccount">
+    <form method="POST" action="http://localhost:8082/auth/register/" class="validateForm" id="frmCreateAccount">
       <div class="column">
         <div class="row">
           <label class="matter-textfield-outlined matter-secondary">
             <span class="matter-tooltip"></span>
-            <input name="txtName" placeholder=" " required />
+            <input name="name" placeholder=" " required />
             <span>Nome</span>
           </label>
           <label class="matter-textfield-outlined matter-secondary">
             <span class="matter-tooltip "></span>
-            <input name="txtLastName" placeholder=" " required />
+            <input name="lastName" placeholder=" " required />
             <span>Sobrenome</span>
           </label>
         </div>
         <label class="matter-textfield-outlined matter-secondary">
           <span class="matter-tooltip"></span>
-          <input name="emlEmail" type="email" placeholder=" " required />
+          <input name="email" type="email" placeholder=" " required />
           <span>Email</span>
         </label>
         <div class="row">
           <label class="matter-textfield-outlined matter-secondary">
             <span class="matter-tooltip"></span>
-            <input name="pswPassword" type="password" placeholder=" " required />
+            <input name="password" type="password" placeholder=" " required />
             <span>Senha</span>
           </label>
           <label class="matter-textfield-outlined matter-secondary">
             <span class="matter-tooltip "></span>
-            <input name="pswConfirmPassword" type="password" placeholder=" " required />
+            <input type="password" placeholder=" " required />
             <span>Confirmar senha</span>
           </label>
         </div>
