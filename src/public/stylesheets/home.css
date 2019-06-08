@@ -2,5 +2,20 @@ h4 {
   border-bottom: 1px solid #D8D8D8;
   padding: .5rem 0; }
 
+.project {
+  float: left; }
+
+.project-title {
+  color: black !important;
+  border-bottom: none;
+  padding: 0; }
+
+.last-project {
+  background-color: #FFFFFF;
+  border: 1px solid #D8D8D8; }
+
+.last-project:hover {
+  box-shadow: 0 0 1px 2px #000000; }
+
 #h4-project {
   margin-top: 2rem; }
