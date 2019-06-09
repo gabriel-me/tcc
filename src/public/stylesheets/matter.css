@@ -3,7 +3,7 @@
 /* Components */
 /* Button Contained */
 .matter-button-contained {
-    --matter-helper-theme: var(--matter-theme-rgb, var(--matter-primary-rgb, 33, 150, 243));
+    --matter-helper-theme: var(--matter-theme-rgb, var(--matter-primary-rgb, 33, 111, 243));
     --matter-helper-ontheme: var(--matter-ontheme-rgb, var(--matter-onprimary-rgb, 255, 255, 255));
     position: relative;
     display: inline-block;
@@ -99,7 +99,7 @@
 
 /* Button Unelevated */
 .matter-button-unelevated {
-    --matter-helper-theme: var(--matter-theme-rgb, var(--matter-primary-rgb, 33, 150, 243));
+    --matter-helper-theme: var(--matter-theme-rgb, var(--matter-primary-rgb, 33, 111, 243));
     --matter-helper-ontheme: var(--matter-ontheme-rgb, var(--matter-onprimary-rgb, 255, 255, 255));
     position: relative;
     display: inline-block;
@@ -183,7 +183,7 @@
 
 /* Button Outlined */
 .matter-button-outlined {
-    --matter-helper-theme: var(--matter-theme-rgb, var(--matter-primary-rgb, 33, 150, 243));
+    --matter-helper-theme: var(--matter-theme-rgb, var(--matter-primary-rgb, 33, 111, 243));
     position: relative;
     display: inline-block;
     box-sizing: border-box;
@@ -269,7 +269,7 @@
 
 /* Button Text */
 .matter-button-text {
-    --matter-helper-theme: var(--matter-theme-rgb, var(--matter-primary-rgb, 33, 150, 243));
+    --matter-helper-theme: var(--matter-theme-rgb, var(--matter-primary-rgb, 33, 111, 243));
     position: relative;
     display: inline-block;
     box-sizing: border-box;
@@ -353,7 +353,7 @@
 
 /* Link */
 .matter-link {
-    --matter-helper-theme: var(--matter-theme-rgb, var(--matter-primary-rgb, 33, 150, 243));
+    --matter-helper-theme: var(--matter-theme-rgb, var(--matter-primary-rgb, 33, 111, 243));
     --matter-helper-safari1: rgba(var(--matter-helper-theme), 0.12);
     border-radius: 4px;
     color: rgb(var(--matter-helper-theme));
@@ -381,7 +381,7 @@
 
 /* Progress Circular */
 .matter-progress-circular {
-    --matter-helper-theme: var(--matter-theme-rgb, var(--matter-primary-rgb, 33, 150, 243));
+    --matter-helper-theme: var(--matter-theme-rgb, var(--matter-primary-rgb, 33, 111, 243));
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
@@ -517,7 +517,7 @@
 
 /* Progress Linear */
 .matter-progress-linear {
-    --matter-helper-theme: var(--matter-theme-rgb, var(--matter-primary-rgb, 33, 150, 243));
+    --matter-helper-theme: var(--matter-theme-rgb, var(--matter-primary-rgb, 33, 111, 243));
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
@@ -620,7 +620,7 @@
 
 /* Checkbox */
 .matter-checkbox {
-    --matter-helper-theme: var(--matter-theme-rgb, var(--matter-primary-rgb, 33, 150, 243));
+    --matter-helper-theme: var(--matter-theme-rgb, var(--matter-primary-rgb, 33, 111, 243));
     --matter-helper-ontheme: var(--matter-ontheme-rgb, var(--matter-onprimary-rgb, 255, 255, 255));
     z-index: 0;
     position: relative;
@@ -773,7 +773,7 @@
 
 /* Radio */
 .matter-radio {
-    --matter-helper-theme: var(--matter-theme-rgb, var(--matter-primary-rgb, 33, 150, 243));
+    --matter-helper-theme: var(--matter-theme-rgb, var(--matter-primary-rgb, 33, 111, 243));
     z-index: 0;
     position: relative;
     display: inline-block;
@@ -908,7 +908,7 @@
 
 /* Switch */
 .matter-switch {
-    --matter-helper-theme: var(--matter-theme-rgb, var(--matter-primary-rgb, 33, 150, 243));
+    --matter-helper-theme: var(--matter-theme-rgb, var(--matter-primary-rgb, 33, 111, 243));
     z-index: 0;
     position: relative;
     display: inline-block;
@@ -1058,7 +1058,7 @@
 
 /* Textfield Standard */
 .matter-textfield-standard {
-    --matter-helper-theme: var(--matter-theme-rgb, var(--matter-primary-rgb, 33, 150, 243));
+    --matter-helper-theme: var(--matter-theme-rgb, var(--matter-primary-rgb, 33, 111, 243));
     position: relative;
     display: inline-block;
     font-family: var(--matter-font-family, "Roboto", "Segoe UI", BlinkMacSystemFont, system-ui, -apple-system);
@@ -1183,7 +1183,7 @@
 
 /* Textfield Filled */
 .matter-textfield-filled {
-    --matter-helper-theme: var(--matter-theme-rgb, var(--matter-primary-rgb, 33, 150, 243));
+    --matter-helper-theme: var(--matter-theme-rgb, var(--matter-primary-rgb, 33, 111, 243));
     position: relative;
     display: inline-block;
     font-family: var(--matter-font-family, "Roboto", "Segoe UI", BlinkMacSystemFont, system-ui, -apple-system);
@@ -1311,7 +1311,7 @@
 
 /* Textfield Outlined */
 .matter-textfield-outlined {
-    --matter-helper-theme: rgb(var(--matter-theme-rgb, var(--matter-primary-rgb, 33, 150, 243)));
+    --matter-helper-theme: rgb(var(--matter-theme-rgb, var(--matter-primary-rgb, 33, 111, 243)));
     --matter-helper-safari1: rgba(var(--matter-onsurface-rgb, 0, 0, 0), 0.38);
     --matter-helper-safari2: rgba(var(--matter-onsurface-rgb, 0, 0, 0), 0.6);
     --matter-helper-safari3: rgba(var(--matter-onsurface-rgb, 0, 0, 0), 0.87);
@@ -1591,7 +1591,7 @@
 /* Colors */
 /* Components */
 .matter-primary {
-    --matter-theme-rgb: var(--matter-primary-rgb, 33, 150, 243);
+    --matter-theme-rgb: var(--matter-primary-rgb, 33, 111, 243);
     --matter-ontheme-rgb: var(--matter-onprimary-rgb, 255, 255, 255);
 }
 
@@ -1617,7 +1617,7 @@
 
 /* Text */
 .matter-primary-text {
-    color: rgb(var(--matter-primary-rgb, 33, 150, 243));
+    color: rgb(var(--matter-primary-rgb, 33, 111, 243));
 }
 
 .matter-secondary-text {

@@ -233,8 +233,8 @@ h6 { font-size: 1.1rem; }
   z-index: -1;
   border-top-left-radius: 10rem;
   border-bottom-left-radius: 10rem;
-  background-color: rgb(102, 0, 238);
-  box-shadow: 0 0 .1px .5px rgb(102, 0, 238); }
+  background-color: rgb(33, 111, 243);
+  box-shadow: 0 0 .1px .5px rgb(33, 111, 243); }
 
 .dropdown {
   position: relative;
@@ -259,7 +259,7 @@ h6 { font-size: 1.1rem; }
   padding: .5rem; }
 
 .dropdown-menu li:hover {
-  color: rgb(102, 0, 238); }
+  color: rgb(33, 111, 243); }
 
 .spinner {
   position: fixed;
@@ -279,7 +279,7 @@ h6 { font-size: 1.1rem; }
   content: "";
   width: 100%;
   height: 100vh;
-  background-color: rgb(102, 0, 238); }
+  background-color: rgb(33, 111, 243); }
 
 .spinner div {
   background-color: #FFFFFF;
@@ -322,13 +322,14 @@ h6 { font-size: 1.1rem; }
   width: auto;
   padding: .3rem;
   border-radius: 3px;
-  color: rgb(102, 0, 238);
-  border: 1px solid rgb(102, 0, 238);
+  color: #000000;
+  border: 1px solid #000000;
   cursor: pointer; }
 
 .tag-selected,
 .tag:hover {
-  background-color: rgb(102, 0, 238);
+  border-color: rgb(33, 111, 243);
+  background-color: rgb(33, 111, 243);
   color: #FFFFFF; }
 
 .number-notification {
@@ -341,7 +342,7 @@ h6 { font-size: 1.1rem; }
   font-size: .8rem;
   font-weight: bold;
   color: #FFFFFF;
-  background-color: rgb(102, 0, 238); }
+  background-color: rgb(33, 111, 243); }
 
 .project {
   display: flex;
@@ -352,13 +353,13 @@ h6 { font-size: 1.1rem; }
   width: 9rem;
   padding: 1rem;
   margin: 1rem .5rem 2.3rem .5rem;
-  background-color: royalblue;
+  background-color: rgb(33, 111, 243);
   border-radius: 2rem;
   cursor: pointer;
   transition: .1s; }
 
 .project:hover {
-  box-shadow: 0 0 1px 2px royalblue; }
+  box-shadow: 0 0 1px 2px rgb(33, 111, 243); }
 
 .project .project-title,
 .project time {
