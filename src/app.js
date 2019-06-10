@@ -7,6 +7,7 @@ const generic = require('./routes/generic');
 const user = require('./routes/user');
 const task = require('./routes/task');
 const project = require('./routes/project');
+const notification = require('./routes/notification');
 const firebase = require('firebase');
 const app = express();
 
@@ -30,6 +31,7 @@ app.use('/', generic);
 app.use('/user/', user);
 app.use('/task/', task);
 app.use('/project/', project);
+app.use('/notification/', notification);
 
 // Server
 app.listen('8081', () => {
