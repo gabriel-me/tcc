@@ -8,6 +8,7 @@ const user = require('./routes/user');
 const task = require('./routes/task');
 const project = require('./routes/project');
 const notification = require('./routes/notification');
+const message = require('./routes/message');
 const firebase = require('firebase');
 const app = express();
 
@@ -32,6 +33,7 @@ app.use('/user/', user);
 app.use('/task/', task);
 app.use('/project/', project);
 app.use('/notification/', notification);
+app.use('/message/', message);
 
 // Server
 app.listen('8081', () => {
