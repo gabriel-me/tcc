@@ -201,7 +201,7 @@ h6 { font-size: 1.1rem; }
   position: absolute;
   padding: .3rem 1.5rem;
   border-radius: 10rem;
-  background-color: #282841;
+  background-color: #120A2A;
   color: white;
   z-index: 1; }
 
@@ -417,7 +417,7 @@ h6 { font-size: 1.1rem; }
 #menu .menu-column,
 #menu #menu-nav header,
 #menu #menu-nav .menu-ul {
-  background-color: #282841;
+  background-color: #120A2A;
   transition: .3s; }
 
 #menu #menu-div {
@@ -438,7 +438,7 @@ h6 { font-size: 1.1rem; }
 #menu #menu-nav {
   left: 4rem;
   width: 16rem; 
-  border-right: 1px solid #282841; }
+  border-right: 1px solid #120A2A; }
 
 #menu #menu-nav header {
   display: flex;
@@ -483,7 +483,7 @@ h6 { font-size: 1.1rem; }
   padding: 0 .8rem; }
 
 #menu #menu-nav .menu-ul .menu-li p {
-  color: #282841;
+  color: #120A2A;
   font-size: 1.8rem; }
 
 /* Media queries
