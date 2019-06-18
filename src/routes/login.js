@@ -12,7 +12,7 @@ route.get('/login', (req, res) => {
   res.render('generic/login', {
     layout: 'skeleton',
     style: 'login.css',
-    service: 'loginService'
+    service: 'login'
   });
 });
 
