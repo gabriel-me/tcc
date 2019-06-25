@@ -1,0 +1,41 @@
+.col,
+.col div {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 2px;
+}
+
+.col:hover div {
+  background-color: #E6E6E6;
+}
+
+.col div {
+  justify-content: flex-start;
+  height: 3.3rem;
+  width: 20%;
+  padding: 0 .5rem;
+  background-color: #F2F2F2;
+  border: 1px solid #E6E6E6;
+  margin: 0 2px 0 0;
+}
+
+.first:hover div {
+  background-color: #FFFFFF;
+}
+
+.first div {
+  height: auto;
+  background-color: #FFFFFF;
+  border: none;
+  padding: 0;
+  margin: 0;
+  opacity: .6;
+  font-size: 1.1rem;
+}
+
+._2 { width: 20% !important; justify-content: center !important; }
+._4 { width: 40% !important; }
+._6 { width: 60% !important; }
+._8 { width: 80% !important; }
+._10 { width: 100% !important; }

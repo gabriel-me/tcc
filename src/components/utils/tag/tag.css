@@ -1,0 +1,18 @@
+.tag {
+  display: inline-block;
+  font-weight: bold;
+  border-radius: 3px;
+  margin: 1rem .5rem 1rem 0;
+}
+
+.tag:hover {
+  color: #2E64FE;
+}
+
+.selected {
+  color: #2E64FE;
+}
+
+.unselect {
+  color: #000000;
+}

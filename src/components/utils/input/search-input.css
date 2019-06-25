@@ -1,0 +1,15 @@
+.matter-textfield-filled {
+  width: 25rem;
+}
+
+.matter-textfield-filled ul {
+  position: absolute;
+  width: 100%;
+  border-left: 1px solid #E6E6E6;
+  border-bottom: 1px solid #E6E6E6;
+  border-bottom-left-radius: 3px;
+}
+
+.matter-textfield-filled ul li {
+  padding: .25rem .8rem;
+}

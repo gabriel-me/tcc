@@ -1,0 +1,49 @@
+.menu {
+  width: 20rem;
+  height: 100vh;
+  overflow: auto;
+  background-color: #2A1B3D;
+}
+
+.menu header {
+  display: flex;
+  align-items: center;
+  padding: 1rem;
+  justify-content: space-between;
+}
+
+.menu header div {
+  position: relative;
+}
+
+.menu header div .status {
+  position: absolute;
+  left: 0;
+}
+
+.menu section header {
+  padding-bottom: 0;
+}
+
+.menu ul li, .menu h4 {
+  color: #BDBDBD;
+}
+
+.menu section ul li {
+  display: flex;
+  align-items: center;
+  height: 2rem;
+  padding: 0 1rem;
+}
+
+.menu section ul li:hover {
+  background-color: #2A0B3D;
+}
+
+.menu section ul li:active {
+  color: #FFFFFF;
+}
+
+.status, .icon {
+  margin: 0 5px 0 0;
+}

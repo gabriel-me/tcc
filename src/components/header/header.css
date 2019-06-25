@@ -1,0 +1,15 @@
+.header,
+.header div {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.header {
+  padding-left: 1rem;
+}
+
+.header div {
+  justify-content: flex-end;
+}
