@@ -1,17 +1,17 @@
 .col,
-.col div {
+.col .item {
   display: flex;
   align-items: center;
   justify-content: space-between;
   margin-bottom: 3px;
 }
 
-.col:hover div {
+.col:hover .item {
   background-color: #F2F2F2;
   border-color: #E6E6E6;
 }
 
-.col div {
+.col .item {
   justify-content: flex-start;
   height: 4rem;
   width: 20%;
@@ -21,11 +21,11 @@
   margin: 0 3px 0 0;
 }
 
-.first:hover div {
+.first:hover .item {
   background-color: #FFFFFF;
 }
 
-.first div {
+.first .item {
   height: auto;
   background-color: #FFFFFF;
   border: none;
