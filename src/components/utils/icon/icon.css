@@ -1,1 +1,11 @@
-.icon { margin: 5px; }
+.icon {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin: 5px;
+  width: auto !important;
+}
+
+.icon text {
+  margin-left: 5px;
+}
