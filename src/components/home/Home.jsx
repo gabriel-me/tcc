@@ -3,6 +3,7 @@ import Header from '../header/Header'
 import Li from '../utils/list/Row'
 import Profile from '../utils/profile/Profile'
 import ProgressBar from '../utils/chart/ProgressBar'
+import Project from '../project/Quadrat'
 import './home.css'
 
 export default props => 
@@ -19,10 +20,12 @@ export default props =>
       </section>
       <section className="session-home">
         <h3>Projetos recentes</h3>
-        <Li position="first" cols={[{ text: 'Tarefa', size: '_4' }, { text: 'Remetente', size: '_2' }, { text: 'Projeto', size: '_2' }, { text: 'Prazo', size: '_2' }]} />
-        <Li cols={[{ text: 'Desenvolver front-end', size: '_4' }, { text: <Profile />, size: '_2' }, { text: 'TCC', size: '_2' }, { text: <ProgressBar size="10%" text="20/19 - 13:50" />, size: '_2' }]} />
-        <Li cols={[{ text: 'Desenvolver front-end', size: '_4' }, { text: <Profile />, size: '_2' }, { text: 'TCC', size: '_2' }, { text: <ProgressBar size="36%" text="20/19 - 13:50" />, size: '_2' }]} />
-        <Li cols={[{ text: 'Desenvolver front-end', size: '_4' }, { text: <Profile />, size: '_2' }, { text: 'TCC', size: '_2' }, { text: <ProgressBar size="40%" text="20/19 - 13:50" />, size: '_2' }]} />
+        <div className="projects">
+          <Project date="20/19" text="SHOW" />
+          <Project date="20/19" text="TCC" />
+          <Project date="20/19" text="APP" />
+          <Project date="20/19" text="Ver todos" type="white-quadrat" />
+        </div>
       </section>
     </div>
   </div>
