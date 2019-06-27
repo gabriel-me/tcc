@@ -1,9 +1,9 @@
 import React from 'react'
 import Header from '../header/Header'
 import Li from '../utils/list/Row'
-import Profile from '../utils/profile/Profile'
+import Profile from '../utils/profilePicture/Profile'
 import ProgressBar from '../utils/chart/ProgressBar'
-import Project from '../project/Quadrat'
+import Project from '../utils/quadrat/Quadrat'
 import IconTask from '../utils/icon/Icon'
 import './home.css'
 
@@ -25,7 +25,7 @@ export default props =>
           <Project date="20/19" text="SHOW" />
           <Project date="20/19" text="TCC" />
           <Project date="20/19" text="APP" />
-          <Project date="20/19" text="Ver todos" type="white-quadrat" />
+          <Project date="20/19" text="Novo projeto" type="white-quadrat" />
         </div>
       </section>
     </div>
