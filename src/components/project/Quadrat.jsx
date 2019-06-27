@@ -11,5 +11,5 @@ export default props =>
     >
     </i>
     {props.type === 'white-quadrat' ? '' : props.date}
-    <text>{props.text || ''}</text>
+    {props.text ? <p>{props.text}</p> : ''}
   </div>

@@ -19,7 +19,7 @@
   border-color: #2E64FE;
 }
 
-.blue-quadrat text {
+.blue-quadrat p {
   display: flex;
   align-items: flex-start;
   justify-content: center;

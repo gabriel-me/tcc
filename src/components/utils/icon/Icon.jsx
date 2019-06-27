@@ -15,5 +15,5 @@ export default props =>
         data-eva-height={props.size || '1.6rem'}>
       </i>
     </span>
-    {props.text ? <text>{props.text}</text> : ''}
+    {props.text ? <p>{props.text}</p> : ''}
   </div>
