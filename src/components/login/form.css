@@ -1,0 +1,17 @@
+.form {
+  position: relative;
+  text-align: right;
+}
+
+.form button {
+  margin-top: .5rem;
+}
+
+.form a {
+  position: absolute;
+  font-size: .8rem;
+  left: 1px;
+  margin-top: .5rem;
+  opacity: .5;
+  width: auto !important;
+}

@@ -4,7 +4,7 @@
   align-items: center !important;
   justify-content: center !important;
   background-color: #2A1B3D !important;
-  width: 70% !important;
+  width: 8rem !important;
   height: 1.8rem !important;
   border-radius: 999rem !important;
   color: #FFFFFF !important;
@@ -26,7 +26,7 @@
   position: absolute;
   left: 0;
   width: 50%;
-  background-color: #5858FA;
+  background-color: #29C3D8;
   height: 100%;
   z-index: -1;
 }

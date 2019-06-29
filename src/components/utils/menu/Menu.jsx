@@ -1,7 +1,7 @@
 import React from 'react'
-import Icon from '../utils/icon/Icon'
-import Profile from '../utils/profile/Profile'
-import Status from '../utils/status/Status'
+import Icon from '../icon/Icon'
+import Profile from '../profilePicture/Profile'
+import Status from '../status/Status'
 import './menu.css'
 
 export default () =>
@@ -15,7 +15,7 @@ export default () =>
     </header>
     <section className="section-main">
       <ul>
-        <a href="/"><li><Icon icon="home-outline" color="#BDBDBD" />Página inicial</li></a>
+        <a href="/home"><li><Icon icon="home-outline" color="#BDBDBD" />Página inicial</li></a>
         <a href="/task"><li><Icon icon="checkmark-circle-2-outline" color="#BDBDBD" />Minhas tarefas</li></a>
         <a href="/task"><li><Icon icon="bell-outline" color="#BDBDBD" />Caixa de entrada</li></a>
         <a href="/task"><li><Icon icon="people-outline" color="#BDBDBD" />Usuários</li></a>
@@ -30,7 +30,6 @@ export default () =>
         <a href="/task"><li><Status />Eddie Vedder</li></a>
         <a href="/task"><li><Status />Gabriel Marques de Souza</li></a>
         <a href="/task"><li><Status status="online" />Roger Waters</li></a>
-        <a href="/task"><li><Status />Abilgaio Brisa</li></a>
       </ul>
     </section>
     <section>

@@ -1,15 +1,7 @@
-.header,
-.header div {
+.header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  width: 100%;
-}
-
-.header {
   padding-left: 1rem;
-}
-
-.header div {
-  justify-content: flex-end;
+  height: 4rem;
 }

@@ -1,16 +1,18 @@
 import React from 'react'
-import Header from '../header/Header'
+import Header from '../utils/header/Header'
+import Menu from '../utils/menu/Menu'
 import Li from '../utils/list/Row'
-import Profile from '../utils/profilePicture/Profile'
+import Profile from '../utils/profile/Profile'
 import ProgressBar from '../utils/chart/ProgressBar'
 import Project from '../utils/quadrat/Quadrat'
 import IconTask from '../utils/icon/Icon'
 import './home.css'
 
 export default props => 
-  <div>
+  <div className="content">
+    <Menu />
     <Header title="Página inicial" />
-    <div className="content">
+    <main>
       <section className="session-home">
         <h3>Tarefas com data de conclusão próximas</h3>
         <Li position="first" cols={[{ text: 'Tarefa', size: '_4' }, { text: 'Remetente', size: '_2' }, { text: 'Projeto', size: '_2' }, { text: 'Prazo', size: '_2' }]} />
@@ -28,5 +30,5 @@ export default props =>
           <Project date="20/19" text="Novo projeto" type="white-quadrat" />
         </div>
       </section>
-    </div>
+    </main>
   </div>
