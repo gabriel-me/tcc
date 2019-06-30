@@ -5,3 +5,16 @@
   padding-left: 1rem;
   height: 4rem;
 }
+
+.header div {
+  display: flex;
+  align-items: center;
+}
+
+.header div button {
+  border: none;
+  font-size: 1.05rem;
+  height: calc(4rem + 1px);
+  padding: 0 2rem;
+  margin-right: .5rem;
+}
