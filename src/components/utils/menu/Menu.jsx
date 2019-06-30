@@ -1,6 +1,6 @@
 import React from 'react'
 import Icon from '../icon/Icon'
-import Profile from '../profilePicture/Profile'
+import Profile from '../profile/Profile'
 import Status from '../status/Status'
 import './menu.css'
 

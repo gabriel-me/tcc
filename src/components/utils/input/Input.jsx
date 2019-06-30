@@ -8,7 +8,12 @@ export default props => {
   return (
     <label style={style} className="matter-textfield-outlined matter-primary">
       <span className="matter-tooltip"></span>
-      <input type="email" placeholder=" " required />
+      <input 
+        name={props.name || ''} 
+        type={props.type || 'text'}
+        placeholder=" " 
+        required={props.required ? 'required' : ''}
+        autoFocus={props.autoFocus ? 'autoFocus' : ''} />
       <span>{props.label || ''}</span>
     </label>
   )
@@ -20,7 +25,7 @@ export const Search = props => {
   
   return (
     <label className="matter-textfield-filled matter-primary">
-      <input placeholder=" "></input>
+      <input name={props.name || ''} placeholder=" "></input>
       <span>{props.label}</span>
       <ul>{props.option ? renderLi(props.option) : ''}</ul>
     </label>
