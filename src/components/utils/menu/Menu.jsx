@@ -2,6 +2,7 @@ import React from 'react'
 import Icon from '../icon/Icon'
 import Profile from '../profile/Profile'
 import Status from '../status/Status'
+import ProjectIcon from '../../project/ProjectIcon'
 import './menu.css'
 
 export default () =>
@@ -24,7 +25,7 @@ export default () =>
     <section>
       <header>
         <h4>Conversas</h4>
-        <a href="/task"><Icon color="#BDBDBD" title="Novo conversa" titleLocation="left" /></a>
+        <Icon color="#BDBDBD" title="Nova conversa" titleLocation="left" />
       </header>
       <ul>
         <a href="/task"><li><Status />Eddie Vedder</li></a>
@@ -35,7 +36,7 @@ export default () =>
     <section>
       <header>
         <h4>Projetos</h4>
-        <a href="/task"><Icon color="#BDBDBD" title="Novo projeto" titleLocation="left" /></a>        
+        <ProjectIcon />    
       </header>
       <ul>
         <a href="/task"><li>- Novo Aplicativo de Vendas</li></a>
