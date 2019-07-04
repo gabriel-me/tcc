@@ -3,7 +3,7 @@
 /* Components */
 /* Button Contained */
 .matter-button-contained {
-  --matter-helper-theme: var(--matter-theme-rgb, var(--matter-primary-rgb, 33, 111, 243));
+  --matter-helper-theme: var(--matter-theme-rgb, var(--matter-primary-rgb, 33, 150, 243));
   --matter-helper-ontheme: var(--matter-ontheme-rgb, var(--matter-onprimary-rgb, 255, 255, 255));
   position: relative;
   display: inline-block;
@@ -99,7 +99,7 @@
 
 /* Button Unelevated */
 .matter-button-unelevated {
-  --matter-helper-theme: var(--matter-theme-rgb, var(--matter-primary-rgb, 33, 111, 243));
+  --matter-helper-theme: var(--matter-theme-rgb, var(--matter-primary-rgb, 33, 150, 243));
   --matter-helper-ontheme: var(--matter-ontheme-rgb, var(--matter-onprimary-rgb, 255, 255, 255));
   position: relative;
   display: inline-block;
@@ -183,14 +183,14 @@
 
 /* Button Outlined */
 .matter-button-outlined {
-  --matter-helper-theme: var(--matter-theme-rgb, var(--matter-primary-rgb, 33, 111, 243));
+  --matter-helper-theme: var(--matter-theme-rgb, var(--matter-primary-rgb, 33, 150, 243));
   position: relative;
   display: inline-block;
   box-sizing: border-box;
   margin: 0;
   border: solid 1px;
   /* Safari */
-  border-color: #D8D8D8;
+  border-color: rgba(var(--matter-onsurface-rgb, 0, 0, 0), 0.24);
   border-radius: 4px;
   padding: 0 16px;
   min-width: 64px;
@@ -269,7 +269,7 @@
 
 /* Button Text */
 .matter-button-text {
-  --matter-helper-theme: var(--matter-theme-rgb, var(--matter-primary-rgb, 33, 111, 243));
+  --matter-helper-theme: var(--matter-theme-rgb, var(--matter-primary-rgb, 33, 150, 243));
   position: relative;
   display: inline-block;
   box-sizing: border-box;
@@ -353,7 +353,7 @@
 
 /* Link */
 .matter-link {
-  --matter-helper-theme: var(--matter-theme-rgb, var(--matter-primary-rgb, 33, 111, 243));
+  --matter-helper-theme: var(--matter-theme-rgb, var(--matter-primary-rgb, 33, 150, 243));
   --matter-helper-safari1: rgba(var(--matter-helper-theme), 0.12);
   border-radius: 4px;
   color: rgb(var(--matter-helper-theme));
@@ -381,7 +381,7 @@
 
 /* Progress Circular */
 .matter-progress-circular {
-  --matter-helper-theme: var(--matter-theme-rgb, var(--matter-primary-rgb, 33, 111, 243));
+  --matter-helper-theme: var(--matter-theme-rgb, var(--matter-primary-rgb, 33, 150, 243));
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
@@ -517,7 +517,7 @@
 
 /* Progress Linear */
 .matter-progress-linear {
-  --matter-helper-theme: var(--matter-theme-rgb, var(--matter-primary-rgb, 33, 111, 243));
+  --matter-helper-theme: var(--matter-theme-rgb, var(--matter-primary-rgb, 33, 150, 243));
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
@@ -620,7 +620,7 @@
 
 /* Checkbox */
 .matter-checkbox {
-  --matter-helper-theme: var(--matter-theme-rgb, var(--matter-primary-rgb, 33, 111, 243));
+  --matter-helper-theme: var(--matter-theme-rgb, var(--matter-primary-rgb, 33, 150, 243));
   --matter-helper-ontheme: var(--matter-ontheme-rgb, var(--matter-onprimary-rgb, 255, 255, 255));
   z-index: 0;
   position: relative;
@@ -773,7 +773,7 @@
 
 /* Radio */
 .matter-radio {
-  --matter-helper-theme: var(--matter-theme-rgb, var(--matter-primary-rgb, 33, 111, 243));
+  --matter-helper-theme: var(--matter-theme-rgb, var(--matter-primary-rgb, 33, 150, 243));
   z-index: 0;
   position: relative;
   display: inline-block;
@@ -908,7 +908,7 @@
 
 /* Switch */
 .matter-switch {
-  --matter-helper-theme: var(--matter-theme-rgb, var(--matter-primary-rgb, 33, 111, 243));
+  --matter-helper-theme: var(--matter-theme-rgb, var(--matter-primary-rgb, 33, 150, 243));
   z-index: 0;
   position: relative;
   display: inline-block;
@@ -1058,7 +1058,7 @@
 
 /* Textfield Standard */
 .matter-textfield-standard {
-  --matter-helper-theme: var(--matter-theme-rgb, var(--matter-primary-rgb, 33, 111, 243));
+  --matter-helper-theme: var(--matter-theme-rgb, var(--matter-primary-rgb, 33, 150, 243));
   position: relative;
   display: inline-block;
   font-family: var(--matter-font-family, "Roboto", "Segoe UI", BlinkMacSystemFont, system-ui, -apple-system);
@@ -1183,7 +1183,7 @@
 
 /* Textfield Filled */
 .matter-textfield-filled {
-  --matter-helper-theme: var(--matter-theme-rgb, var(--matter-primary-rgb, 33, 111, 243));
+  --matter-helper-theme: var(--matter-theme-rgb, var(--matter-primary-rgb, 33, 150, 243));
   position: relative;
   display: inline-block;
   font-family: var(--matter-font-family, "Roboto", "Segoe UI", BlinkMacSystemFont, system-ui, -apple-system);
@@ -1311,7 +1311,7 @@
 
 /* Textfield Outlined */
 .matter-textfield-outlined {
-  --matter-helper-theme: rgb(var(--matter-theme-rgb, var(--matter-primary-rgb, 33, 111, 243)));
+  --matter-helper-theme: rgb(var(--matter-theme-rgb, var(--matter-primary-rgb, 33, 150, 243)));
   --matter-helper-safari1: rgba(var(--matter-onsurface-rgb, 0, 0, 0), 0.38);
   --matter-helper-safari2: rgba(var(--matter-onsurface-rgb, 0, 0, 0), 0.6);
   --matter-helper-safari3: rgba(var(--matter-onsurface-rgb, 0, 0, 0), 0.87);
@@ -1320,7 +1320,7 @@
   padding-top: 6px;
   font-family: var(--matter-font-family, "Roboto", "Segoe UI", BlinkMacSystemFont, system-ui, -apple-system);
   font-size: 16px;
-  line-height: 0;
+  line-height: 1.5;
 }
 
 /* Input, Textarea */
@@ -1330,7 +1330,7 @@
   margin: 0;
   border-style: solid;
   border-width: 1px;
-  border-color: #D8D8D8;
+  border-color: transparent #E6E6E6 #E6E6E6;
   border-radius: 4px;
   padding: 15px 13px 15px;
   width: 100%;
@@ -1349,7 +1349,7 @@
 
 .matter-textfield-outlined>input:not(:focus):placeholder-shown,
 .matter-textfield-outlined>textarea:not(:focus):placeholder-shown {
-  border-top-color: #D8D8D8;
+  border-top-color: #E6E6E6;
 }
 
 /* Span */
@@ -1383,7 +1383,7 @@
   display: block;
   box-sizing: border-box;
   margin-top: 6px;
-  border-top: solid 1px #D8D8D8;
+  border-top: solid 1px #E6E6E6;
   min-width: 10px;
   height: 8px;
   pointer-events: none;
@@ -1410,7 +1410,7 @@
 .matter-textfield-outlined>textarea:not(:focus):placeholder-shown+span::before,
 .matter-textfield-outlined>input:not(:focus):placeholder-shown+span::after,
 .matter-textfield-outlined>textarea:not(:focus):placeholder-shown+span::after {
-  border-top-color: #D8D8D8;
+  border-top-color: transparent;
 }
 
 /* Hover */
@@ -1428,7 +1428,7 @@
 
 .matter-textfield-outlined:hover>input:not(:focus):placeholder-shown,
 .matter-textfield-outlined:hover>textarea:not(:focus):placeholder-shown {
-  border-color: #D8D8D8;
+  border-color: var(--matter-helper-safari3);
 }
 
 /* Focus */
@@ -1591,7 +1591,7 @@
 /* Colors */
 /* Components */
 .matter-primary {
-  --matter-theme-rgb: var(--matter-primary-rgb, 33, 111, 243);
+  --matter-theme-rgb: var(--matter-primary-rgb, 33, 150, 243);
   --matter-ontheme-rgb: var(--matter-onprimary-rgb, 255, 255, 255);
 }
 
@@ -1617,7 +1617,7 @@
 
 /* Text */
 .matter-primary-text {
-  color: rgb(var(--matter-primary-rgb, 33, 111, 243));
+  color: rgb(var(--matter-primary-rgb, 33, 150, 243));
 }
 
 .matter-secondary-text {
