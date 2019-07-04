@@ -2,7 +2,7 @@ import React from 'react'
 import Icon from '../icon/Icon'
 import Profile from '../profile/Profile'
 import Status from '../status/Status'
-import ProjectIcon from '../../project/ProjectIcon'
+import AddProject from '../../project/AddProject'
 import './menu.css'
 
 export default () =>
@@ -36,7 +36,7 @@ export default () =>
     <section>
       <header>
         <h4>Projetos</h4>
-        <ProjectIcon />    
+        <AddProject />    
       </header>
       <ul>
         <a href="/task"><li>- Novo Aplicativo de Vendas</li></a>

@@ -1,25 +1,13 @@
 .modal {
   display: flex !important;
-  align-items: center !important;
+  align-items: flex-start !important;
   justify-content: center !important;
   position: fixed !important;
   top: 0 !important;
   left: 0 !important;
   width: 100% !important;
   height: 100vh !important;
-  background-color: rgba(0, 0, 0, .8) !important;
+  padding-top: 6rem;
+  background-color: #FFFFFFFF !important;
   z-index: 3 !important;
-}
-
-.modal .modal-container {
-  background-color: #FFFFFF !important;
-  border: 1px solid #E6E6E6 !important;
-  border-radius: 5px !important;
-  min-height: 90vh !important;
-  width: 50rem !important;
-  z-index: 2 !important;
-}
-
-.modal .modal-container .modal-content {
-  padding: 1rem !important;
 }

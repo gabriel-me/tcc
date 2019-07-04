@@ -4,6 +4,7 @@
   align-items: center;
   margin: 5px;
   width: auto !important;
+  cursor: pointer;
 }
 
 .icon p {
