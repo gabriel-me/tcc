@@ -3,6 +3,7 @@ import axios from 'axios'
 import Input from '../utils/input/Input'
 import Button from '../utils/button/Button'
 import Form from '../utils/form/Form'
+import authUser from '../utils/Auth'
 import './form.css'
 
 export default class SignIn extends Component {
@@ -24,7 +25,14 @@ export default class SignIn extends Component {
 
     axios.post(URL, requestBody).then(result => {
       if (result.status === 200) {
-        window.location.href = 'http://localhost:3000/home'
+        authUser(
+          result.data.user._id, 
+          result.data.token
+        ).then(result => {
+          window.location.href = 'http://localhost:3000/home'
+        }).catch(err => {
+          console.log(err)
+        })    
       }
     }).catch(() => {
       console.log('Message Fail')
