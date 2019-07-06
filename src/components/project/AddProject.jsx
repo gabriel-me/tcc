@@ -32,7 +32,11 @@ export default class Project extends Component {
       'name': values[0],
       'boss': values[1],
       'deadline': values[2],
-      'description': values[3]
+      'description': values[3],
+      'members': {
+        id: window.localStorage.getItem('id'),
+        name: window.localStorage.getItem('name')
+      }
     }
 
     axios.post(URL, requestBody).then(result => {

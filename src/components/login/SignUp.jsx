@@ -18,6 +18,8 @@ export default class SignUp extends Component {
     const URL = `http://localhost:8082/auth/register/`
     const values = Form.getFormValues('form')
     const requestBody = {
+      'name': values[0],
+      'lastName': values[1],
       'email': values[2],
       'password': values[3]
     }
