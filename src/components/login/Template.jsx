@@ -2,6 +2,7 @@ import React from 'react'
 import SignIn from './SignIn'
 import SignUp from './SignUp'
 import { Outline } from '../utils/button/Button'
+import { Link } from 'react-router-dom'
 import './login.css'
 
 const signType = (sign) => {
@@ -20,8 +21,8 @@ export default () =>
     <h1 className="logo">LOGO</h1>
     <div className="login">
       <section>
-        <a href="/signup"><h2 className="h2-left">Criar conta</h2></a>
-        <a href="/signin"><h2 className="h2-right">Entrar</h2></a>
+        <Link to="/signup"><h2 className="h2-left">Criar conta</h2></Link>
+        <Link to="/signin"><h2 className="h2-right">Entrar</h2></Link>
       </section>
       <section className="padding">
         <h1>{textH2()}</h1>
