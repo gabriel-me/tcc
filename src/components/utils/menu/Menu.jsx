@@ -4,6 +4,7 @@ import Profile from '../profile/Profile'
 import Status from '../status/Status'
 import AddProject from '../../project/AddProject'
 import axios from 'axios'
+import { Link } from 'react-router-dom'
 import './menu.css'
 
 const URL = `http://localhost:8082/user/${window.localStorage.getItem('id')}`
@@ -78,10 +79,10 @@ export default class Menu extends Component {
         </header>
         <section className="section-main">
           <ul>
-            <a href="/home"><li><Icon icon="home-outline" color="#BDBDBD" />Página inicial</li></a>
-            <a href="/task"><li><Icon icon="checkmark-circle-2-outline" color="#BDBDBD" />Minhas tarefas</li></a>
-            <a href="/task"><li><Icon icon="bell-outline" color="#BDBDBD" />Caixa de entrada</li></a>
-            <a href="/task"><li><Icon icon="people-outline" color="#BDBDBD" />Usuários</li></a>
+            <Link to="/home"><li><Icon icon="home-outline" color="#BDBDBD" />Página inicial</li></Link>
+            <Link to="/task"><li><Icon icon="checkmark-circle-2-outline" color="#BDBDBD" />Minhas tarefas</li></Link>
+            <Link to="/task"><li><Icon icon="bell-outline" color="#BDBDBD" />Caixa de entrada</li></Link>
+            <Link to="/task"><li><Icon icon="people-outline" color="#BDBDBD" />Usuários</li></Link>
           </ul>
         </section>
         {this.renderRows()}
