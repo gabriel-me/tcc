@@ -39,3 +39,10 @@ main {
   height: calc(100vh - 4rem);
   overflow: auto;
 }
+
+.red { background-color: #FE2E64 !important; }
+.blue { background-color: #2E2EFE !important; }
+.black { background-color: #848484 !important; }
+.pink { background-color: #FE2EF7 !important; }
+.green { background-color: #2EFE64 !important; }
+.yellow { background-color: #F7FE2E !important; }

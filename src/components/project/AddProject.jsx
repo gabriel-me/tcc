@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import Button from '../utils/button/Button'
-import Input from '../utils/input/Input'
+import Input, { Switch } from '../utils/input/Input'
 import axios from 'axios'
 import Form from '../utils/form/Form'
 import Modal from '../utils/modal/Modal'
@@ -10,16 +10,24 @@ import './project.css'
 export default class Project extends Component {
   constructor(props) {
     super(props)
-    this.state = { display: 'none' }
+    this.state = { display: 'none', color: 'blue' }
     this.display = this.display.bind(this)
     this.submit = this.submit.bind(this)
     this.addProject = this.addProject.bind(this)
+    this.changeColor = this.changeColor.bind(this)
   }
 
   display() {
     this.setState({
       ...this.state, 
       display: this.state.display === 'flex' ? 'none' : 'flex'
+    })
+  }
+
+  changeColor(color) {
+    this.setState({
+      ...this.state,
+      color: color
     })
   }
 
@@ -33,6 +41,8 @@ export default class Project extends Component {
       'boss': values[1],
       'deadline': values[2],
       'description': values[3],
+      'private': values[4],
+      'color': this.state.color,
       'members': {
         id: window.localStorage.getItem('id'),
         name: window.localStorage.getItem('name')
@@ -74,6 +84,17 @@ export default class Project extends Component {
                   </section>
                   <section>
                     <Input name="description" label="Descrição" width="100%" />
+                  </section>
+                  <section>
+                    <div className="color-container">
+                      <p>Cores: </p>
+                      <span className="project-color red" onClick={ () => this.changeColor('red')}></span>
+                      <span className="project-color blue" onClick={() => this.changeColor('blue')}></span>
+                      <span className="project-color black" onClick={() => this.changeColor('black')}></span>
+                      <span className="project-color yellow" onClick={() => this.changeColor('yellow')}></span>
+                      <span className="project-color green" onClick={() => this.changeColor('green')}></span>
+                    </div>
+                    <Switch name="public" label="Projeto privado" />
                   </section>
                   <section className="last-section">
                     <span>

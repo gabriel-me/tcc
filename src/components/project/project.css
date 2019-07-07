@@ -28,3 +28,23 @@
   right: .8rem;
   z-index: 4;
 }
+
+.color-container {
+  width: 49%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.color-container p {
+  font-size: 1.2rem;
+  color: #6E6E6E
+}
+
+.color-container .project-color {
+  width: 25px;
+  height: 25px;
+  margin-left: 5px;
+  border-radius: 100%;
+  cursor: pointer;
+}

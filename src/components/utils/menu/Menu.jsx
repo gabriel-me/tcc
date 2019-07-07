@@ -24,7 +24,7 @@ export default class Menu extends Component {
 
     axios.get(URL).then(result => {
       result.data.projects.forEach(project => {
-        projects.push({ id: project._id, name: project.name })
+        projects.push({ id: project._id, name: project.name, color: project.color })
       })
       result.data.tasks.forEach(task => {
         tasks.push({ id: task._id, name: task.name })
@@ -57,7 +57,9 @@ export default class Menu extends Component {
             <AddProject />
           </header>
           <ul>
-            {this.state.listProject.map(p => <li key={p.id}>- {p.name}</li>)}
+            {this.state.listProject.map(p => <li key={p.id}>
+              <span className={`color-project ${p.color}`}></span>{p.name}
+            </li>)}
           </ul>
         </section>
       </div>

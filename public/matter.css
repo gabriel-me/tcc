@@ -947,6 +947,7 @@
   padding-right: 51px;
   width: inherit;
   cursor: pointer;
+  color: #6E6E6E;
 }
 
 /* Highlight */
@@ -1361,7 +1362,7 @@
   display: flex;
   width: 100%;
   max-height: 100%;
-  color: rgba(var(--matter-onsurface-rgb, 0, 0, 0), 0.6);
+  color: #6E6E6E;
   font-size: 75%;
   line-height: 15px;
   cursor: text;
