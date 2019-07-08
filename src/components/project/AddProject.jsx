@@ -4,8 +4,7 @@ import Input, { Switch } from '../utils/input/Input'
 import axios from 'axios'
 import Form from '../utils/form/Form'
 import Modal from '../utils/modal/Modal'
-import Icon from '../utils/icon/Icon'
-import './project.css'
+import './add-project.css'
 
 export default class Project extends Component {
   constructor(props) {
@@ -62,11 +61,11 @@ export default class Project extends Component {
     return(
       <div>
         <span onClick={this.display}>
-          <Icon color="#BDBDBD" title="Novo projeto" titleLocation="left" />
+          <h4>btn</h4>
         </span>
         <span className={this.state.display}>
           <span id="close" onClick={this.display}>
-            <Icon icon="close-outline" size="2.5rem" />
+            <h4>btn</h4>
           </span>
           <Modal contentHTML={
             <div className="container-project">

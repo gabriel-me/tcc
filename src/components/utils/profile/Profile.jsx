@@ -9,7 +9,7 @@ export default props =>
     >
       <img 
         className="profile-img" 
-        src={`image/${props.src || 'profile.jpg'}`} 
+        src={`../image/profile.jpg`} 
         alt={props.title || ''} 
       ></img>
     </span>
