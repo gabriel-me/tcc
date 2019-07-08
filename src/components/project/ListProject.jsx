@@ -36,7 +36,7 @@ export default class ListProject extends Component {
         <Link key={i} to={`/project/${project.id}`}>
           <li key={`${i}`} title={project.name} >
               <span style={styleSpan} className={`${project.color}`}></span>
-              {project.name.length > 20 ? `${project.name.substring(0, 15)}...` : project.name}
+              {project.name.length > 30 ? `${project.name.substring(0, 30)}...` : project.name}
           </li>
         </Link>
       )
