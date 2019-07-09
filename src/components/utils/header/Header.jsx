@@ -26,9 +26,9 @@ export default class Header extends Component {
           <div className="add-container">
             <Button label="Adicionar novo..." click={this.changeDisplayButton} />
             <div className="dropdown">
-              <Link to="/"><span className={`${this.state.ulButton}`}>Tarefa</span></Link>
-              <Link to="/"><span className={`${this.state.ulButton}`}>Projeto</span></Link>
-              <Link to="/"><span className={`${this.state.ulButton}`}>Usuário</span></Link>
+              <Link to="/task/add"><span className={`${this.state.ulButton}`}>Tarefa</span></Link>
+              <Link to="/project/add"><span className={`${this.state.ulButton}`}>Projeto</span></Link>
+              <Link to="/user/add"><span className={`${this.state.ulButton}`}>Usuário</span></Link>
             </div>
           </div>
           <Search label="Buscar projeto, tarefa ou usuário" option={this.props.option || ''} />

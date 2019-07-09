@@ -20,14 +20,14 @@ export default () =>
       <ul>
         <Link to="/home"><li><Home color="#BDBDBD" /> Página inicial</li></Link>
         <Link to="/task"><li><Done color="#BDBDBD" /> Minhas tarefas</li></Link>
-        <Link to="/task"><li><Notication color="#BDBDBD" /> Caixa de entrada</li></Link>
-        <Link to="/task"><li><Person color="#BDBDBD" /> Usuários</li></Link>
+        <Link to="/notification"><li><Notication color="#BDBDBD" /> Caixa de entrada</li></Link>
+        <Link to="/user"><li><Person color="#BDBDBD" /> Usuários</li></Link>
       </ul>
     </section>
     <section>
       <header>
         <h4>Contatos</h4>
-        <Add color="#BDBDBD" />
+        <Link to="/user/add"><Add color="#BDBDBD" /></Link>
       </header>
       <Messages />
     </section>
