@@ -19,16 +19,13 @@ export default class AddTask extends Component {
     const URL = `http://localhost:8082/task`
     const values = Form.getFormValues('form')
     const requestBody = {
+      'id': values[3],
       'name': values[0],
       'addressee': {
         id: values[1],
         name: values[1]
       },
       'deadline': values[2],
-      'project': {
-        id: values[3],
-        name: values[3]
-      },
       'description': values[4],
       'sender': {
         id: window.localStorage.getItem('id'),
