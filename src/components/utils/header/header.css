@@ -6,7 +6,7 @@
   height: 4rem;
 }
 
-.header div {
+.header .right-content {
   display: flex;
   align-items: center;
 }
@@ -16,5 +16,27 @@
   font-size: 1.05rem;
   height: calc(4rem + 1px);
   padding: 0 2rem;
-  margin-right: .5rem;
 }
+
+.add-container {
+  position: relative;
+  flex-direction: column;
+}
+
+.add-container .dropdown {
+  position: absolute;
+  top: 100%;
+  width: 100%;
+  background-color: #FFFFFF;
+  z-index: 1;
+}
+
+.add-container .dropdown span {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: .25rem .8rem;
+}
+
+.flex { display: flex !important; }
+.none { display: none !important; }
