@@ -2,7 +2,6 @@ import React from 'react'
 import Profile from '../profile/Profile'
 import Status from '../status/Status'
 import Projects from '../../project/ListProject'
-import AddProject from '../../project/AddProject'
 import Messages from '../../message/ListMessage'
 import { Link } from 'react-router-dom'
 import Add, { Done, Home, Person, Notication, ArrowBack } from '../icons/Icon'
@@ -35,7 +34,7 @@ export default () =>
     <section>
       <header>
         <h4>Projetos</h4>
-        <AddProject />
+        <Link to="/project/add"><Add color="#BDBDBD" /></Link>
       </header>
       <Projects />
     </section>
