@@ -1,33 +1,76 @@
 import React from 'react'
+import axios from 'axios'
 import Header from '../utils/header/Header'
 import Menu from '../utils/menu/Menu'
-import Li from '../utils/list/Row'
-import Profile from '../utils/profile/Profile'
+import Row from '../utils/list/Row'
 import ProgressBar from '../utils/chart/ProgressBar'
 import Project from '../utils/quadrat/Quadrat'
 import './home.css'
 
-export default props => 
-  <div className="content">
-    <Menu />
-    <Header title="Página inicial" />
-    <main>
-      <section className="session-home">
-        <h3>Tarefas com data de conclusão próximas</h3>
-        <Li position="first" cols={[{ text: 'Tarefa', size: '_4' }, { text: 'Remetente', size: '_2' }, { text: 'Projeto', size: '_2' }, { text: 'Prazo', size: '_2' }]} />
-        <Li cols={[{ text: <Profile />, size: '_2' }, { text: 'TCC', size: '_2' }, { text: <ProgressBar size="60%" text="20/19 - 13:50" />, size: '_2' }]} />
-        <Li cols={[{ text: <Profile />, size: '_2' }, { text: 'TCC', size: '_2' }, { text: <ProgressBar size="30%" text="20/19 - 13:50" />, size: '_2' }]} />
-        <Li cols={[{ text: <Profile />, size: '_2' }, { text: 'TCC', size: '_2' }, { text: <ProgressBar size="25%" text="20/19 - 13:50" />, size: '_2' }]} />
-        <Li cols={[{ text: <Profile />, size: '_2' }, { text: 'TCC', size: '_2' }, { text: <ProgressBar size="90%" text="20/19 - 13:50" />, size: '_2' }]} />
-      </section>
-      <section className="session-home">
-        <h3>Projetos recentes</h3>
-        <div className="projects">
-          <Project date="20/19" text="SHOW" />
-          <Project date="20/19" text="TCC" />
-          <Project date="20/19" text="APP" />
-          <Project date="20/19" text="Novo projeto" type="white-quadrat" />
-        </div>
-      </section>
-    </main>
-  </div>
+const URL = `http://localhost:8082/user/${window.localStorage.getItem('id')}`
+
+export default class Home extends React.Component {
+  constructor(props) {
+    super(props)
+    this.state = { tasks: [], projects: [] }
+    this.renderProjectsAndTasks = this.renderProjectsAndTasks.bind(this)
+    this.dateFormat = this.dateFormat.bind(this)
+    this.renderProjectsAndTasks()
+  }
+
+  dateFormat(date) {
+    date = new Date(date)
+    const day = date.getDate().toString().padStart('2', '0')
+    const month = date.getMonth().toString().padStart('2', '0')
+    return `${day}/${month}`
+  }
+
+  renderProjectsAndTasks() {
+    axios.get(URL).then(result => {
+      const tasks = result.data.tasks.map(task => 
+        <Row key={task._id} cols={[
+          { text: task.name, size: '_4' },
+          { text: task.sender.name, size: '_2' },
+          { text: task.project.name, size: '_2' },
+          { text: <ProgressBar size="60%" text={this.dateFormat(task.deadline)} />, size: '_2' }
+        ]} />
+      )
+      const projects = result.data.projects.map(project =>
+        <Project date={this.dateFormat(project.deadline)} text={project.name} />
+      )
+      this.setState({
+        ...this.state,
+        tasks: tasks,
+        projects: projects
+      })
+    })
+  }
+
+  render() {
+    return(
+      <div className="content">
+        <Menu />
+        <Header title="Página inicial" />
+        <main>
+          <section className="session-home">
+            <h3>Tarefas com data de conclusão próximas</h3>
+            <Row position="first" cols={[
+              { text: 'Tarefa', size: '_4' }, 
+              { text: 'Remetente', size: '_2' }, 
+              { text: 'Projeto', size: '_2' }, 
+              { text: 'Prazo', size: '_2' }
+            ]} />
+            {this.state.tasks}
+          </section>
+          <section className="session-home">
+            <h3>Projetos recentes</h3>
+            <div className="projects">
+              {this.state.projects}
+              <Project type="white-quadrat" text="Novo projeto" />
+            </div>
+          </section>
+        </main>
+      </div>
+    )
+  }
+}
