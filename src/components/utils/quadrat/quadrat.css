@@ -1,11 +1,9 @@
-.blue-quadrat {
+.quadrat {
   position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background-color: rgb(33, 111, 243);
-  border: 1px solid rgb(33, 111, 243);
   height: 9rem;
   width: 9rem;
   padding: 1rem;
@@ -14,12 +12,7 @@
   cursor: pointer;
 }
 
-.blue-quadrat:hover {
-  box-shadow: 0 0 .1px 2px rgb(33, 111, 243);
-  border-color: rgb(33, 111, 243);
-}
-
-.blue-quadrat p {
+.quadrat p {
   display: flex;
   align-items: flex-start;
   justify-content: center;

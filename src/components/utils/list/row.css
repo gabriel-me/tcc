@@ -11,6 +11,10 @@
   border-color: #E6E6E6;
 }
 
+.col:hover .item .progress-bar:after {
+  box-shadow: 0 0 1px 5px #F2F2F2;
+}
+
 .col .item {
   justify-content: flex-start;
   height: 4rem;

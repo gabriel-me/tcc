@@ -8,7 +8,8 @@ const styleSpan = {
   height: '.5rem',
   width: '.5rem',
   marginRight: '5px',
-  backgroundColor: '#585858'
+  backgroundColor: '#585858',
+  borderRadius: '1.5px'
 }
 
 export default class ListProject extends Component {

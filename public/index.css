@@ -40,9 +40,13 @@ main {
   overflow: auto;
 }
 
-.red { background-color: #FE2E64 !important; }
-.blue { background-color: #2E2EFE !important; }
-.black { background-color: #848484 !important; }
+.red { background-color: #DF013A !important; }
+.blue { background-color: #0174DF !important; }
+.black { background-color: #6E6E6E !important; }
 .pink { background-color: #FE2EF7 !important; }
-.green { background-color: #2EFE64 !important; }
-.yellow { background-color: #F7FE2E !important; }
+.green { background-color: #01DF74 !important; }
+.red-hover:hover { box-shadow: 0 0 .1px 2px #DF013A !important; }
+.blue-hover:hover { box-shadow: 0 0 .1px 2px #0174DF !important; }
+.black-hover:hover { box-shadow: 0 0 .1px 2px #6E6E6E !important; }
+.pink-hover:hover { box-shadow: 0 0 .1px 2px #FE2EF7 !important; }
+.green-hover:hover { box-shadow: 0 0 .1px 2px #01DF74 !important; }

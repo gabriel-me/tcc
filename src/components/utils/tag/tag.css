@@ -6,14 +6,8 @@
   cursor: pointer;
 }
 
-.tag:hover {
-  color: #2E64FE;
-}
+.tag:hover { color: rgb(33, 150, 243); }
 
-.selected {
-  color: #2E64FE;
-}
+.selected { color: rgb(33, 150, 243); }
 
-.unselect {
-  color: #000000;
-}
+.unselect { color: #000000; }

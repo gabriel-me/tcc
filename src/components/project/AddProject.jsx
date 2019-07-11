@@ -76,7 +76,6 @@ export default class Project extends Component {
                   <span className="project-color red" onClick={() => this.changeColor('red')}></span>
                   <span className="project-color blue" onClick={() => this.changeColor('blue')}></span>
                   <span className="project-color black" onClick={() => this.changeColor('black')}></span>
-                  <span className="project-color yellow" onClick={() => this.changeColor('yellow')}></span>
                   <span className="project-color green" onClick={() => this.changeColor('green')}></span>
                 </div>
                 <Switch name="public" label="Projeto privado" />
