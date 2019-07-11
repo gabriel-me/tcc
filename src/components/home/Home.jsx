@@ -37,7 +37,7 @@ export default class Home extends React.Component {
         ]} />
       )
       const projects = result.data.projects.map(project =>
-        <Link to={`/project/${project.id}`}>
+        <Link key={project.id} to={`/project/${project.id}`}>
           <Project date={this.dateFormat(project.deadline)} text={project.name} />
         </Link>
       )
