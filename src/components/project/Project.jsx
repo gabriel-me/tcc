@@ -13,7 +13,7 @@ export default class Project extends Component {
   constructor(props) {
     super(props)
     currentURL = this.props.location.pathname
-    this.state = { tasks: [] }
+    this.state = { tasks: [], project: '' }
     this.renderTasks = this.renderTasks.bind(this)
     this.dateFormat = this.dateFormat.bind(this)
     this.renderTasks()
@@ -37,7 +37,8 @@ export default class Project extends Component {
         ]} />)
       this.setState({
         ...this.state,
-        tasks: rows
+        tasks: rows,
+        project: result.data.name
       })
     }) 
   }
@@ -46,7 +47,7 @@ export default class Project extends Component {
     return (
       <div className="content">
         <Menu />
-        <Header title="Página inicial" />
+        <Header title={this.state.project} />
         <main>
           <Tag text="tcc" />
           <Tag text="show" />
