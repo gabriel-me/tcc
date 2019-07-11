@@ -13,11 +13,14 @@
 }
 
 .menu header div {
+  display: flex;
+  align-items: center;
   position: relative;
 }
 
 .menu header div .status {
   position: absolute;
+  top: 0;
   left: 0;
 }
 
@@ -46,4 +49,9 @@
 
 .status {
   margin: 0 5px 0 0;
+}
+
+.name {
+  margin-left: 5px;
+  color: #BDBDBD;
 }
