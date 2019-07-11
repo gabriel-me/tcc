@@ -1,5 +1,6 @@
 import React from 'react'
 import axios from 'axios'
+import { Link } from 'react-router-dom'
 import Header from '../utils/header/Header'
 import Menu from '../utils/menu/Menu'
 import Row from '../utils/list/Row'
@@ -36,7 +37,9 @@ export default class Home extends React.Component {
         ]} />
       )
       const projects = result.data.projects.map(project =>
-        <Project date={this.dateFormat(project.deadline)} text={project.name} />
+        <Link to={`/project/${project.id}`}>
+          <Project date={this.dateFormat(project.deadline)} text={project.name} />
+        </Link>
       )
       this.setState({
         ...this.state,
@@ -66,7 +69,9 @@ export default class Home extends React.Component {
             <h3>Projetos recentes</h3>
             <div className="projects">
               {this.state.projects}
-              <Project type="white-quadrat" text="Novo projeto" />
+              <Link to="/project/add">
+                <Project type="white-quadrat" text="Novo projeto" />
+              </Link>
             </div>
           </section>
         </main>
