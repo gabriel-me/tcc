@@ -56,3 +56,49 @@ export class Switch extends Component {
     )
   }
 }
+
+export class Date extends Component {
+  constructor(props) {
+    super(props)
+    this.state = { 
+        value: '', 
+        style: { width: this.props.width || '25rem' } 
+    }
+    this.dateState = this.dateState.bind(this)
+    this.dateMask = this.dateMask.bind(this)
+  }
+
+  dateState() {
+    const btn = document.querySelector(`input[name="${this.props.name}"]`)
+    this.setState({
+      ...this.state,
+      value: this.state.value <= btn.value
+        ? this.dateMask(btn.value)
+        : btn.value
+    })
+  }
+
+  dateMask(date) {
+    if (date.length === 2 || date.length === 5) 
+      return `${date}/`
+    return date
+  }
+
+  render() {
+    return (
+      <label style={this.state.style} className="matter-textfield-outlined matter-primary">
+        <span className="matter-tooltip"></span>
+        <input
+          name={this.props.name || ''}
+          type="text"
+          placeholder=" "
+          required={this.props.required ? 'required' : ''}
+          autoFocus={this.props.autoFocus ? 'autoFocus' : ''}
+          value={this.state.value}
+          onChange={this.dateState}
+          maxLength="10" />
+        <span>{this.props.label || ''}</span>
+      </label>
+    )
+  }
+}

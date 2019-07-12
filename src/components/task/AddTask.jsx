@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import Button from '../utils/button/Button'
-import Input from '../utils/input/Input'
+import Input, { Date } from '../utils/input/Input'
 import axios from 'axios'
 import { Link } from 'react-router-dom'
 import Form from '../utils/form/Form'
@@ -58,7 +58,7 @@ export default class AddTask extends Component {
               </section>
               <section>
                 <Input name="addressee" label="Responsável pela tarefa" width="49%" />
-                <Input name="deadline" label="Prazo de entrega" width="49%" />
+                <Date name="deadline" label="Prazo de entrega" width="49%" />
               </section>
               <section>
                 <Input name="project" label="Projeto que essa tarefa pertence" width="100%" />

@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import Button from '../utils/button/Button'
-import Input, { Switch } from '../utils/input/Input'
+import Input, { Switch, Date } from '../utils/input/Input'
 import axios from 'axios'
 import { Link } from 'react-router-dom'
 import Form from '../utils/form/Form'
@@ -65,7 +65,7 @@ export default class Project extends Component {
               </section>
               <section>
                 <Input name="boss" label="Responsável pelo projeto" width="49%" />
-                <Input name="deadline" label="Prazo de entrega" width="49%" />
+                <Date name="deadline" label="Prazo de entrega" width="49%" />
               </section>
               <section>
                 <Input name="description" label="Descrição" width="100%" />
