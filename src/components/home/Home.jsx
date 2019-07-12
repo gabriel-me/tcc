@@ -68,7 +68,7 @@ export default class Home extends React.Component {
           </section>
           <section className="session-home">
             <h3>Projetos recentes</h3>
-            {this.state.projects.lenght > 0 ? '' : <Message text="Você ainda não possui projetos" />}
+            {this.state.projects.length > 0 ? '' : <Message text="Você ainda não possui projetos" />}
             <div className="projects">
               {this.state.projects}
               <Link to="/project/add">
