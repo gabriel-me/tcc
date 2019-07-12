@@ -6,6 +6,7 @@ import Menu from '../utils/menu/Menu'
 import Row from '../utils/list/Row'
 import ProgressBar from '../utils/chart/ProgressBar'
 import Project from '../utils/quadrat/Quadrat'
+import { Message } from '../utils/alert/Alert'
 import './home.css'
 
 const URL = `http://localhost:8082/user/${window.localStorage.getItem('id')}`
@@ -63,10 +64,11 @@ export default class Home extends React.Component {
               { text: 'Projeto', size: '_2' }, 
               { text: 'Prazo', size: '_2' }
             ]} />
-            {this.state.tasks}
+            {this.state.tasks.length > 0 ? this.state.tasks : <Message text="Você não possui tarefas pendentes" />}
           </section>
           <section className="session-home">
             <h3>Projetos recentes</h3>
+            {this.state.projects.lenght > 0 ? '' : <Message text="Você ainda não possui projetos" />}
             <div className="projects">
               {this.state.projects}
               <Link to="/project/add">
