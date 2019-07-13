@@ -47,8 +47,8 @@ export default class AddTask extends Component {
     return (
       <div>
         <Link to="/home"><span id="close"><Close /></span></Link>
-        <div className="container-project">
-          <div className="add-project">
+        <div className="form-container">
+          <div className="form-content">
             <header>
               <h1>Detalhes da tarefa</h1>
             </header>

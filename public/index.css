@@ -50,3 +50,42 @@ main {
 .black-hover:hover { box-shadow: 0 0 .1px 2px #6E6E6E !important; }
 .pink-hover:hover { box-shadow: 0 0 .1px 2px #FE2EF7 !important; }
 .green-hover:hover { box-shadow: 0 0 .1px 2px #01DF74 !important; }
+
+.none {
+  display: none;
+}
+
+.flex {
+  display: flex;
+}
+
+.form-container {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: 100vh;
+}
+
+.form-content {
+  margin-top: 5rem;
+  width: 40rem;
+}
+
+.form-content header {
+  padding: 1rem 0 !important;
+}
+
+.form-content section {
+  display: flex;
+  justify-content: space-between;
+  min-width: 40rem;
+  padding: .25rem 0;
+  text-align: right;
+}
+
+#close {
+  position: fixed;
+  top: .8rem;
+  right: .8rem;
+  z-index: 4;
+}

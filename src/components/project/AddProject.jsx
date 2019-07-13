@@ -54,10 +54,10 @@ export default class Project extends Component {
     return(
       <div>
         <Link to="/home"><span id="close"><Close /></span></Link>
-        <div className="container-project">
-          <div className="add-project">
+        <div className="form-container">
+          <div className="form-content">
             <header>
-              <h1>Detalhes desse projeto</h1>
+              <h1>Detalhes do projeto</h1>
             </header>
             <form onSubmit={this.submit}>
               <section>

@@ -3,7 +3,7 @@ import axios from 'axios'
 import Profile from '../profile/Profile'
 import Status from '../status/Status'
 import Projects from '../../project/ListProject'
-import Messages from '../../message/ListMessage'
+import Users from '../../user/ListMessage'
 import { Link } from 'react-router-dom'
 import Add, { Done, Home, Person, Notication, ArrowBack } from '../icons/Icon'
 import './menu.css'
@@ -49,10 +49,10 @@ export default class Menu extends Component {
         </section>
         <section>
           <header>
-            <h4>Contatos</h4>
+            <h4>Conversas</h4>
             <Link to="/user/add"><Add color="#BDBDBD" /></Link>
           </header>
-          <Messages />
+          <Users />
         </section>
         <section>
           <header>

@@ -7,6 +7,7 @@ import ListTasks from '../components/task/ListTasks'
 import Login from '../components/login/Template'
 import Project from '../components/project/Project'
 import AddProject from '../components/project/AddProject'
+import AddUser from '../components/user/AddUser'
 
 export default () => (
   <BrowserRouter>
@@ -20,6 +21,7 @@ export default () => (
       <Route path="/task/:id" component={Task} />
       <Route path="/project/add" exact component={AddProject} />
       <Route path="/project/:id" component={Project} />
+      <Route path="/user/add" exact component={AddUser} />
     </ Switch>
   </ BrowserRouter>
 )

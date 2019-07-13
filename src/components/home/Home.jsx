@@ -21,10 +21,13 @@ export default class Home extends React.Component {
   }
 
   dateFormat(date) {
-    date = new Date(date)
-    const day = date.getDate().toString().padStart('2', '0')
-    const month = date.getMonth().toString().padStart('2', '0')
-    return `${day}/${month}`
+    if (date) {
+      date = new Date(date)
+      const day = date.getDate().toString().padStart('2', '0')
+      const month = date.getMonth().toString().padStart('2', '0')
+      return `${day}/${month}`
+    }
+    return 'Sem prazo'    
   }
 
   renderProjectsAndTasks() {
