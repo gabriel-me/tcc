@@ -38,7 +38,7 @@ export default class Project extends Component {
       document.querySelector(`input[name='profession']`).value = profession
       document.querySelector(`input[name='status']`).value = status
       document.querySelector(`input[name='about']`).value = about
-      document.getElementById('photo').src = photo
+      document.getElementById('photo').src = photo || '../image/profile.jpg'
     })
   }
 
