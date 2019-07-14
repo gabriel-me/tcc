@@ -1,22 +1,40 @@
 import React, { Component } from 'react'
 import './input.css'
 
-export default props => {
-  let style = {
-    width: `${props.width || '25rem'}`
+export default class Input extends Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      value: this.props.value || '',
+      style: { width: this.props.width || '25rem' }
+    }
+    this.valueState = this.valueState.bind(this)
   }
-  return (
-    <label style={style} className="matter-textfield-outlined matter-primary">
-      <span className="matter-tooltip"></span>
-      <input 
-        name={props.name || ''} 
-        type={props.type || 'text'}
-        placeholder=" " 
-        required={props.required ? 'required' : ''}
-        autoFocus={props.autoFocus ? 'autoFocus' : ''} />
-      <span>{props.label || ''}</span>
-    </label>
-  )
+
+  valueState() {
+    const btn = document.querySelector(`input[name="${this.props.name}"]`)
+    this.setState({
+      ...this.state,
+      value: btn.value
+    })
+  }
+
+  render() {
+    return (
+      <label style={this.state.style} className="matter-textfield-outlined matter-primary">
+        <span className="matter-tooltip"></span>
+        <input
+          name={this.props.name || ''}
+          type={this.props.type || 'text'}
+          placeholder=" "
+          required={this.props.required ? 'required' : ''}
+          autoFocus={this.props.autoFocus ? 'autoFocus' : ''}
+          value={this.state.value}
+          onChange={this.valueState} />
+        <span>{this.props.label || ''}</span>
+      </label>
+    )
+  }
 }
 
 export const Search = props => {

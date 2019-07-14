@@ -7,16 +7,40 @@ import { Close } from '../utils/icons/Icon'
 import Profile from '../utils/profile/Profile'
 import Form from '../utils/form/Form'
 
-const URL = `http://localhost:8082/user`
+const changeProfileURL = `http://localhost:8082/user`
+const infoProfileURL = `http://localhost:8082/user/${window.localStorage.getItem('id')}`
+const changeProfilePhotoURL = `http://localhost:8082/user/upload/${window.localStorage.getItem('id')}`
 
 export default class Project extends Component {
   constructor(props) {
     super(props)
     this.submit = this.submit.bind(this)
     this.changeProfile = this.changeProfile.bind(this)
+    this.infoProfile = this.infoProfile.bind(this)
+    this.infoProfile()
   }
 
   submit(e) { e.preventDefault() }
+
+  infoProfile() {
+    axios.get(infoProfileURL).then(result => {
+      const {
+        name,
+        lastName,
+        profession,
+        status,
+        about,
+        photo
+      } = result.data
+
+      document.querySelector(`input[name='name']`).value = name
+      document.querySelector(`input[name='lastName']`).value = lastName
+      document.querySelector(`input[name='profession']`).value = profession
+      document.querySelector(`input[name='status']`).value = status
+      document.querySelector(`input[name='about']`).value = about
+      document.getElementById('photo').src = photo
+    })
+  }
 
   changeProfile() {
     const values = Form.getFormValues('form')
@@ -29,8 +53,21 @@ export default class Project extends Component {
       'about': values[4]
     }
 
-    axios.post(URL, body).then(result => {
+    axios.post(changeProfileURL, body).then(result => {
       console.log(result)
+    }).catch(err => {
+      console.log(err)
+    })
+  }
+
+  changeProfilePhoto() {
+    const header = { 'Content-Type': 'multipart/form-data' }
+    const body = new FormData()
+    const image = document.querySelector("input[name='img']")
+    body.append("img", image.files[0])
+    axios.post(changeProfilePhotoURL, body, header).then(() => {
+      document.getElementById('photo').src = 
+        `http://localhost:8082/user/upload/${window.localStorage.getItem('id')}`
     }).catch(err => {
       console.log(err)
     })
@@ -45,9 +82,10 @@ export default class Project extends Component {
             <header>
               <h1>Meu perfil</h1>
             </header>
+            <input onChange={this.changeProfilePhoto} type="file" name="img"></input>
             <form onSubmit={this.submit}>
               <section className="profile-section">
-                <Profile />
+                <Profile id="photo" />
               </section>
               <section>
                 <Input name="name" type="text" label="Nome" width="49%" required="required" />
