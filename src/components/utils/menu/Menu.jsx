@@ -34,7 +34,7 @@ export default class Menu extends Component {
         <header>
           <Link to={`/user/${window.localStorage.getItem('id')}`}>
             <div>
-              <Profile title="Visualizar perfil" titleLocation="right" />
+              <Profile src={this.state.user.photo} title="Visualizar perfil" titleLocation="right" />
               <Status status="online" />
               <span className="name">{this.state.user.name}</span>
             </div>
