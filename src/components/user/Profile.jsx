@@ -82,10 +82,12 @@ export default class Project extends Component {
             <header>
               <h1>Meu perfil</h1>
             </header>
-            <input onChange={this.changeProfilePhoto} type="file" name="img"></input>
+            <input id="photo-upload" className="photo-upload" onChange={this.changeProfilePhoto} type="file" name="img"></input>
             <form onSubmit={this.submit}>
               <section className="profile-section">
-                <Profile id="photo" />
+                <label htmlFor="photo-upload">
+                  <Profile id="photo" />
+                </label>
               </section>
               <section>
                 <Input name="name" type="text" label="Nome" width="49%" required="required" />
