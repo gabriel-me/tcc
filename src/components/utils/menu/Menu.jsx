@@ -32,11 +32,13 @@ export default class Menu extends Component {
     return(
       <div className="menu">
         <header>
-          <div>
-            <Profile title="Visualizar perfil" titleLocation="right" />
-            <Status status="online" />
-            <span className="name">{this.state.user.name}</span>
-          </div>
+          <Link to={`/user/${window.localStorage.getItem('id')}`}>
+            <div>
+              <Profile title="Visualizar perfil" titleLocation="right" />
+              <Status status="online" />
+              <span className="name">{this.state.user.name}</span>
+            </div>
+          </Link>
           <ArrowBack color="#BDBDBD" />
         </header>
         <section className="section-main">

@@ -3,7 +3,7 @@ import Button from '../utils/button/Button'
 import Input from '../utils/input/Input'
 import { Link } from 'react-router-dom'
 import { Close } from '../utils/icons/Icon'
-import './add-user.css'
+import './user.css'
 
 export default class Project extends Component {
   constructor(props) {
