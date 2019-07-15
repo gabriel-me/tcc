@@ -5,6 +5,7 @@ import Menu from '../utils/menu/Menu'
 import Row from '../utils/list/Row'
 import ProgressBar from '../utils/chart/ProgressBar'
 import Tag from '../utils/tag/Tag'
+import Profile from '../utils/profile/Profile'
 
 const URL = `http://localhost:8082/user/${window.localStorage.getItem('id')}`
 
@@ -29,7 +30,7 @@ export default class Tasks extends React.Component {
       const tasks = result.data.tasks.map(task =>
         <Row key={task._id} cols={[
           { text: task.name, size: '_4' },
-          { text: task.sender.name, size: '_2' },
+          { text: <Profile src={task.sender.photo} />, size: '_2' },
           { text: task.project.name, size: '_2' },
           { text: <ProgressBar size="60%" text={this.dateFormat(task.deadline)} />, size: '_2' }
         ]} />

@@ -30,7 +30,8 @@ export default class AddTask extends Component {
       'sender': {
         id: window.localStorage.getItem('id'),
         name: `${window.localStorage.getItem('name')}
-          ${window.localStorage.getItem('lastName')}`
+          ${window.localStorage.getItem('lastName')}`,
+        photo: `http://localhost:8082/user/upload/${window.localStorage.getItem('id')}`
       }
     }
 

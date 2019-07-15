@@ -31,8 +31,8 @@ export default class Project extends Component {
       let rows = result.data.tasks.map((task, i) =>
         <Row key={i} cols={[
           { text: task.name, size: '_4' },
-          { text: <Profile />, size: '_2' },
-          { text: <Profile />, size: '_2' },
+          { text: <Profile src={task.addressee.photo} />, size: '_2' },
+          { text: <Profile src={task.sender.photo} />, size: '_2' },
           { text: <ProgressBar size="60%" text={this.dateFormat(task.deadline)} />, size: '_2' }
         ]} />)
       this.setState({

@@ -33,11 +33,11 @@ export default class Project extends Component {
         photo
       } = result.data
 
-      document.querySelector(`input[name='name']`).value = name
-      document.querySelector(`input[name='lastName']`).value = lastName
-      document.querySelector(`input[name='profession']`).value = profession
-      document.querySelector(`input[name='status']`).value = status
-      document.querySelector(`input[name='about']`).value = about
+      document.querySelector(`input[name='name']`).value = name || ''
+      document.querySelector(`input[name='lastName']`).value = lastName || ''
+      document.querySelector(`input[name='profession']`).value = profession || ''
+      document.querySelector(`input[name='status']`).value = status || ''
+      document.querySelector(`input[name='about']`).value = about || ''
       document.getElementById('photo').src = photo || '../image/profile.jpg'
     })
   }
