@@ -6,8 +6,14 @@ import Row from '../utils/list/Row'
 import ProgressBar from '../utils/chart/ProgressBar'
 import Tag from '../utils/tag/Tag'
 import Profile from '../utils/profile/Profile'
+import { Done }  from '../utils/icons/Icon'
 
 const URL = `http://localhost:8082/user/${window.localStorage.getItem('id')}`
+
+const alignCenter = {
+  display: 'flex',
+  alignItems: 'center',
+}
 
 export default class Tasks extends React.Component {
   constructor(props) {
@@ -32,7 +38,7 @@ export default class Tasks extends React.Component {
     axios.get(URL).then(result => {
       const tasks = result.data.tasks.map(task =>
         <Row key={task._id} cols={[
-          { text: task.name, size: '_4' },
+          { text: <span style={alignCenter} className="name-task"><Done /> {task.name} </span>, size: '_4' },
           { text: <Profile src={task.sender.photo} />, size: '_2' },
           { text: task.project.name, size: '_2' },
           { text: <ProgressBar size="60%" text={this.dateFormat(task.deadline)} />, size: '_2' }
