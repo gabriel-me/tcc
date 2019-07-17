@@ -5,7 +5,7 @@ import Status from '../status/Status'
 import Projects from '../../project/ListProject'
 import Users from '../../user/ListMessage'
 import { Link } from 'react-router-dom'
-import Add, { Done, Home, Person, Notication, ArrowBack } from '../icons/Icon'
+import Add, { Done, Home, Person, Notication, MenuHamburger } from '../icons/Icon'
 import './menu.css'
 
 const URL = `http://localhost:8082/user/${window.localStorage.getItem('id')}`
@@ -39,7 +39,10 @@ export default class Menu extends Component {
               <span className="name">{this.state.user.name}</span>
             </div>
           </Link>
-          <ArrowBack color="#BDBDBD" />
+          <MenuHamburger options={[
+            {'text': 'Condigurações', 'link': '/config'}, 
+            {'text': 'Sair', 'link': '/'}
+          ]} color="#BDBDBD" />
         </header>
         <section className="section-main">
           <ul>
