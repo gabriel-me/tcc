@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 import axios from 'axios'
+import { MoreHoriz } from '../utils/icons/Icon'
 
 const URL = `http://localhost:8082/user/${window.localStorage.getItem('id')}`
 
@@ -34,12 +35,24 @@ export default class ListProject extends Component {
   renderProjects() {
     this.getProjects().then(projects => {
       let rows = projects.map((project, i) =>
-        <Link key={i} to={`/project/${project.id}`}>
-          <li key={`${i}`} title={project.name} >
+        <li className='menu-item' key={`${i}`} title={project.name} >
+          <Link key={i} to={`/project/${project.id}`}>
+            <div>
               <span style={styleSpan} className={`${project.color}`}></span>
               {project.name.length > 30 ? `${project.name.substring(0, 30)}...` : project.name}
-          </li>
-        </Link>
+            </div>
+          </Link>
+          <div className="menu-dropdown">
+            <span className="menu-icon">
+              <MoreHoriz color="#BDBDBD" />
+            </span>
+            <div className="menu-dropdown-option">
+              <Link to="/"><span>Concluir projeto</span></Link>
+              <Link to="/"><span>Editar projeto</span></Link>
+              <Link to="/"><span>Excluir projeto</span></Link>
+            </div>
+          </div>
+        </li>
       )
       this.setState({
         ...this.state,

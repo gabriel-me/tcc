@@ -1,7 +1,6 @@
 .menu {
   width: 18rem;
   height: 100vh;
-  overflow: auto;
   background-color: #2A1B3D;
 }
 
@@ -54,4 +53,68 @@
 .name {
   margin-left: 5px;
   color: #BDBDBD;
+}
+
+.menu-icon {
+  opacity: 0;
+  cursor: pointer;
+}
+
+.menu-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 0 !important;
+}
+
+.menu-item:hover .menu-icon {
+  opacity: 1;
+}
+
+.menu-item div {
+  display: flex;
+  align-items: center;
+  height: 2rem;
+  padding: 0 1rem;
+  width: calc(15rem + 4px);
+  color: #BDBDBD;
+}
+
+.menu-dropdown {
+  position: relative;
+  padding-left: 0 !important;
+  width: auto !important;
+}
+
+.menu-dropdown:hover .menu-dropdown-option {
+  display: flex;
+}
+
+.menu-dropdown .menu-dropdown-option {
+  display: none;
+  flex-direction: column;
+  align-items: flex-start;
+  position: absolute;
+  left: 0;
+  top: 100%;
+  background-color: #FFFFFF;
+  border-radius: 3px;
+  border: 1px solid #E6E6E6;
+  padding: 0;
+  height: auto;
+  min-width: 10rem !important;
+  z-index: 9999;
+  width: auto;
+}
+
+.menu-dropdown-option span {
+  display: flex !important;
+  align-items: center;
+  padding: .5rem;
+  min-width: 10rem;
+  font-size: .9rem;
+}
+
+.menu-dropdown-option span:hover {
+  background-color: #F2F2F2;
 }
