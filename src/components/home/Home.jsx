@@ -14,8 +14,7 @@ import './home.css'
 const URL = `http://localhost:8082/user/${window.localStorage.getItem('id')}`
 
 const alignCenter = {
-  display: 'flex',
-  alignItems: 'center',
+  position: 'relative',
 }
 
 export default class Home extends React.Component {
@@ -24,6 +23,7 @@ export default class Home extends React.Component {
     this.state = { tasks: [], projects: [] }
     this.renderProjectsAndTasks = this.renderProjectsAndTasks.bind(this)
     this.dateFormat = this.dateFormat.bind(this)
+    this.doneTask = this.doneTask.bind(this)
     this.renderProjectsAndTasks()
   }
 
@@ -37,17 +37,24 @@ export default class Home extends React.Component {
     return 'Sem prazo'    
   }
 
+  doneTask(idTask) {
+    alert(idTask)
+  }
+
   renderProjectsAndTasks() {
     axios.get(URL).then(result => {
-      const tasks = result.data.tasks.map(task => 
-        <Link to="/" key={task._id}>
-          <Row key={task._id} cols={[
-            { text: <span style={alignCenter} className="name-task"><Done /> {task.name}</span>, size: '_4' },
-            { text: <Profile src={task.sender.photo} />, size: '_2' },
-            { text: task.project.name, size: '_2' },
-            { text: <ProgressBar size="60%" text={this.dateFormat(task.deadline)} />, size: '_2' }
-          ]} />
-        </Link>
+      const tasks = result.data.tasks.map((task, i) => 
+        <div key={i} className="rowTask" style={alignCenter}>
+          <span className="doneTask" onClick={() => this.doneTask(task._id)}><Done /></span>
+          <Link to="/">
+            <Row cols={[
+              { text: task.name, size: '_4' },
+              { text: <Profile src={task.sender.photo} />, size: '_2' },
+              { text: task.project.name, size: '_2' },
+              { text: <ProgressBar size="60%" text={this.dateFormat(task.deadline)} />, size: '_2' }
+            ]} />
+          </Link>
+        </div>
       )
       const projects = result.data.projects.map(project =>
         <Link key={project.id} to={`/project/${project.id}`}>

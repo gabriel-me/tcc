@@ -7,12 +7,13 @@ import ProgressBar from '../utils/chart/ProgressBar'
 import Tag from '../utils/tag/Tag'
 import Profile from '../utils/profile/Profile'
 import { Done }  from '../utils/icons/Icon'
+import {Link} from 'react-router-dom'
+import '../home/home.css'
 
 const URL = `http://localhost:8082/user/${window.localStorage.getItem('id')}`
 
 const alignCenter = {
-  display: 'flex',
-  alignItems: 'center',
+  position: 'relative',
 }
 
 export default class Tasks extends React.Component {
@@ -21,6 +22,7 @@ export default class Tasks extends React.Component {
     this.state = { tasks: [] }
     this.renderTasks = this.renderTasks.bind(this)
     this.dateFormat = this.dateFormat.bind(this)
+    this.doneTask = this.doneTask.bind(this)
     this.renderTasks()
   }
 
@@ -34,15 +36,24 @@ export default class Tasks extends React.Component {
     return 'Sem prazo'
   }
 
+  doneTask(idTask) {
+    alert(idTask)
+  }
+
   renderTasks() {
     axios.get(URL).then(result => {
-      const tasks = result.data.tasks.map(task =>
-        <Row key={task._id} cols={[
-          { text: <span style={alignCenter} className="name-task"><Done /> {task.name} </span>, size: '_4' },
-          { text: <Profile src={task.sender.photo} />, size: '_2' },
-          { text: task.project.name, size: '_2' },
-          { text: <ProgressBar size="60%" text={this.dateFormat(task.deadline)} />, size: '_2' }
-        ]} />
+      const tasks = result.data.tasks.map((task, i) =>
+        <div key={i} className="rowTask" style={alignCenter}>
+          <span className="doneTask" onClick={() => this.doneTask(task._id)}><Done /></span>
+          <Link to="/">
+            <Row cols={[
+              { text: task.name, size: '_4' },
+              { text: <Profile src={task.sender.photo} />, size: '_2' },
+              { text: task.project.name, size: '_2' },
+              { text: <ProgressBar size="60%" text={this.dateFormat(task.deadline)} />, size: '_2' }
+            ]} />
+          </Link>
+        </div>
       )
       this.setState({
         ...this.state,
