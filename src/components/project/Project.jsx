@@ -6,8 +6,15 @@ import ProgressBar from '../utils/chart/ProgressBar'
 import Profile from '../utils/profile/Profile'
 import Tag from '../utils/tag/Tag'
 import axios from 'axios'
+import { Link } from 'react-router-dom'
+import { Done } from '../utils/icons/Icon'
+import '../home/home.css'
 
 let currentURL = ''
+
+const alignCenter = {
+  position: 'relative',
+}
 
 export default class Project extends Component {
   constructor(props) {
@@ -29,15 +36,24 @@ export default class Project extends Component {
     return 'Sem prazo'
   }
 
+  doneTask(idTask) {
+    alert(idTask)
+  }
+
   renderTasks() {
     axios.get(`http://localhost:8082${currentURL}`).then(result => {
       let rows = result.data.tasks.map((task, i) =>
-        <Row key={i} cols={[
-          { text: task.name, size: '_4' },
-          { text: <Profile src={task.addressee.photo} />, size: '_2' },
-          { text: <Profile src={task.sender.photo} />, size: '_2' },
-          { text: <ProgressBar size="60%" text={this.dateFormat(task.deadline)} />, size: '_2' }
-        ]} />)
+        <div key={i} className="rowTask" style={alignCenter}>
+          <span className="doneTask" onClick={() => this.doneTask(task._id)}><Done /></span>
+          <Link to="/">
+            <Row cols={[
+              { text: task.name, size: '_4' },
+              { text: <Profile src={task.sender.photo} />, size: '_2' },
+              { text: <Profile src={task.addressee.photo} />, size: '_2' },
+              { text: <ProgressBar size="60%" text={this.dateFormat(task.deadline)} />, size: '_2' }
+            ]} />
+          </Link>
+        </div>)
       this.setState({
         ...this.state,
         tasks: rows,
