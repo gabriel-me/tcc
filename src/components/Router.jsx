@@ -8,6 +8,7 @@ import Login from '../components/login/Template'
 import Project from '../components/project/Project'
 import AddProject from '../components/project/AddProject'
 import AddUser from '../components/user/AddUser'
+import ListUser from '../components/user/ListFriend'
 import Profile from '../components/user/Profile'
 
 export default () => (
@@ -22,6 +23,7 @@ export default () => (
       <Route path="/task/:id" component={Task} />
       <Route path="/project/add" exact component={AddProject} />
       <Route path="/project/:id" component={Project} />
+      <Route path="/user" exact component={ListUser} />
       <Route path="/user/add" exact component={AddUser} />
       <Route path="/user/:id" component={Profile} />
     </ Switch>
