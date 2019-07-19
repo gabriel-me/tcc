@@ -3,7 +3,10 @@ import Button from '../utils/button/Button'
 import Input from '../utils/input/Input'
 import { Link } from 'react-router-dom'
 import { Close } from '../utils/icons/Icon'
+import axios from 'axios'
 import './user.css'
+
+const URL = 'http://localhost:8082/user/add'
 
 export default class Project extends Component {
   constructor(props) {
@@ -16,7 +19,13 @@ export default class Project extends Component {
   submit(e) { e.preventDefault() }
 
   addUser() {
-    
+    const body = {
+      id: window.localStorage.getItem('id'),
+      email: document.querySelector(`input[name='email']`).value
+    }
+    axios.post(URL, body).then(result => {
+      console.log(result)
+    })
   }
 
   render() {
