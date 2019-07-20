@@ -1,14 +1,62 @@
 import React, { Component } from 'react'
 import './input.css'
+import axios from 'axios'
 
 export default class Input extends Component {
   constructor(props) {
     super(props)
     this.state = {
       value: this.props.value || '',
-      style: { width: this.props.width || '25rem' }
+      style: { 
+        position: 'relative', 
+        width: this.props.width || '25rem' 
+      },
+      dropdown: '',
+      valueHidden: ''
     }
     this.valueState = this.valueState.bind(this)
+    this.renderDropdown = this.renderDropdown.bind(this)
+    this.closeDropdown = this.closeDropdown.bind(this)
+    this.selected = this.selected.bind(this)
+  }
+
+  selected(id, name) {
+    this.setState({
+      ...this.state,
+      valueHidden: id,
+      value: name
+    })
+  }
+
+  renderDropdown(data) {
+    return data.map((item, i) => 
+      <div key={i} onClick={
+        () => this.selected(item._id, `${item.name || ''} ${item.lastName || ''}`)}>
+        {`${item.name || ''} ${item.lastName || ''}`}
+      </div>
+    )
+  }
+
+  queryAPI(URL) {
+    axios.get(`http://localhost:8082/${URL}`).then(result => {
+      let data = result.data
+      this.setState({
+        ...this.state,
+        dropdown: 
+          <div className="dropdownInput">
+            {this.renderDropdown(data)}
+          </div>
+      })
+    })
+  }
+
+  closeDropdown() {
+    setTimeout(() => {
+      this.setState({
+        ...this.state,
+        dropdown: ''
+      })
+    }, 500);
   }
 
   valueState() {
@@ -17,6 +65,8 @@ export default class Input extends Component {
       ...this.state,
       value: btn.value
     })
+    if(this.props.url)
+      this.queryAPI(this.props.url)
   }
 
   render() {
@@ -30,8 +80,15 @@ export default class Input extends Component {
           required={this.props.required ? 'required' : ''}
           autoFocus={this.props.autoFocus ? 'autoFocus' : ''}
           value={this.state.value}
-          onChange={this.valueState} />
+          onChange={this.valueState}
+          onBlur={this.closeDropdown} />
         <span>{this.props.label || ''}</span>
+        {this.props.url ? 
+          <input
+            type="hidden"
+            value={this.state.valueHidden || ''}
+          ></input> : ''}
+        {this.state.dropdown}
       </label>
     )
   }

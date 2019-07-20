@@ -30,10 +30,13 @@ export default class Project extends Component {
     const values = Form.getFormValues('form')
     const requestBody = {
       'name': values[0],
-      'boss': values[1],
-      'deadline': values[2],
-      'description': values[3],
-      'private': values[4],
+      'boss': {
+        id: values[1],
+        name: values[2]
+      },
+      'deadline': values[3],
+      'description': values[4],
+      'private': values[5],
       'color': this.state.color,
       'members': {
         id: window.localStorage.getItem('id'),
@@ -64,7 +67,7 @@ export default class Project extends Component {
                 <Input name="name" label="Nome do projeto" width="100%" required="required" />
               </section>
               <section>
-                <Input name="boss" label="Responsável pelo projeto" width="49%" />
+                <Input name="boss" url="user" label="Responsável pelo projeto" width="49%" />
                 <Date name="deadline" label="Prazo de entrega" width="49%" />
               </section>
               <section>

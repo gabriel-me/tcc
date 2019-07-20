@@ -19,14 +19,14 @@ export default class AddTask extends Component {
     const URL = `http://localhost:8082/task`
     const values = Form.getFormValues('form')
     const requestBody = {
-      'id': values[3],
+      'id': values[5],
       'name': values[0],
       'addressee': {
-        id: values[1],
+        id: values[2],
         name: values[1]
       },
-      'deadline': values[2],
-      'description': values[4],
+      'deadline': values[3],
+      'description': values[6],
       'sender': {
         id: window.localStorage.getItem('id'),
         name: `${window.localStorage.getItem('name')}
@@ -58,11 +58,11 @@ export default class AddTask extends Component {
                 <Input name="name" label="Nome da tarefa" width="100%" required="required" />
               </section>
               <section>
-                <Input name="addressee" label="Responsável pela tarefa" width="49%" />
+                <Input name="addressee" url="user" label="Responsável pela tarefa" width="49%" />
                 <Date name="deadline" label="Prazo de entrega" width="49%" />
               </section>
               <section>
-                <Input name="project" label="Projeto que essa tarefa pertence" width="100%" />
+                <Input name="project" url="project" label="Projeto que essa tarefa pertence" width="100%" />
               </section>
               <section>
                 <Input name="description" label="Descrição" width="100%" />
