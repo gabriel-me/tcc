@@ -9,6 +9,7 @@ import Project from '../utils/quadrat/Quadrat'
 import { Message } from '../utils/alert/Alert'
 import Profile from '../utils/profile/Profile'
 import { Done } from '../utils/icons/Icon'
+import { brazilFormat } from '../utils/Date'
 import './home.css'
 
 const URL = `http://localhost:8082/user/${window.localStorage.getItem('id')}`
@@ -22,19 +23,8 @@ export default class Home extends React.Component {
     super(props)
     this.state = { tasks: [], projects: [] }
     this.renderProjectsAndTasks = this.renderProjectsAndTasks.bind(this)
-    this.dateFormat = this.dateFormat.bind(this)
     this.doneTask = this.doneTask.bind(this)
     this.renderProjectsAndTasks()
-  }
-
-  dateFormat(date) {
-    if (date) {
-      date = new Date(date)
-      const day = date.getDate().toString().padStart('2', '0')
-      const month = date.getMonth().toString().padStart('2', '0')
-      return `${day}/${month}`
-    }
-    return 'Sem prazo'    
   }
 
   doneTask(idTask) {
@@ -51,14 +41,14 @@ export default class Home extends React.Component {
               { text: task.name, size: '_4' },
               { text: <Profile src={task.sender.photo} />, size: '_2' },
               { text: task.project.name, size: '_2' },
-              { text: <ProgressBar size="60%" text={this.dateFormat(task.deadline)} />, size: '_2' }
+              { text: <ProgressBar size="60%" text={brazilFormat(task.deadline) || 'Sem prazo'} />, size: '_2' }
             ]} />
           </Link>
         </div>
       )
       const projects = result.data.projects.map(project =>
         <Link key={project.id} to={`/project/${project.id}`}>
-          <Project color={project.color} date={this.dateFormat(project.deadline)} text={project.name} />
+          <Project color={project.color} date={brazilFormat(project.deadline) || 'Sem prazo'} text={project.name} />
         </Link>
       )
       this.setState({
