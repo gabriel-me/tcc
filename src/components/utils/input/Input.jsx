@@ -51,12 +51,14 @@ export default class Input extends Component {
   }
 
   closeDropdown() {
-    setTimeout(() => {
-      this.setState({
-        ...this.state,
-        dropdown: ''
-      })
-    }, 500);
+    if (this.props.url) {
+      setTimeout(() => {
+        this.setState({
+          ...this.state,
+          dropdown: ''
+        })
+      }, 500);
+    }
   }
 
   valueState() {
