@@ -5,6 +5,7 @@ import axios from 'axios'
 import { Link } from 'react-router-dom'
 import Form from '../utils/form/Form'
 import { Close } from '../utils/icons/Icon'
+import DateFormat from '../utils/Date'
 
 export default class AddTask extends Component {
   constructor(props) {
@@ -25,7 +26,7 @@ export default class AddTask extends Component {
         id: values[2],
         name: values[1]
       },
-      'deadline': values[3],
+      'deadline': DateFormat(values[3]),
       'description': values[6],
       'sender': {
         id: window.localStorage.getItem('id'),

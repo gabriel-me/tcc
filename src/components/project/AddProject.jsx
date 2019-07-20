@@ -5,6 +5,7 @@ import axios from 'axios'
 import { Link } from 'react-router-dom'
 import Form from '../utils/form/Form'
 import { Close } from '../utils/icons/Icon'
+import DateFormat from '../utils/Date'
 import './add-project.css'
 
 export default class Project extends Component {
@@ -34,7 +35,7 @@ export default class Project extends Component {
         id: values[1],
         name: values[2]
       },
-      'deadline': values[3],
+      'deadline': DateFormat(values[3]),
       'description': values[4],
       'private': values[5],
       'color': this.state.color,
