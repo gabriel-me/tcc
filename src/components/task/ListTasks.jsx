@@ -13,6 +13,9 @@ import '../home/home.css'
 
 const URL = `http://localhost:8082/user/${window.localStorage.getItem('id')}`
 
+let selectedTags = []
+let notRun = true
+
 const alignCenter = {
   position: 'relative',
 }
@@ -20,36 +23,73 @@ const alignCenter = {
 export default class Tasks extends React.Component {
   constructor(props) {
     super(props)
-    this.state = { tasks: [] }
+    this.state = { tasks: [], tags: [] }
+    this.selectedTag = this.selectedTag.bind(this)
+    this.getDataUser = this.getDataUser.bind(this)
     this.renderTasks = this.renderTasks.bind(this)
     this.doneTask = this.doneTask.bind(this)
-    this.renderTasks()
+    this.renderProjectsTags = this.renderProjectsTags.bind(this)
+    this.getDataUser()
+  }
+
+  getDataUser() {
+    axios.get(URL).then(user => {
+      if (notRun) {
+        selectedTags = user.data.tasks.map(task => task.project.id)
+        notRun = false
+      }
+      this.renderProjectsTags(user.data)
+      this.renderTasks(user.data)
+    })
+  }
+
+  selectedTag(projectId) {
+    let projectTag = selectedTags.filter(id => id === projectId)
+    if (projectTag.length === 0) 
+      selectedTags.push(projectId)
+    else 
+      selectedTags = selectedTags.filter(id => id !== projectId)
+    this.getDataUser()
+  }
+
+  renderProjectsTags(data) {
+    const tags = data.projects.map((project, i) => 
+      <span key={i} onClick={ () => this.selectedTag(project.id)}>
+        <Tag selected="selected" text={project.name} />
+      </span>
+    ) 
+    this.setState({
+      ...this.state,
+      tags: tags
+    })
+  }
+
+  renderTasks(data) {
+    const tasks = data.tasks.map((task, i) =>
+      <React.Fragment key={i}>
+        {(selectedTags.indexOf(task.project.id) !== -1) ?
+          <div className="rowTask" style={alignCenter} >
+            <span className="doneTask" onClick={() => this.doneTask(task._id)}><Done /></span>
+            <Link to="/">
+              <Row cols={[
+                { text: task.name, size: '_4' },
+                { text: <Profile src={task.sender.photo} />, size: '_2' },
+                { text: task.project.name, size: '_2' },
+                { text: <ProgressBar size="60%" text={brazilFormat(task.deadline) || 'Sem prazo'} />, size: '_2' }
+              ]} />
+            </Link>
+          </div>
+        : '' }
+      </React.Fragment>
+    )
+    this.setState({
+      ...this.state,
+      tasks: tasks
+    })
   }
 
   doneTask(idTask) {
     alert(idTask)
-  }
-
-  renderTasks() {
-    axios.get(URL).then(result => {
-      const tasks = result.data.tasks.map((task, i) =>
-        <div key={i} className="rowTask" style={alignCenter}>
-          <span className="doneTask" onClick={() => this.doneTask(task._id)}><Done /></span>
-          <Link to="/">
-            <Row cols={[
-              { text: task.name, size: '_4' },
-              { text: <Profile src={task.sender.photo} />, size: '_2' },
-              { text: task.project.name, size: '_2' },
-              { text: <ProgressBar size="60%" text={brazilFormat(task.deadline) || 'Sem prazo'} />, size: '_2' }
-            ]} />
-          </Link>
-        </div>
-      )
-      this.setState({
-        ...this.state,
-        tasks: tasks
-      })
-    })
   }
 
   render() {
@@ -58,10 +98,7 @@ export default class Tasks extends React.Component {
         <Menu />
         <Header title="Minhas tarefas" />
         <main>
-          <Tag text="Example" />
-          <Tag text="Example" />
-          <Tag text="Example" />
-          <Tag text="Example" />
+          {this.state.tags}
           <Row position="first" cols={[
             { text: 'Tarefa', size: '_4' },
             { text: 'Remetente', size: '_2' },
