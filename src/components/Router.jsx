@@ -10,6 +10,7 @@ import AddProject from '../components/project/AddProject'
 import AddUser from '../components/user/AddUser'
 import ListUser from '../components/user/ListFriend'
 import Profile from '../components/user/Profile'
+import Timeline from '../components/notification/Timeline'
 
 export default () => (
   <BrowserRouter>
@@ -26,6 +27,7 @@ export default () => (
       <Route path="/user" exact component={ListUser} />
       <Route path="/user/add" exact component={AddUser} />
       <Route path="/user/:id" component={Profile} />
+      <Route ppath="/notification" component={Timeline} />
     </ Switch>
   </ BrowserRouter>
 )
