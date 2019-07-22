@@ -54,7 +54,7 @@ export default class Menu extends Component {
         </section>
         <section>
           <header>
-            <h4>Conversas</h4>
+            <h4>Contatos</h4>
             <Link to="/user/add"><Add color="#BDBDBD" /></Link>
           </header>
           <Users />
