@@ -49,7 +49,7 @@ export default class Tasks extends React.Component {
                 <Profile src={friend.photo} /> 
                 <span style={marginName}>{friend.name} {friend.lastName}</span>
               </div>, size: '_6' },
-            { text: 'das', size: '_2' },
+            { text: friend.email, size: '_4' },
             { text: friend.status, size: '_2' },
           ]} />
         </Link>
@@ -69,7 +69,7 @@ export default class Tasks extends React.Component {
           <Tag text="Example" />
           <Row position="first" cols={[
             { text: 'Usuário', size: '_6' },
-            { text: 'Função', size: '_2' },
+            { text: 'Email', size: '_4' },
             { text: 'Status', size: '_2' },
           ]} />
           {this.renderFriends()}
