@@ -2,11 +2,15 @@
   justify-content: flex-end;
 }
 
-.color-container {
-  width: 49%;
+.color-container, .color-container div {
+  width: auto;
   display: flex;
   align-items: center;
   justify-content: flex-start;
+}
+
+.color-container div:hover .project-color {
+  opacity: .5;
 }
 
 .color-container p {
@@ -14,10 +18,14 @@
   color: #6E6E6E
 }
 
-.color-container .project-color {
+.color-container div .project-color {
   width: 22px;
   height: 22px;
   margin-left: 5px;
-  border-radius: 100%;
+  border-radius: 5px;
   cursor: pointer;
+}
+
+.color-container div .project-color:hover {
+  opacity: 1;
 }
