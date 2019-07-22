@@ -61,7 +61,7 @@ export default class Tasks extends React.Component {
     return (
       <div className="content">
         <Menu />
-        <Header title="Minhas tarefas" />
+        <Header title="Usuários" />
         <main>
           <Tag text="Example" />
           <Tag text="Example" />
