@@ -5,7 +5,7 @@ import Status from '../status/Status'
 import Projects from '../../project/ListProject'
 import Users from '../../user/ListMessage'
 import { Link } from 'react-router-dom'
-import Add, { Done, Home, Person, Notication, MenuHamburger } from '../icons/Icon'
+import Add, { Done, Home, Person, Notication, MenuHamburger, BarChart } from '../icons/Icon'
 import './menu.css'
 
 const URL = `http://localhost:8082/user/${window.localStorage.getItem('id')}`
@@ -50,6 +50,7 @@ export default class Menu extends Component {
             <Link to="/task"><li><Done color="#BDBDBD" /> Minhas tarefas</li></Link>
             <Link to="/notification"><li><Notication color="#BDBDBD" /> Caixa de entrada</li></Link>
             <Link to="/user"><li><Person color="#BDBDBD" /> Usuários</li></Link>
+            <Link to="/report"><li><BarChart color="#BDBDBD" /> Relatórios</li></Link>
           </ul>
         </section>
         <section>
