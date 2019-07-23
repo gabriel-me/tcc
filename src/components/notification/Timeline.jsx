@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import axios from 'axios'
 import { Close } from '../utils/icons/Icon'
-import { brazilFormat } from '../utils/Date'
 import { Link } from 'react-router-dom'
 import Profile from '../utils/profile/Profile'
 import './notification.css'
@@ -14,6 +13,7 @@ export default class extends Component {
     this.state = { notifications: [] }
     this.getNotifications = this.getNotifications.bind(this)
     this.renderNotifications = this.renderNotifications.bind(this)
+    this.dateNotification = this.dateNotification.bind(this)
     this.getNotifications()
   }
 
@@ -21,6 +21,13 @@ export default class extends Component {
     axios.get(URL).then(result => {
       this.renderNotifications(result.data.notifications)
     })
+  }
+
+  dateNotification(date) {
+    date = new Date(date)
+    let day = date.getDate().toString().padStart(2, '0')
+    let month = date.getMonth().toString().padStart(2, '0')
+    return `${day}/${month}`
   }
 
   renderNotifications(notifications) {
@@ -33,7 +40,7 @@ export default class extends Component {
         <div>
           <h3>{notification.message || ''}</h3>
         </div>
-        <time className="opacity">{brazilFormat(notification.date) || ''}</time>
+        <time className="opacity">{this.dateNotification(notification.date) || ''}</time>
       </section>
     )
     this.setState({
