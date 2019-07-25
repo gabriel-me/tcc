@@ -41,7 +41,9 @@ export default class Project extends Component {
       'color': this.state.color,
       'members': {
         id: window.localStorage.getItem('id'),
-        name: window.localStorage.getItem('name')
+        name: window.localStorage.getItem('name'),
+        photo: window.localStorage.getItem('photo'),
+        profession: window.localStorage.getItem('profession')
       }
     }
 
