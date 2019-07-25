@@ -53,6 +53,12 @@ export default class Project extends Component {
       'about': values[4]
     }
 
+    window.localStorage.setItem('name', values[0])
+    window.localStorage.setItem('lastName', values[1])
+    window.localStorage.setItem('profession', values[2])
+    window.localStorage.setItem('status', values[3])
+    window.localStorage.setItem('about', values[4])
+
     axios.post(changeProfileURL, body).then(result => {
       console.log(result)
     }).catch(err => {
@@ -66,8 +72,9 @@ export default class Project extends Component {
     const image = document.querySelector("input[name='img']")
     body.append("img", image.files[0])
     axios.post(changeProfilePhotoURL, body, header).then(() => {
-      document.getElementById('photo').src = 
-        `http://localhost:8082/user/upload/${window.localStorage.getItem('id')}`
+      let newPhoto = `http://localhost:8082/user/upload/${window.localStorage.getItem('id')}`
+      document.getElementById('photo').src = newPhoto
+      window.localStorage.setItem('photo', newPhoto)
     }).catch(err => {
       console.log(err)
     })
