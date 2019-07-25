@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom'
 import Form from '../utils/form/Form'
 import { Close } from '../utils/icons/Icon'
 import DateFormat from '../utils/Date'
-import './add-project.css'
+import './project.css'
 
 export default class Project extends Component {
   constructor(props) {

@@ -47,7 +47,7 @@ export default class ListProject extends Component {
               <MoreHoriz color="#BDBDBD" />
             </span>
             <div className="menu-dropdown-option">
-              <Link to="/"><span>Visualizar projeto</span></Link>
+              <Link to={`/project/member/${project.id}`}><span>Integrantes do projeto</span></Link>
               <Link to="/"><span>Concluir projeto</span></Link>
               <Link to="/"><span>Editar projeto</span></Link>
               <Link to="/"><span>Excluir projeto</span></Link>
