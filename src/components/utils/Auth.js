@@ -9,6 +9,9 @@ export default (idUser, token) => {
       local.setItem('email', result.data.email || '')
       local.setItem('name', result.data.name || '')
       local.setItem('lastName', result.data.lastName || '')
+      local.setItem('about', result.data.about || '')
+      local.setItem('profession', result.data.profession || '')
+      local.setItem('photo', result.data.photo || '')
       local.setItem('createAt', result.data.createAt || '')
       local.setItem('token', token || '')
       resolve({
