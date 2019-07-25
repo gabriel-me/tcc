@@ -31,8 +31,8 @@ export default class extends Component {
   }
 
   renderNotifications(notifications) {
-    notifications = notifications.map(notification => 
-      <section className="notification">
+    notifications = notifications.map((notification, i) => 
+      <section className="notification" key={i}>
         <div>
           <Profile src={notification.sender.photo} /> 
           <h4 className="opacity">{notification.sender.name || ''}</h4>
