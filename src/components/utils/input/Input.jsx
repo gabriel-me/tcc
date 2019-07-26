@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { Link } from 'react-router-dom'
 import './input.css'
 import axios from 'axios'
 
@@ -16,6 +17,7 @@ export default class Input extends Component {
     }
     this.valueState = this.valueState.bind(this)
     this.renderDropdown = this.renderDropdown.bind(this)
+    this.renderDropdownAll = this.renderDropdownAll.bind(this)
     this.closeDropdown = this.closeDropdown.bind(this)
     this.selected = this.selected.bind(this)
   }
@@ -37,14 +39,48 @@ export default class Input extends Component {
     )
   }
 
+  renderDropdownAll(data) {
+    return data.map((item, i) => {
+      let link = ''
+      if (item.lastName) {
+        link = `/user/${item.id}`
+      } else if (item.color) {
+        link = `/project/${item.id}`
+      } else {
+        link = `/task/${item.id}`
+      }
+      return <Link to={link}>
+        <div key={i} onClick={
+          () => this.selected(item._id, `${item.name || ''} ${item.lastName || ''}`)}>
+          {`${item.name || ''} ${item.lastName || ''}`}
+        </div>
+      </Link>
+    })
+  }
+
   queryAPI(URL) {
     axios.get(`http://localhost:8082/${URL}`).then(result => {
-      let data = result.data
+      let data = []
+      if (this.props.class) {
+        result.data.friends.forEach(friend => {
+          data.push(friend)
+        })
+        result.data.projects.forEach(project => {
+          project.name = `Projeto - ${project.name}`
+          data.push(project)
+        })
+        result.data.tasks.forEach(task => {
+          data.push(task)
+        })
+      } else {
+        data = result.data
+      }
+      
       this.setState({
         ...this.state,
         dropdown: 
           <div className="dropdownInput">
-            {this.renderDropdown(data)}
+            {this.props.class ? this.renderDropdownAll(data) : this.renderDropdown(data) }
           </div>
       })
     })
@@ -73,8 +109,8 @@ export default class Input extends Component {
 
   render() {
     return (
-      <label style={this.state.style} className="matter-textfield-outlined matter-primary">
-        <span className="matter-tooltip"></span>
+      <label style={this.state.style} className={this.props.class || 'matter-textfield-outlined matter-primary'}>
+        {this.props.class ? '' : <span className="matter-tooltip"></span>}
         <input
           name={this.props.name || ''}
           type={this.props.type || 'text'}

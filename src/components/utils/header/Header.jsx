@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { Outline as Button } from '../button/Button'
-import { Search } from '../input/Input'
+import Input from '../input/Input'
 import { Link } from 'react-router-dom'
 import './header.css'
 
@@ -31,7 +31,12 @@ export default class Header extends Component {
               <Link to="/user/add"><span className={`${this.state.ulButton}`}>Usuário</span></Link>
             </div>
           </div>
-          <Search label="Buscar projeto, tarefa ou contato" option={this.props.option || ''} />
+          <Input
+            name="search"
+            type="text"
+            label="Buscar projeto, tarefa ou contato"
+            class="matter-textfield-filled matter-primary"
+            width="30rem" url={`user/${window.localStorage.getItem('id')}`} />
         </div>
       </header>
     )
