@@ -46,11 +46,14 @@ export default class Home extends React.Component {
           </Link>
         </div>
       )
-      const projects = result.data.projects.map(project =>
+      let projects = result.data.projects.map(project =>
         <Link key={project.id} to={`/project/${project.id}`}>
           <Project color={project.color} date={brazilFormat(project.deadline) || 'Sem prazo'} text={project.name} />
         </Link>
       )
+        
+      projects = projects.filter((project, i) => i < 6)
+
       this.setState({
         ...this.state,
         tasks: tasks,
