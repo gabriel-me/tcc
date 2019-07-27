@@ -13,22 +13,34 @@ const styleSpan = {
   borderRadius: '1.5px'
 }
 
+const pointer = { cursor: 'pointer' }
+
 export default class ListProject extends Component {
   constructor(props) {
     super(props)
     this.state = { projects: [] }
     this.getProjects = this.getProjects.bind(this)
     this.renderProjects = this.renderProjects.bind(this)
+    this.doneProject = this.doneProject.bind(this)
     this.renderProjects()
   }
 
   getProjects() {
     return new Promise((resolve, reject) => {
       axios.get(URL).then(result => {
-        resolve(result.data.projects)
+        const projects = result.data.projects.filter(project => project.done === false)
+        resolve(projects)
       }).catch(err => {
         reject(err)
       })
+    })
+  }
+  
+  doneProject(projectId) {
+    const URL = 'http://localhost:8082/project'
+    const body = { projectId: projectId, userId: window.localStorage.getItem('id') }
+    axios.put(URL, body).then(result => {
+      this.renderProjects()
     })
   }
 
@@ -48,7 +60,7 @@ export default class ListProject extends Component {
             </span>
             <div className="menu-dropdown-option">
               <Link to={`/project/member/${project.id}`}><span>Integrantes do projeto</span></Link>
-              <Link to="/"><span>Concluir projeto</span></Link>
+              <span style={pointer} onClick={() => this.doneProject(project.id)}>Concluir projeto</span>
               <Link to="/"><span>Editar projeto</span></Link>
               <Link to="/"><span>Excluir projeto</span></Link>
             </div>
