@@ -62,7 +62,7 @@ export default class ListProject extends Component {
               <Link to={`/project/member/${project.id}`}><span>Integrantes do projeto</span></Link>
               <span style={pointer} onClick={() => this.doneProject(project.id)}>Concluir projeto</span>
               <Link to="/"><span>Editar projeto</span></Link>
-              <Link to="/"><span>Excluir projeto</span></Link>
+              <span style={pointer} onClick={() => this.doneProject(project.id)}>Excluir projeto</span>
             </div>
           </div>
         </li>
