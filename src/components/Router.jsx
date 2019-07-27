@@ -10,6 +10,7 @@ import AddProject from '../components/project/AddProject'
 import ProjectMember from '../components/project/ProjectMember'
 import AddMember from '../components/project/AddMember'
 import AddUser from '../components/user/AddUser'
+import Config from '../components/user/Config'
 import ListUser from '../components/user/ListFriend'
 import Profile from '../components/user/Profile'
 import Timeline from '../components/notification/Timeline'
@@ -21,6 +22,7 @@ export default () => (
       <Route path="/signin" component={Login} />
       <Route path="/signup" component={Login} />
       <Route path="/home" component={Home} />
+      <Route path="/config" exact component={Config} />
       <Route path="/task" exact component={ListTasks} />
       <Route path="/task/add" exact component={AddTask} />
       <Route path="/task/:id" component={Task} />
