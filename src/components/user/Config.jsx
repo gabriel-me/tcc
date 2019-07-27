@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React from 'react'
 import { Switch } from '../utils/input/Input'
 import { Link } from 'react-router-dom'
 import { Close } from '../utils/icons/Icon'
