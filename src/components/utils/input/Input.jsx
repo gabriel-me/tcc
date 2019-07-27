@@ -66,7 +66,7 @@ export default class Input extends Component {
           data.push(friend)
         })
         result.data.projects.forEach(project => {
-          project.name = `Projeto - ${project.name}`
+          project.name = `${project.name}`
           data.push(project)
         })
         result.data.tasks.forEach(task => {
