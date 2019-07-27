@@ -75,7 +75,7 @@ export default class Tasks extends React.Component {
                 { text: task.name, size: '_4' },
                 { text: <Profile src={task.sender.photo} />, size: '_2' },
                 { text: task.project.name, size: '_2' },
-                { text: <ProgressBar size="60%" text={brazilFormat(task.deadline) || 'Sem prazo'} />, size: '_2' }
+                { text: <ProgressBar initialTime={task.createAt} finalTime={task.deadline} text={brazilFormat(task.deadline) || 'Sem prazo'} />, size: '_2' }
               ]} />
             </Link>
           </div>
