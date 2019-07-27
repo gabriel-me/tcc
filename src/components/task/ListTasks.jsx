@@ -67,7 +67,7 @@ export default class Tasks extends React.Component {
   renderTasks(data) {
     const tasks = data.tasks.map((task, i) =>
       <React.Fragment key={i}>
-        {(selectedTags.indexOf(task.project.id) !== -1) ?
+        {(selectedTags.indexOf(task.id) !== -1) ?
           <div className="rowTask" style={alignCenter} >
             <span className="doneTask" onClick={() => this.doneTask(task._id)}><Done /></span>
             <Link to="/">
