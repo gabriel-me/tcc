@@ -21,6 +21,8 @@ export default class extends Component {
     this.getUser = this.getUser.bind(this)
     this.getProject = this.getProject.bind(this)
     this.addMember = this.addMember.bind(this)
+    this.getProjectName = this.getProjectName.bind(this)
+    this.getProjectName()
     this.getUser()
   }
 
@@ -53,12 +55,20 @@ export default class extends Component {
   } 
 
   getProject() {
-    console.log(projectURL)
     return new Promise((resolve, reject) => {
       axios.get(projectURL).then(project => {
         resolve(project.data.members)
       }).catch(err => {
         reject(err)
+      })
+    })
+  }
+
+  getProjectName() {
+    axios.get(projectURL).then(project => {
+      this.setState({
+        ...this.state,
+        projectName: project.data.name
       })
     })
   }
@@ -86,7 +96,7 @@ export default class extends Component {
         <div className="form-container">
           <div className="form-content">
             <header>
-              <h1>Adicionar integrantes em {this.state.projectName}</h1>
+              <h1>Integrantes em {this.state.projectName}</h1>
             </header>
             {this.state.friends}
           </div>
