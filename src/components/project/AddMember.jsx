@@ -96,7 +96,7 @@ export default class extends Component {
         <div className="form-container">
           <div className="form-content">
             <header>
-              <h1>Integrantes em {this.state.projectName}</h1>
+              <h1>Adicionar em {this.state.projectName}</h1>
             </header>
             {this.state.friends}
           </div>
