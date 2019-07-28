@@ -63,10 +63,6 @@ export default class Tasks extends React.Component {
         <Menu />
         <Header title="Usuários" />
         <main>
-          <Tag text="Example" />
-          <Tag text="Example" />
-          <Tag text="Example" />
-          <Tag text="Example" />
           <Row position="first" cols={[
             { text: 'Usuário', size: '_6' },
             { text: 'Email', size: '_4' },
