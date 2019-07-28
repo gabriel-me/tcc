@@ -9,6 +9,10 @@ import './project.css'
 let currentURL = ''
 let idProject = ''
 
+const styleSection = {
+  flexDirection: 'column'
+}
+
 export default class extends Component {
   constructor(props) {
     super(props)
@@ -62,7 +66,7 @@ export default class extends Component {
                 <Button label="Novo integrante" />
               </Link>
             </header>
-            <section>{this.state.members}</section>
+            <section style={styleSection}>{this.state.members}</section>
           </div>
         </div>
       </div>
