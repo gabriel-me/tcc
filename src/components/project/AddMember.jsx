@@ -7,43 +7,58 @@ import axios from 'axios'
 import './project.css'
 
 const URL = `http://localhost:8082/user/${window.localStorage.getItem('id')}`
-let URLProject = `http://localhost:8082/project/member/`
-let idProject = ''
+let projectURL = ''
+let memberURL = `http://localhost:8082/project/member`
+let projectId = ''
 
 export default class extends Component {
   constructor(props) {
     super(props)
     this.state = { friends: [], projectName: '' }
-    idProject = this.props.location.pathname
-    idProject = idProject.replace('/project/member/add/', '')
+    projectId = this.props.location.pathname
+    projectId = projectId.replace('/project/member/add/', '')
+    projectURL = `http://localhost:8082/project/${projectId}`
     this.getUser = this.getUser.bind(this)
     this.getProject = this.getProject.bind(this)
     this.addMember = this.addMember.bind(this)
     this.getUser()
-    this.getProject()
   }
 
-  addMember(friend) {
+  addMember(member) {
     const body = {
-      friend: friend,
-      project: idProject
+      id: member.id,
+      name: `${member.name} ${member.lastName}`,
+      photo: member.photo,
+      profession: member.profession,
+      projectId: projectId
     }
-    axios.post(URLProject, body).then(result => {
-      console.log(result.data)
+    axios.post(memberURL, body).then(result => {
+      this.getUser()
     })
   }
 
   getUser() {
     axios.get(URL).then(user => {
-      this.renderFriends(user.data.friends)
+      this.getProject().then(members => {
+        let peoples = []
+        let friends = user.data.friends
+        friends.forEach(friend => {
+          let people = members.filter(member => member.id === friend.id)
+          if (people.length === 0) 
+            peoples.push(friend)
+        })
+        this.renderFriends(peoples)
+      })
     })
   } 
 
   getProject() {
-    axios.get(URLProject).then(project => {
-      this.setState({
-        ...this.state,
-        projectName: project.data.name
+    console.log(projectURL)
+    return new Promise((resolve, reject) => {
+      axios.get(projectURL).then(project => {
+        resolve(project.data.members)
+      }).catch(err => {
+        reject(err)
       })
     })
   }
@@ -53,7 +68,7 @@ export default class extends Component {
       <section key={i} className='friend'>
         <div>
           <Profile src={friend.photo} />
-          <h4 className="opacity">{`${friend.name} ${friend.lastName}` || ''}</h4>
+          <h4 className="opacity">{`${friend.name}` || ''}</h4>
         </div>
         <span onClick={() => this.addMember(friend)}><Button /></span>
       </section>
