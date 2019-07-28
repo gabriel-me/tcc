@@ -19,7 +19,11 @@ export default class extends Component {
 
   getNotifications() {
     axios.get(URL).then(result => {
-      this.renderNotifications(result.data.notifications)
+      let notifications = [] 
+      let length = [...result.data.notifications].length
+      for (let i = length - 1; i >= 0; i--) 
+        notifications.push(result.data.notifications[i])
+      this.renderNotifications(notifications)
     })
   }
 
