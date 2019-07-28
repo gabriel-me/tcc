@@ -27,8 +27,12 @@ export default class Home extends React.Component {
     this.renderProjectsAndTasks()
   }
 
-  doneTask(idTask) {
-    alert(idTask)
+  doneTask(taskId) {
+    const URL = 'http://localhost:8082/task'
+    const body = { taskId: taskId, userId: window.localStorage.getItem('id') }
+    axios.put(URL, body).then(result => {
+      this.renderProjectsAndTasks()
+    })
   }
 
   renderProjectsAndTasks() {

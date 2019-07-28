@@ -11,6 +11,7 @@ import { Done } from '../utils/icons/Icon'
 import '../home/home.css'
 
 let currentURL = ''
+let projectId = ''
 
 const alignCenter = {
   position: 'relative',
@@ -20,9 +21,11 @@ export default class Project extends Component {
   constructor(props) {
     super(props)
     currentURL = this.props.location.pathname
+    projectId = currentURL.replace('/project/', '')
     this.state = { tasks: [], project: '' }
     this.renderTasks = this.renderTasks.bind(this)
     this.dateFormat = this.dateFormat.bind(this)
+    this.doneTask = this.doneTask.bind(this)
     this.renderTasks()
   }
 
@@ -36,15 +39,23 @@ export default class Project extends Component {
     return 'Sem prazo'
   }
 
-  doneTask(idTask) {
-    alert(idTask)
+  doneTask(taskName) {
+    const URL = 'http://localhost:8082/project/task'
+    const body = { 
+      taskName: taskName, 
+      userId: window.localStorage.getItem('id'), 
+      projectId: projectId
+    }
+    axios.put(URL, body).then(result => {
+      this.renderTasks()
+    })
   }
 
   renderTasks() {
     axios.get(`http://localhost:8082${currentURL}`).then(result => {
       let rows = result.data.tasks.map((task, i) =>
         <div key={i} className="rowTask" style={alignCenter}>
-          <span className="doneTask" onClick={() => this.doneTask(task._id)}><Done /></span>
+          <span className="doneTask" onClick={() => this.doneTask(task.name)}><Done /></span>
           <Link to="/">
             <Row cols={[
               { text: task.name, size: '_4' },

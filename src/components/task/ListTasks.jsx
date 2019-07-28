@@ -88,8 +88,12 @@ export default class Tasks extends React.Component {
     })
   }
 
-  doneTask(idTask) {
-    alert(idTask)
+  doneTask(taskId) {
+    const URL = 'http://localhost:8082/task'
+    const body = { taskId: taskId, userId: window.localStorage.getItem('id') }
+    axios.put(URL, body).then(result => {
+      this.getDataUser()
+    })
   }
 
   render() {
