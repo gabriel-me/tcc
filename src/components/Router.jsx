@@ -7,6 +7,7 @@ import ListTasks from '../components/task/ListTasks'
 import Login from '../components/login/Template'
 import Project from '../components/project/Project'
 import AddProject from '../components/project/AddProject'
+import EditProject from '../components/project/EditProject'
 import ProjectMember from '../components/project/ProjectMember'
 import AddMember from '../components/project/AddMember'
 import AddUser from '../components/user/AddUser'
@@ -27,6 +28,7 @@ export default () => (
       <Route path="/task/add" exact component={AddTask} />
       <Route path="/task/:id" component={Task} />
       <Route path="/project/add" exact component={AddProject} />
+      <Route path="/project/edit/:id" component={EditProject} />
       <Route path="/project/member/add/:id" component={AddMember} />
       <Route path="/project/member/:id" component={ProjectMember} />
       <Route path="/project/:id" component={Project} />
