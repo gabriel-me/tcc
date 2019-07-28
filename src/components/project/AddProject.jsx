@@ -32,8 +32,8 @@ export default class Project extends Component {
     const requestBody = {
       'name': values[0],
       'boss': {
-        id: values[1],
-        name: values[2]
+        id: values[2],
+        name: values[1]
       },
       'deadline': DateFormat(values[3]),
       'description': values[4],
@@ -46,7 +46,7 @@ export default class Project extends Component {
         profession: window.localStorage.getItem('profession')
       }
     }
-
+    console.log(requestBody)
     axios.post(URL, requestBody).then(result => {
       if (result.status === 200) {
         console.log('Success')
