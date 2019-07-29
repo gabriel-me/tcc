@@ -27,7 +27,7 @@ export default class ListMessage extends Component {
     return this.state.friends.map((friend, i) => 
       <li key={i}>
         <Status status={friend.status} />
-        {friend.name}
+        {friend.name} {friend.lastName}
       </li>
     )
   }
