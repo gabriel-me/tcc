@@ -40,7 +40,7 @@ export default class Home extends React.Component {
       const tasks = result.data.tasks.map((task, i) => 
         <div key={i} className="rowTask" style={alignCenter}>
           <span className="doneTask" onClick={() => this.doneTask(task._id)}><Done /></span>
-          <Link to="/">
+          <Link to={`/task/edit/${task._id}`}>
             <Row cols={[
               { text: task.name, size: '_4' },
               { text: <Profile src={task.sender.photo} />, size: '_2' },
