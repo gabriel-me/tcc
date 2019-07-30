@@ -4,6 +4,7 @@ import Home from '../components/home/Home'
 import Task from '../components/task/Task'
 import AddTask from '../components/task/AddTask'
 import ListTasks from '../components/task/ListTasks'
+import EditTask from '../components/task/EditTask'
 import Login from '../components/login/Template'
 import Project from '../components/project/Project'
 import AddProject from '../components/project/AddProject'
@@ -26,6 +27,7 @@ export default () => (
       <Route path="/config" exact component={Config} />
       <Route path="/task" exact component={ListTasks} />
       <Route path="/task/add" exact component={AddTask} />
+      <Route path="/task/edit/:id" component={EditTask} />
       <Route path="/task/:id" component={Task} />
       <Route path="/project/add" exact component={AddProject} />
       <Route path="/project/edit/:id" component={EditProject} />
