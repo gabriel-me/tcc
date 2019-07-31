@@ -4,7 +4,6 @@ import Menu from '../utils/menu/Menu'
 import Row from '../utils/list/Row'
 import ProgressBar from '../utils/chart/ProgressBar'
 import Profile from '../utils/profile/Profile'
-import Tag from '../utils/tag/Tag'
 import axios from 'axios'
 import { Link } from 'react-router-dom'
 import { Done } from '../utils/icons/Icon'
@@ -77,9 +76,6 @@ export default class Project extends Component {
         <Menu />
         <Header title={this.state.project} />
         <main>
-          <Tag text="tcc" />
-          <Tag text="show" />
-          <Tag text="viagem" />
           <section>
             <Row position="first" cols={[
               { text: 'Tarefa', size: '_4' }, 
