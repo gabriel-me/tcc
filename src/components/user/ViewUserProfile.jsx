@@ -38,7 +38,10 @@ export default class extends Component {
             <section className="view-section">
               <img src="" id="photo"></img>
               <h1 className="user-info" id="name"></h1>
-              <h2 className="user-info" id="profession"></h2>
+            </section>
+            <section className="view-section">
+              <h4>Principal função</h4>
+              <h3 className="user-info" id="profession"></h3>
             </section>
             <section className="view-section">
               <h4>Status</h4>
