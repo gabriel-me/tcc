@@ -36,24 +36,24 @@ export default class extends Component {
         <div className="form-container">
           <div className="form-content">
             <section className="view-section">
-              <img src="" id="photo"></img>
-              <h1 className="user-info" id="name"></h1>
+              <img src="../../image/profile.jpg" alt="perfil" id="photo"></img>
+              <h1 className="user-info" id="name">...</h1>
             </section>
             <section className="view-section">
               <h4>Principal função</h4>
-              <h3 className="user-info" id="profession"></h3>
+              <h3 className="user-info" id="profession">...</h3>
             </section>
             <section className="view-section">
               <h4>Status</h4>
-              <h3 className="user-info" id="status"></h3>
+              <h3 className="user-info" id="status">...</h3>
             </section>
             <section className="view-section"> 
               <h4>E-mail</h4>
-              <h3 className="user-info" id="email"></h3>
+              <h3 className="user-info" id="email">...</h3>
             </section>
             <section className="view-section">
               <h4>Sobre</h4>
-              <h3 className="user-info" id="about"></h3>
+              <h3 className="user-info" id="about">...</h3>
             </section>
           </div>
         </div>

@@ -49,8 +49,8 @@ export default class Input extends Component {
       } else {
         link = `/task/${item.id}`
       }
-      return <Link to={link}>
-        <div key={i} onClick={
+      return <Link key={i} to={link}>
+        <div onClick={
           () => this.selected(item._id, `${item.name || ''} ${item.lastName || ''}`)}>
           {`${item.name || ''} ${item.lastName || ''}`}
         </div>

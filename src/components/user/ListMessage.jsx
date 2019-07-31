@@ -26,8 +26,8 @@ export default class ListMessage extends Component {
 
   renderFriends() {
     return this.state.friends.map((friend, i) => 
-      <Link to={`/user/view/${friend.id}`}>
-        <li key={i}>
+      <Link key={i} to={`/user/view/${friend.id}`}>
+        <li>
           <Status status={friend.status} />
           {friend.name} {friend.lastName}
         </li>
