@@ -43,7 +43,7 @@ export default class Input extends Component {
     return data.map((item, i) => {
       let link = ''
       if (item.lastName) {
-        link = `/user/${item.id}`
+        link = `/user/view/${item.id}`
       } else if (item.color) {
         link = `/project/${item.id}`
       } else {

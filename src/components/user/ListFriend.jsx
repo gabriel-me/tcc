@@ -41,7 +41,7 @@ export default class Tasks extends React.Component {
     let friends = this.state.friends
     return friends.map((friend, i) => 
       <div key={i}>
-        <Link to="/">
+        <Link to={`/user/view/${friend.id}`}>
           <Row cols={[
             { text: 
               <div style={alignCenter}>

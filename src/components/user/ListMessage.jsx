@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { Link } from 'react-router-dom'
 import Status from '../utils/status/Status'
 import axios from 'axios'
 
@@ -25,10 +26,12 @@ export default class ListMessage extends Component {
 
   renderFriends() {
     return this.state.friends.map((friend, i) => 
-      <li key={i}>
-        <Status status={friend.status} />
-        {friend.name} {friend.lastName}
-      </li>
+      <Link to={`/user/view/${friend.id}`}>
+        <li key={i}>
+          <Status status={friend.status} />
+          {friend.name} {friend.lastName}
+        </li>
+      </Link>
     )
   }
 

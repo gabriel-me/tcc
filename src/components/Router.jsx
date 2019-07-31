@@ -15,6 +15,7 @@ import AddUser from '../components/user/AddUser'
 import Config from '../components/user/Config'
 import ListUser from '../components/user/ListFriend'
 import Profile from '../components/user/Profile'
+import ViewUserProfile from '../components/user/ViewUserProfile'
 import Timeline from '../components/notification/Timeline'
 
 export default () => (
@@ -36,6 +37,7 @@ export default () => (
       <Route path="/project/:id" component={Project} />
       <Route path="/user" exact component={ListUser} />
       <Route path="/user/add" exact component={AddUser} />
+      <Route path="/user/view/:id" exact component={ViewUserProfile} />
       <Route path="/user/:id" component={Profile} />
       <Route ppath="/notification" component={Timeline} />
     </ Switch>
