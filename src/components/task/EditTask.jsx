@@ -13,6 +13,7 @@ let taskId = ''
 export default class AddTask extends Component {
   constructor(props) {
     super(props)
+    this.state = { taskName: '' }
     this.submit = this.submit.bind(this)
     taskId = this.props.location.pathname
     taskId = taskId.replace('/task/edit/', '')
@@ -31,6 +32,10 @@ export default class AddTask extends Component {
       document.querySelector(`input[name='deadline']`).value = brazilFormat(task.deadline.substring(0, 10), 'year') || ''
       document.querySelector(`input[name='project']`).value = task.project.name || ''
       document.querySelector(`input[name='description']`).value = task.description || ''
+      this.setState({
+        ...this.state,
+        taskName: task.name
+      })
     })
   }
 
@@ -61,7 +66,7 @@ export default class AddTask extends Component {
         <div className="form-container">
           <div className="form-content">
             <header>
-              <h1>Detalhes da tarefa</h1>
+              <h1>Detalhes de {this.state.taskName}</h1>
             </header>
             <form onSubmit={this.submit}>
               <section>
