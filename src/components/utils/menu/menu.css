@@ -1,6 +1,6 @@
 .menu {
   width: 18rem;
-  height: 100vh;
+  min-height: 100vh;
   background-color: #2A1B3D;
 }
 
