@@ -81,7 +81,7 @@ export default class extends Component {
       <section key={i} className='friend'>
         <div>
           <Profile src={friend.photo} />
-          <h4 className="opacity">{`${friend.name}` || ''}</h4>
+          <h4 className="opacity">{`${friend.name} ${friend.lastName}` || ''}</h4>
         </div>
         <span onClick={() => this.addMember(friend)}><Button /></span>
       </section>
