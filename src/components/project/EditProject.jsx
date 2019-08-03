@@ -64,6 +64,9 @@ export default class Project extends Component {
       'color': this.state.color,
       'projectId': this.state.projectId
     }
+    axios.put(URL, body).then(result => {
+      console.log(result)
+    })
   }
 
   render() {
