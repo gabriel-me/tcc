@@ -34,7 +34,6 @@ export default class AddTask extends Component {
       })
       document.querySelector(`input[name='name']`).value = task.name || ''
       document.querySelector(`input[name='deadline']`).value = brazilFormat(task.deadline.substring(0, 10), 'year') || ''
-      document.querySelector(`input[name='project']`).value = task.project.name || ''
       document.querySelector(`input[name='description']`).value = task.description || ''
     })
   }
@@ -46,8 +45,8 @@ export default class AddTask extends Component {
       'userId': window.localStorage.getItem('id'),
       'taskId': taskId,
       'name': values[0],
-      'deadline': DateFormat(values[3]),
-      'description': values[4],
+      'deadline': DateFormat(values[1]),
+      'description': values[2],
     }
     
     axios.put(URL, requestBody).then(result => {
@@ -73,8 +72,7 @@ export default class AddTask extends Component {
                 <Input name="name" label="Nome da tarefa" width="100%" required="required" />
               </section>
               <section>
-                <Input name="project" url="project" label="Projeto que essa tarefa pertence" width="49%" />
-                <Date name="deadline" label="Prazo de entrega" width="49%" />
+                <Date name="deadline" label="Prazo de entrega" width="100%" />
               </section>
               <section>
                 <Input name="description" label="Descrição" width="100%" />
