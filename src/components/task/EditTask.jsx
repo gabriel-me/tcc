@@ -28,14 +28,14 @@ export default class AddTask extends Component {
     axios.get(URL).then(tasks => {
       let task = tasks.data.tasks.filter(task => task._id === taskId)
       task = task[0]
-      document.querySelector(`input[name='name']`).value = task.name || ''
-      document.querySelector(`input[name='deadline']`).value = brazilFormat(task.deadline.substring(0, 10), 'year') || ''
-      document.querySelector(`input[name='project']`).value = task.project.name || ''
-      document.querySelector(`input[name='description']`).value = task.description || ''
       this.setState({
         ...this.state,
         taskName: task.name
       })
+      document.querySelector(`input[name='name']`).value = task.name || ''
+      document.querySelector(`input[name='deadline']`).value = brazilFormat(task.deadline.substring(0, 10), 'year') || ''
+      document.querySelector(`input[name='project']`).value = task.project.name || ''
+      document.querySelector(`input[name='description']`).value = task.description || ''
     })
   }
 
