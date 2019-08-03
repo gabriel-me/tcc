@@ -32,7 +32,10 @@ export default class extends Component {
       name: `${member.name} ${member.lastName}`,
       photo: member.photo,
       profession: member.profession,
-      projectId: projectId
+      projectId: projectId,
+      senderId: window.localStorage.getItem('id'),
+      senderName: `${window.localStorage.getItem('name')} ${window.localStorage.getItem('lastName')}`,
+      senderPhoto: window.localStorage.getItem('photo')
     }
     axios.post(memberURL, body).then(result => {
       this.getUser()
