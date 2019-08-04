@@ -17,11 +17,13 @@ import ListUser from '../components/user/ListFriend'
 import Profile from '../components/user/Profile'
 import ViewUserProfile from '../components/user/ViewUserProfile'
 import Timeline from '../components/notification/Timeline'
+import Report from '../components/report/Report'
 
 export default () => (
   <BrowserRouter>
     <Switch name="http://localhost:3000">
       <Route path="/" exact component={Login} />
+      <Route path="/report" component={Report} exact />
       <Route path="/signin" component={Login} />
       <Route path="/signup" component={Login} />
       <Route path="/home" component={Home} />
