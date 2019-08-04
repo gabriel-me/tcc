@@ -18,12 +18,14 @@ import Profile from '../components/user/Profile'
 import ViewUserProfile from '../components/user/ViewUserProfile'
 import Timeline from '../components/notification/Timeline'
 import Report from '../components/report/Report'
+import TaskReport from '../components/report/Task'
 
 export default () => (
   <BrowserRouter>
     <Switch name="http://localhost:3000">
       <Route path="/" exact component={Login} />
       <Route path="/report" component={Report} exact />
+      <Route path="/report/task" component={TaskReport} exact />
       <Route path="/signin" component={Login} />
       <Route path="/signup" component={Login} />
       <Route path="/home" component={Home} />

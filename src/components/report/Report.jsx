@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import { Close, Peoples, Like, Deslike, Layer } from '../utils/icons/Icon'
+import { Close, Peoples, DoneAll, Layer } from '../utils/icons/Icon'
 import './report.css'
 
 export default () => 
@@ -13,31 +13,18 @@ export default () =>
         </header>
         <section className="report-container">
           <div className="card-report">
-            <Link to="/report">
+            <Link to="/report/task">
               <div>
                 <header>
-                  <h2>Dentro prazo</h2>
-                  <Like />
+                  <h2>Tarefas no prazo</h2>
+                  <DoneAll />
                 </header>
-                <p>Tarefas que você conseguio concluir dentro do prazo estipulado</p>
+                <p>Tarefas que você conseguio concluir no prazo estipulado</p>
               </div>
             </Link>
           </div>
           <div className="card-report">
-            <Link to="/home">
-              <div>
-                <header>
-                  <h2>Fora do prazo</h2>
-                  <Deslike />
-                </header>
-                <p>Tarefas que você não conseguio concluir no prazo estipulado</p>
-              </div>
-            </Link>
-          </div>
-        </section>
-        <section className="report-container">
-          <div className="card-report">
-            <Link to="/user">
+            <Link to="/report/project">
               <div>
                 <header>
                   <h2>Projetos</h2>
@@ -47,8 +34,10 @@ export default () =>
               </div>
             </Link>
           </div>
+        </section>
+        <section className="report-container">
           <div className="card-report">
-            <Link to="/home">
+            <Link to="/report/ranking">
               <div>
                 <header>
                   <h2>Ranking</h2>
