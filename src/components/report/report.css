@@ -40,3 +40,44 @@
   opacity: .7;
   padding: 1rem;
 }
+
+.ranking-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  background-color: #FFFFFF;
+  padding: 1rem !important;
+  border-radius: 5px;
+  box-shadow: 0px 0px 5px 1px #F2F2F2;
+  margin-bottom: 12px;
+  transition: .2s;
+}
+
+.ranking-container:hover {
+  box-shadow: 0 0 10px 5px #E6E6E6;
+}
+
+.ranking-item {
+  display: flex;
+  flex-direction: row;
+}
+
+.ranking-item div {
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.result {
+  flex-direction: column;
+  align-items: flex-end !important;
+}
+
+.done {
+  color: rgba(54, 162, 235, 1) !important;
+}
+
+.not-done {
+  color: rgba(255, 99, 132, 1) !important;
+}

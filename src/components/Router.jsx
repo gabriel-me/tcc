@@ -19,6 +19,7 @@ import ViewUserProfile from '../components/user/ViewUserProfile'
 import Timeline from '../components/notification/Timeline'
 import Report from '../components/report/Report'
 import TaskReport from '../components/report/Task'
+import Ranking from '../components/report/Ranking'
 
 export default () => (
   <BrowserRouter>
@@ -26,6 +27,7 @@ export default () => (
       <Route path="/" exact component={Login} />
       <Route path="/report" component={Report} exact />
       <Route path="/report/task" component={TaskReport} exact />
+      <Route path="/report/ranking" component={Ranking} exact />
       <Route path="/signin" component={Login} />
       <Route path="/signup" component={Login} />
       <Route path="/home" component={Home} />
