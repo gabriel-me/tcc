@@ -15,6 +15,10 @@
   transition: .2s;
 }
 
+.card-report:hover {
+  box-shadow: 0 0 10px 5px #E6E6E6;
+}
+
 .card-report div {
   display: flex;
   flex-direction: column;
