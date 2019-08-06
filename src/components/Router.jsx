@@ -20,6 +20,7 @@ import Timeline from '../components/notification/Timeline'
 import Report from '../components/report/Report'
 import TaskReport from '../components/report/Task'
 import Ranking from '../components/report/Ranking'
+import ProjectReport from '../components/report/Project'
 
 export default () => (
   <BrowserRouter>
@@ -27,6 +28,7 @@ export default () => (
       <Route path="/" exact component={Login} />
       <Route path="/report" component={Report} exact />
       <Route path="/report/task" component={TaskReport} exact />
+      <Route path="/report/project" component={ProjectReport} exact />
       <Route path="/report/ranking" component={Ranking} exact />
       <Route path="/signin" component={Login} />
       <Route path="/signup" component={Login} />
