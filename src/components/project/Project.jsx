@@ -38,12 +38,13 @@ export default class Project extends Component {
     return 'Sem prazo'
   }
 
-  doneTask(taskName) {
+  doneTask(taskName, taskDeadline) {
     const URL = 'http://localhost:8082/project/task'
     const body = { 
       taskName: taskName, 
       userId: window.localStorage.getItem('id'), 
-      projectId: projectId
+      projectId: projectId,
+      taskDeadline: taskDeadline
     }
     axios.put(URL, body).then(result => {
       this.renderTasks()
@@ -54,7 +55,7 @@ export default class Project extends Component {
     axios.get(`http://localhost:8082${currentURL}`).then(result => {
       let rows = result.data.tasks.map((task, i) =>
         <div key={i} className="rowTask" style={alignCenter}>
-          <span className="doneTask" onClick={() => this.doneTask(task.name)}><Done /></span>
+          <span className="doneTask" onClick={() => this.doneTask(task.name, task.deadline)}><Done /></span>
             <Row cols={[
               { text: task.name, size: '_4' },
               { text: <Profile src={task.sender.photo} />, size: '_2' },
