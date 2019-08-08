@@ -31,6 +31,7 @@ export default class Input extends Component {
   }
 
   renderDropdown(data) {
+    data = data.filter(i => (i.done === false || !i.done))
     return data.map((item, i) => 
       <div key={i} onClick={
         () => this.selected(item._id, `${item.name || ''} ${item.lastName || ''}`)}>
