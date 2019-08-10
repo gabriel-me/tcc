@@ -30,7 +30,7 @@ export default () =>
                   <h2>Projetos</h2>
                   <Layer />
                 </header>
-                <p>Saiba como anda os projetos da sua equipe.</p>
+                <p>Projetos que você conseguio concluir no prazo estipulado</p>
               </div>
             </Link>
           </div>
