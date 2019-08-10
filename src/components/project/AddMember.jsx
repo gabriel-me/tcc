@@ -95,7 +95,7 @@ export default class extends Component {
   render() {
     return (
       <div>
-        <Link to="/home"><span id="close"><Close /></span></Link>
+        <Link to={`/project/member/${projectId}`}><span id="close"><Close /></span></Link>
         <div className="form-container">
           <div className="form-content">
             <header>
