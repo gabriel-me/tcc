@@ -48,6 +48,7 @@ export default class extends Component {
   }
 
   renderMembers(members) {
+    members = members.filter(member => member.id !== window.localStorage.getItem('id'))
     members = members.map((member, i) => 
       <div key={i} className="member">
         <Profile src={member.photo} />
