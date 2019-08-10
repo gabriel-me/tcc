@@ -27,7 +27,7 @@ export default () =>
             <Link to="/report/project">
               <div>
                 <header>
-                  <h2>Projetos</h2>
+                  <h2>Projetos no prazo</h2>
                   <Layer />
                 </header>
                 <p>Projetos que você conseguio concluir no prazo estipulado</p>
