@@ -7,9 +7,10 @@ import Button from '../utils/button/Button'
 import './project.css'
 
 let currentURL = ''
-let idProject = ''
+let projectId = ''
 
 const styleSection = {
+  position: 'relative',
   flexDirection: 'column'
 }
 
@@ -17,14 +18,26 @@ export default class extends Component {
   constructor(props) {
     super(props)
     currentURL = this.props.location.pathname
-    idProject = currentURL.replace('/project/member/', '')
+    projectId = currentURL.replace('/project/member/', '')
     currentURL = `http://localhost:8082${currentURL}`
     currentURL = currentURL.replace('/member', '')
     this.state = { project: '', members: [] }
     this.getProject = this.getProject.bind(this)
     this.renderMembers = this.renderMembers.bind(this)
     this.renderProjectName = this.renderProjectName.bind(this)
+    this.deleteMember = this.deleteMember.bind(this)
     this.getProject()
+  }
+
+  deleteMember(userId) {
+    const URL = 'http://localhost:8082/project/member'
+    const body = {
+      userId: userId,
+      projectId: projectId
+    }
+    axios.put(URL, body).then(response => {
+      this.getProject()
+    })
   }
 
   getProject() {
@@ -39,6 +52,9 @@ export default class extends Component {
       <div key={i} className="member">
         <Profile src={member.photo} />
         <h3>{member.name || ''}</h3>
+        <span className="delete" onClick={ () => this.deleteMember(member.id) }>
+          Excluir
+        </span>
       </div>
     )
     this.setState({
@@ -62,7 +78,7 @@ export default class extends Component {
           <div className="form-content">
             <header>
               <h1>Integrantes de {this.state.project}</h1> 
-              <Link to={`add/${idProject}`}>
+              <Link to={`add/${projectId}`}>
                 <Button label="Novo integrante" />
               </Link>
             </header>

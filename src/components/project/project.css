@@ -91,3 +91,16 @@
 .friend .opacity {
   opacity: .5;
 }
+
+.delete {
+  position: absolute;
+  right: 1rem !important;
+  padding: .5rem;
+  opacity: .5;
+  cursor: pointer;
+}
+
+.delete:hover {
+  color: rgba(255, 99, 132, 1);
+  opacity: 1;
+}
