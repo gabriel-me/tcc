@@ -22,7 +22,19 @@ export default class ListProject extends Component {
     this.getProjects = this.getProjects.bind(this)
     this.renderProjects = this.renderProjects.bind(this)
     this.doneProject = this.doneProject.bind(this)
+    this.leaveProject = this.leaveProject.bind(this)
     this.renderProjects()
+  }
+
+  leaveProject(projectId) {
+    const URL = 'http://localhost:8082/project/member'
+    const body = {
+      userId: window.localStorage.getItem('id'),
+      projectId: projectId
+    }
+    axios.put(URL, body).then(response => {
+      this.renderProjects()
+    })
   }
 
   getProjects() {
@@ -62,7 +74,7 @@ export default class ListProject extends Component {
               <Link to={`/project/member/${project.id}`}><span>Integrantes do projeto</span></Link>
               <span style={pointer} onClick={() => this.doneProject(project.id, project.deadline)}>Concluir projeto</span>
               <Link to={`/project/edit/${project.id}`}><span>Editar projeto</span></Link>
-              <span style={pointer} onClick={() => this.doneProject(project.id)}>Excluir projeto</span>
+              <span style={pointer} onClick={() => this.leaveProject(project.id)}>Sair do projeto</span>
             </div>
           </div>
         </li>
