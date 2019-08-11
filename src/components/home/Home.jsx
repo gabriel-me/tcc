@@ -48,6 +48,7 @@ export default class Home extends React.Component {
           }
         }
       }
+      tasks = tasks.slice(0, 4)
       tasks = tasks.map((task, i) => 
         <div key={i} className="rowTask" style={alignCenter}>
           <span className="doneTask" onClick={() => this.doneTask(task._id)}><Done /></span>
