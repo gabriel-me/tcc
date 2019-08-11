@@ -53,7 +53,18 @@ export default class Project extends Component {
 
   renderTasks() {
     axios.get(`http://localhost:8082${currentURL}`).then(result => {
-      let rows = result.data.tasks.map((task, i) =>
+      let tasks = result.data.tasks 
+      let aux = {}
+      for (let x = 0; x < tasks.length; x++) {
+        for (let i = x; i < tasks.length; i++) {
+          if (tasks[x].deadline > tasks[i].deadline) {
+            aux = tasks[x]
+            tasks[x] = tasks[i]
+            tasks[i] = aux
+          }
+        }
+      }
+      let rows = tasks.map((task, i) =>
         <div key={i} className="rowTask" style={alignCenter}>
           <span className="doneTask" onClick={() => this.doneTask(task.name, task.deadline)}><Done /></span>
             <Row cols={[

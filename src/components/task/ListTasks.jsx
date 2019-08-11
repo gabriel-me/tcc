@@ -65,7 +65,18 @@ export default class Tasks extends React.Component {
   }
 
   renderTasks(data) {
-    const tasks = data.tasks.map((task, i) =>
+    let tasks = data.tasks
+    let aux = {}
+    for (let x = 0; x < tasks.length; x++) {
+      for (let i = x; i < tasks.length; i++) {
+        if (tasks[x].deadline > tasks[i].deadline) {
+          aux = tasks[x]
+          tasks[x] = tasks[i]
+          tasks[i] = aux
+        }
+      }
+    }
+    tasks = tasks.map((task, i) =>
       <React.Fragment key={i}>
         {(selectedTags.indexOf(task.id) !== -1) ?
           <div className="rowTask" style={alignCenter} >
