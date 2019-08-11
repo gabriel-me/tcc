@@ -19,6 +19,20 @@ export default class extends Component {
   getUsers() {
     axios.get(URL).then(result => {
       let users = result.data
+      let aux = {}
+      for (let x = 0; x < users.length; x++) {
+        for (let i = x; i < users.length; i++) {
+          if (
+            (users[x].doneTask / users[x].notDoneTask) < 
+            (users[i].doneTask / users[i].notDoneTask) ||
+            (users[i].doneTask !== 0)
+          ) {
+            aux = users[x]
+            users[x] = users[i]
+            users[i] = aux
+          }
+        }
+      }
       users = users.map((user, i) =>
         <div key={i} className="ranking-container">
           <div className="ranking-item">
