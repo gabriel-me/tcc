@@ -24,7 +24,7 @@ export default class Header extends Component {
         <h1>{this.props.title || ''}</h1>
         <div className="right-content">
           <div className="add-container">
-            <Button label="Adicionar novo..." click={this.changeDisplayButton} />
+            <Button label="Adicionar novo" click={this.changeDisplayButton} />
             <div className="dropdown">
               <Link to="/task/add"><span className={`${this.state.ulButton}`}>Tarefa</span></Link>
               <Link to="/project/add"><span className={`${this.state.ulButton}`}>Projeto</span></Link>
