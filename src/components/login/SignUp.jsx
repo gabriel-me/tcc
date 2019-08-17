@@ -17,20 +17,24 @@ export default class SignUp extends Component {
   register() {
     const URL = `http://localhost:8082/auth/register/`
     const values = Form.getFormValues('form')
-    const requestBody = {
-      'name': values[0],
-      'lastName': values[1],
-      'email': values[2],
-      'password': values[3]
-    }
-
-    axios.post(URL, requestBody).then(result => {
-      if (result.status === 200) {
-        window.location.href = 'http://localhost:3000/signin'
+    if (values[3] === values[4]) {
+      const requestBody = {
+        'name': values[0],
+        'lastName': values[1],
+        'email': values[2],
+        'password': values[3]
       }
-    }).catch(() => {
-      console.log('Message Fail')
-    })
+
+      axios.post(URL, requestBody).then(result => {
+        if (result.status === 200) {
+          window.location.href = 'http://localhost:3000/signin'
+        }
+      }).catch(() => {
+        console.log('Message Fail')
+      })
+    } else {
+      alert('Senha inválida, digite novamente!')
+    }
   }
 
   render() {
