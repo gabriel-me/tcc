@@ -104,3 +104,13 @@
   color: rgba(255, 99, 132, 1);
   opacity: 1;
 }
+
+.status-task {
+  position: absolute;
+  left: -5px;
+  height: 4rem;
+  width: 5px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}

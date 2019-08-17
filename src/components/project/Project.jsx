@@ -41,6 +41,7 @@ export default class Project extends Component {
       }
       let rows = tasks.map((task, i) =>
         <div key={i} className="rowTask" style={alignCenter}>
+          <span className="status-task" style={{ backgroundColor: task.done ? '#00FF80' : '#FF0040'}}></span>
           <Link to={`/project/task/edit/${projectId}/${task._id}`}>
             <Row cols={[
               { text: task.name, size: '_4' },
