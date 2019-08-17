@@ -10,6 +10,7 @@ import Project from '../components/project/Project'
 import AddProject from '../components/project/AddProject'
 import EditProject from '../components/project/EditProject'
 import ProjectMember from '../components/project/ProjectMember'
+import ProjectEditTask from '../components/project/ProjectEditTask'
 import AddMember from '../components/project/AddMember'
 import AddUser from '../components/user/AddUser'
 import Config from '../components/user/Config'
@@ -41,6 +42,7 @@ export default () => (
       <Route path="/project/add" exact component={AddProject} />
       <Route path="/project/edit/:id" component={EditProject} />
       <Route path="/project/member/add/:id" component={AddMember} />
+      <Route path="/project/task/edit/:id" component={ProjectEditTask} />
       <Route path="/project/member/:id" component={ProjectMember} />
       <Route path="/project/:id" component={Project} />
       <Route path="/user" exact component={ListUser} />

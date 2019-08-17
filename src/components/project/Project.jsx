@@ -67,12 +67,14 @@ export default class Project extends Component {
       let rows = tasks.map((task, i) =>
         <div key={i} className="rowTask" style={alignCenter}>
           <span className="doneTask" onClick={() => this.doneTask(task.name, task.deadline)}><Done /></span>
+          <Link to={`/project/task/edit/${projectId}/${task._id}`}>
             <Row cols={[
               { text: task.name, size: '_4' },
               { text: <Profile src={task.sender.photo} />, size: '_2' },
               { text: <Profile src={task.addressee.photo} />, size: '_2' },
               { text: <ProgressBar initialTime={task.createAt} finalTime={task.deadline} text={this.dateFormat(task.deadline)} />, size: '_2' }
             ]} />
+          </Link>
         </div>)
       this.setState({
         ...this.state,
