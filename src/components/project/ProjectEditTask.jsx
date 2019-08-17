@@ -7,12 +7,10 @@ import Form from '../utils/form/Form'
 import { Close } from '../utils/icons/Icon'
 import DateFormat, { brazilFormat } from '../utils/Date'
 
-const USER_URL = `http://localhost:8082/user/${window.localStorage.getItem('id')}`
 const styleH4 = { opacity: '.6', color: 'blue' }
 let projectId = ''
 let taskId = ''
 let url = ''
-let userTask = {}
 
 export default class AddTask extends Component {
   constructor(props) {
@@ -34,17 +32,14 @@ export default class AddTask extends Component {
     const URL = `http://localhost:8082/project/${projectId}`
     axios.get(URL).then(result => {
       let projectTask = result.data.tasks.filter(task => task._id === taskId)[0]
-      axios.get(USER_URL).then(result => {
-        userTask = result.data.tasks.filter(task => task.name === projectTask.name)[0]
-        this.setState({
-          ...this.state,
-          taskName: userTask.name,
-          projectName: userTask.project.name
-        })
-        document.querySelector(`input[name='name']`).value = userTask.name || ''
-        document.querySelector(`input[name='deadline']`).value = brazilFormat(userTask.deadline.substring(0, 10), 'year') || ''
-        document.querySelector(`input[name='description']`).value = userTask.description || ''
+      this.setState({
+        ...this.state,
+        taskName: projectTask.name,
+        projectName: result.data.name
       })
+      document.querySelector(`input[name='name']`).value = projectTask.name || ''
+      document.querySelector(`input[name='deadline']`).value = brazilFormat(projectTask.deadline.substring(0, 10), 'year') || ''
+      document.querySelector(`input[name='description']`).value = projectTask.description || ''
     })
   }
 
