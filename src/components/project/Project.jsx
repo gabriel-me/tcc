@@ -7,6 +7,7 @@ import Profile from '../utils/profile/Profile'
 import axios from 'axios'
 import { Link } from 'react-router-dom'
 import { Done } from '../utils/icons/Icon'
+import { brazilFormat } from '../utils/Date'
 import '../home/home.css'
 
 let currentURL = ''
@@ -23,19 +24,8 @@ export default class Project extends Component {
     projectId = currentURL.replace('/project/', '')
     this.state = { tasks: [], project: '' }
     this.renderTasks = this.renderTasks.bind(this)
-    this.dateFormat = this.dateFormat.bind(this)
     this.doneTask = this.doneTask.bind(this)
     this.renderTasks()
-  }
-
-  dateFormat(date) {
-    if (date) {
-      date = new Date(date)
-      const day = date.getDate().toString().padStart('2', '0')
-      const month = date.getMonth().toString().padStart('2', '0')
-      return `${day}/${month}`
-    }
-    return 'Sem prazo'
   }
 
   doneTask(taskName, taskDeadline) {
@@ -72,7 +62,7 @@ export default class Project extends Component {
               { text: task.name, size: '_4' },
               { text: <Profile src={task.sender.photo} />, size: '_2' },
               { text: <Profile src={task.addressee.photo} />, size: '_2' },
-              { text: <ProgressBar initialTime={task.createAt} finalTime={task.deadline} text={this.dateFormat(task.deadline)} />, size: '_2' }
+              { text: <ProgressBar initialTime={task.createAt} finalTime={task.deadline} text={brazilFormat(task.deadline)} />, size: '_2' }
             ]} />
           </Link>
         </div>)
