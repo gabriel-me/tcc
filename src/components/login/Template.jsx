@@ -18,7 +18,7 @@ const controller = () =>
 
 export default () => 
   <div className="login-container">
-    <h1 className="logo">LOGO</h1>
+    <h1 className="logo">MyTasks</h1>
     <div className="login">
       <section>
         <Link to="/signup"><h2 className="h2-left">Criar conta</h2></Link>
