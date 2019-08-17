@@ -6,7 +6,6 @@ import ProgressBar from '../utils/chart/ProgressBar'
 import Profile from '../utils/profile/Profile'
 import axios from 'axios'
 import { Link } from 'react-router-dom'
-import { Done } from '../utils/icons/Icon'
 import { brazilFormat } from '../utils/Date'
 import '../home/home.css'
 
@@ -24,21 +23,7 @@ export default class Project extends Component {
     projectId = currentURL.replace('/project/', '')
     this.state = { tasks: [], project: '' }
     this.renderTasks = this.renderTasks.bind(this)
-    this.doneTask = this.doneTask.bind(this)
     this.renderTasks()
-  }
-
-  doneTask(taskName, taskDeadline) {
-    const URL = 'http://localhost:8082/project/task'
-    const body = { 
-      taskName: taskName, 
-      userId: window.localStorage.getItem('id'), 
-      projectId: projectId,
-      taskDeadline: taskDeadline
-    }
-    axios.put(URL, body).then(result => {
-      this.renderTasks()
-    })
   }
 
   renderTasks() {
@@ -56,7 +41,6 @@ export default class Project extends Component {
       }
       let rows = tasks.map((task, i) =>
         <div key={i} className="rowTask" style={alignCenter}>
-          <span className="doneTask" onClick={() => this.doneTask(task.name, task.deadline)}><Done /></span>
           <Link to={`/project/task/edit/${projectId}/${task._id}`}>
             <Row cols={[
               { text: task.name, size: '_4' },
