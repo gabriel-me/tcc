@@ -114,3 +114,35 @@
   align-items: center;
   cursor: pointer;
 }
+
+.week {
+  position: relative;
+  margin-bottom: 2rem !important;
+}
+
+.week .week-title {
+  position: absolute;
+  top: 0;
+  left: -50px;
+  width: 45px;
+  z-index: 9999;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-left: 1px solid #E6E6E6;
+  border-top: 1px solid #E6E6E6;
+  border-bottom: 1px solid #E6E6E6;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
+
+.week > h5 {
+  position: absolute;
+  top: 50%;
+  left: -67px;
+  display: inline-block;
+  z-index: 9999 !important;
+  transform: rotate(90deg);
+  font-weight: bold;
+}
