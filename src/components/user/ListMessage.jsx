@@ -8,7 +8,7 @@ const URL = `http://localhost:8082/user/${window.localStorage.getItem('id')}`
 export default class ListMessage extends Component {
   constructor(props) {
     super(props)
-    this.state = { friends: [], chat: '', closeChat: true }
+    this.state = { friends: [], chat: '', closeChat: true, show: false }
     this.getFriends = this.getFriends.bind(this)
     this.renderFriends = this.renderFriends.bind(this)
     this.renderChat = this.renderChat.bind(this)
@@ -17,10 +17,18 @@ export default class ListMessage extends Component {
 
   getFriends() {
     axios.get(URL).then(infoUser => {
-      let friends = infoUser.data.friends
+      let msgs = infoUser.data.msg
+      let friends = ''
+      if (!this.state.show) {
+        friends = infoUser.data.friends.filter(friend => msgs.includes(friend.id))
+      } else {
+        friends = infoUser.data.friends
+      }
+      
       this.setState({
         ...this.state,
-        friends: friends
+        friends: friends,
+        show: this.state.show ? false : true
       })
     })
   }
@@ -47,6 +55,9 @@ export default class ListMessage extends Component {
       <div>
         <ul>{this.renderFriends()}</ul>
         {this.state.chat}
+        <ul>
+          <li onClick={() => this.getFriends('all') } style={{justifyContent: 'center'}}>Ver todos os contatos</li>
+        </ul>
       </div>
     )
   }
