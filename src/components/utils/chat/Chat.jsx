@@ -47,6 +47,8 @@ export default class Project extends Component {
       ...this.state,
       messages: messages
     })
+    let messageContainer = document.getElementById('messageContainer')
+    messageContainer.scrollTop = messageContainer.scrollHeight
   }
 
   getUser() {
@@ -85,7 +87,7 @@ export default class Project extends Component {
         </span>  
         <span className="close-chat" onClick={this.display}><Close /></span>
       </header>
-      <div className="message">
+      <div className="message" id="messageContainer">
         {this.state.messages}
       </div>
       <footer>
