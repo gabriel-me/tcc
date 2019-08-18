@@ -35,7 +35,7 @@ export default class AddTask extends Component {
         projectName: task.project.name
       })
       document.querySelector(`input[name='name']`).value = task.name || ''
-      document.querySelector(`input[name='deadline']`).value = brazilFormat(task.deadline.substring(0, 10), 'year') || ''
+      document.querySelector(`input[name='deadline']`).value = (task.deadline) ? brazilFormat(task.deadline.substring(0, 10), 'year') : ''
       document.querySelector(`input[name='description']`).value = task.description || ''
     })
   }
