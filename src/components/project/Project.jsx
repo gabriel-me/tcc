@@ -45,8 +45,8 @@ export default class Project extends Component {
           <Link to={`/project/task/edit/${projectId}/${task._id}`}>
             <Row cols={[
               { text: task.name, size: '_4' },
-              { text: <Profile src={task.sender.photo} />, size: '_2' },
               { text: <Profile src={task.addressee.photo} />, size: '_2' },
+              { text: <Profile src={task.sender.photo} />, size: '_2' },
               { text: <ProgressBar initialTime={task.createAt} finalTime={task.deadline} text={(task.deadline) ? brazilFormat(task.deadline) : 'Sem prazo'} />, size: '_2' }
             ]} />
           </Link>
