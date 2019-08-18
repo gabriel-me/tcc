@@ -47,7 +47,7 @@ export default class Project extends Component {
               { text: task.name, size: '_4' },
               { text: <Profile src={task.sender.photo} />, size: '_2' },
               { text: <Profile src={task.addressee.photo} />, size: '_2' },
-              { text: <ProgressBar initialTime={task.createAt} finalTime={task.deadline} text={brazilFormat(task.deadline)} />, size: '_2' }
+              { text: <ProgressBar initialTime={task.createAt} finalTime={task.deadline} text={(task.deadline) ? brazilFormat(task.deadline) : 'Sem prazo'} />, size: '_2' }
             ]} />
           </Link>
         </div>)
