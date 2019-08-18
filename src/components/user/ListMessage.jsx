@@ -8,7 +8,7 @@ const URL = `http://localhost:8082/user/${window.localStorage.getItem('id')}`
 export default class ListMessage extends Component {
   constructor(props) {
     super(props)
-    this.state = { friends: [], chat: '', closeChat: true, show: false }
+    this.state = { friends: [], chat: '', closeChat: true, show: false, showMessage: 'menos' }
     this.getFriends = this.getFriends.bind(this)
     this.renderFriends = this.renderFriends.bind(this)
     this.renderChat = this.renderChat.bind(this)
@@ -28,7 +28,8 @@ export default class ListMessage extends Component {
       this.setState({
         ...this.state,
         friends: friends,
-        show: this.state.show ? false : true
+        show: this.state.show ? false : true,
+        showMessage: this.state.showMessage === 'mais' ? 'menos' : 'mais'
       })
     })
   }
@@ -56,7 +57,9 @@ export default class ListMessage extends Component {
         <ul>{this.renderFriends()}</ul>
         {this.state.chat}
         <ul>
-          <li onClick={() => this.getFriends('all') } style={{justifyContent: 'center'}}>Ver todos os contatos</li>
+          <li onClick={() => this.getFriends('all') } style={{cursor: 'pointer'}}>
+            Ver {this.state.showMessage}
+          </li>
         </ul>
       </div>
     )
