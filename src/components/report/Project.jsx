@@ -17,13 +17,13 @@ export default class extends Component {
   getChartData() {
     axios.get(URL).then(result => {
       let chartData = {
-        labels: ['Fora do prazo', 'Dentro do prazo'],
+        labels: ['Dentro do prazo', 'Fora do prazo'],
         datasets: [
           {
             data: [result.data.doneProject, result.data.notDoneProject],
             backgroundColor: [
-              'rgba(255, 99, 132, 0.6)',
-              'rgba(54, 162, 235, 0.6)'
+              'rgba(54, 162, 235, 0.6)',
+              'rgba(255, 99, 132, 0.6)'
             ]
           }
         ]
