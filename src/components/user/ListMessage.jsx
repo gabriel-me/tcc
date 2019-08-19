@@ -17,7 +17,7 @@ export default class ListMessage extends Component {
 
   getFriends() {
     axios.get(URL).then(infoUser => {
-      let msgs = infoUser.data.msg
+      let msgs = infoUser.data.msg ? infoUser.data.msg : ''
       let friends = ''
       if (!this.state.show) {
         friends = infoUser.data.friends.filter(friend => msgs.includes(friend.id))
