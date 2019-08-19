@@ -44,7 +44,7 @@ export default class Project extends Component {
       })
       document.querySelector(`input[name='name']`).value = project.name || ''
       document.querySelector(`input[name='boss']`).value = project.boss.name || ''
-      document.querySelector(`input[name='deadline']`).value = brazilFormat(project.deadline.substring(0, 10), 'year') || ''
+      document.querySelector(`input[name='deadline']`).value = project.deadline ? brazilFormat(project.deadline.substring(0, 10), 'year') : ''
       document.querySelector(`input[name='description']`).value = project.description || ''
     })
   }
